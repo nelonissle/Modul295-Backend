@@ -1,0 +1,6 @@
+@Modul295PraxisArbeit_HostAddress = http://localhost:5013
+
+GET {{Modul295PraxisArbeit_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
