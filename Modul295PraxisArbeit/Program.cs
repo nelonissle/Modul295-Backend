@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Modul295PraxisArbeit.Services;
-
+using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 // Erstelle den WebApplication-Builder
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +31,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+
+  // Fügen Sie CORS hinzu und konfigurieren Sie es
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        policy => policy.AllowAnyOrigin() // Erlaubt jede Origin
+                        .AllowAnyMethod() // Erlaubt alle HTTP-Methoden
+                        .AllowAnyHeader()); // Erlaubt alle Header
+});
+
 // Füge den JwtService als Singleton hinzu
 builder.Services.AddSingleton<IJwtService>(sp => new JwtService(key));
 
@@ -42,6 +53,8 @@ builder.Services.AddSwaggerGen();
 
 // Erstelle die Anwendung
 var app = builder.Build();
+
+app.UseCors("AllowAllOrigins");
 
 // Konfiguriere die HTTP-Pipeline für Entwicklungsumgebung
 if (app.Environment.IsDevelopment())
@@ -59,6 +72,40 @@ app.UseAuthorization();
 
 // Mappe die Controller
 app.MapControllers();
+
+static void EnsureDatabaseAndTablesExist(string DefaultConnection)
+        {
+            string createDatabaseScript = @"
+            IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'JetStreamDB')
+            BEGIN
+                CREATE DATABASE JetStreamDB;
+            END
+            ";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DefaultConnection))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(createDatabaseScript, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                    /*
+                                        using (SqlCommand command = new SqlCommand(createTablesScript, connection))
+                                        {
+                                            command.ExecuteNonQuery();
+                                        }
+                    */
+                    Console.WriteLine("Datenbank und Tabellen wurden sichergestellt.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Fehler bei der Datenbankerstellung: " + ex.Message);
+            }
+        }
 
 // Starte die Anwendung
 app.Run();

@@ -25,8 +25,10 @@ namespace Praxisarbeit_M295.Controllers
         [HttpPost("Login")]
         public async Task<ActionResult<string>> Login([FromBody] UserLoginDto loginDto)
         {
-            var user = await _context.Users
-                .SingleOrDefaultAsync(u => u.Username == loginDto.Username);
+            Console.WriteLine($"Name: {loginDto.Username}");
+            var user =  _context.Users
+                .SingleOrDefault(u => u.Username == loginDto.Username);
+            Console.WriteLine($"Name: {user.Username}");
 
             if (user == null || !VerifyPasswordHash(loginDto.Password, user.PasswordHash))
             {
@@ -64,19 +66,25 @@ namespace Praxisarbeit_M295.Controllers
         // Hilfsfunktionen für die Passwortverwaltung
         private string CreatePasswordHash(string password)
         {
+            // Generiert den Hash mit bcrypt. Salt wird automatisch erstellt.
+            return BCrypt.Net.BCrypt.HashPassword(password);
+/*
             using (var hmac = new HMACSHA256())
             {
                 return Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(password)));
-            }
+            }*/
         }
 
         private bool VerifyPasswordHash(string password, string storedHash)
         {
+            // bcrypt übernimmt das Vergleichen des Passworts mit dem gespeicherten Hash, einschließlich des Salts.
+            return BCrypt.Net.BCrypt.Verify(password, storedHash);
+/*
             using (var hmac = new HMACSHA256())
             {
                 var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
                 return Convert.ToBase64String(computedHash) == storedHash;
-            }
+            }*/
         }
     }
 

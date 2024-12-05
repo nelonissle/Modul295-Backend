@@ -59,12 +59,14 @@ namespace Modul295PraxisArbeit.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutServiceOrder(int id, ServiceOrder serviceOrder)
         {
-            if (id != serviceOrder.OrderId)
+            var dbService = await _context.ServiceOrders.FindAsync(id);
+            if (dbService == null)
             {
-                return BadRequest("ID im URL stimmt nicht mit der ID des Objekts überein.");
+                return NotFound();
             }
 
-            _context.Entry(serviceOrder).State = EntityState.Modified;
+            dbService.name = serviceOrder.name;
+            _context.Entry(dbService).State = EntityState.Modified;
 
             try
             {
