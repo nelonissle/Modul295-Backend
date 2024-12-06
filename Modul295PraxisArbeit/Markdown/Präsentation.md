@@ -49,26 +49,50 @@ Im Rahmen des Moduls 295 spielten Planung und Organisation eine zentrale Rolle. 
 
 # Entscheiden
 
-<font size  = 4>
+<font size  = 3>
 
-Im IPERKA-Schritt Entscheiden lag der Fokus darauf, die bestmöglichen Lösungen für die Entwicklung der Backend-APIs unserer Website auszuwählen. Dabei mussten Mali und Nelo verschiedene Ansätze und Technologien evaluieren, die sowohl die Login- als auch die Order-Funktion optimal unterstützen.
+1. **Evaluierte Ansätze und Technologien**:  
+     - Login-Funktion.  
+     - Order-Funktion.  
 
-Die Entscheidung umfasste die Auswahl geeigneter Programmiersprachen, Frameworks und Authentifizierungsmethoden. Es wurde analysiert, welche Technologien am besten zu den Anforderungen der Anwendung passen und gleichzeitig eine hohe Sicherheit und Performance gewährleisten. Besonders bei der Implementierung der Login-Funktion war es wichtig, sichere Authentifizierungsmechanismen wie JWT (JSON Web Tokens) oder Session-basierte Authentifizierung in Betracht zu ziehen. Für die Order-Funktion wurde entschieden, auf eine effiziente API-Struktur zu setzen, die den Datenfluss zwischen Frontend und Backend optimiert.
+2. **Entscheidungen getroffen zu**:  
+     - Programmiersprachen und Frameworks.  
+     - Authentifizierungsmethoden (z. B. JWT oder Session-basierte Authentifizierung).  
 
-Die Entscheidungsfindung basierte auf klaren Kriterien wie Skalierbarkeit, Wartbarkeit und der Benutzerfreundlichkeit der APIs, sodass am Ende ein solides technisches Fundament für die Webseite gelegt wurde.
+3. **Analyse der Technologien**:  
+     - Anpassung an die Anforderungen der Anwendung.  
+     - Sicherstellung von hoher Sicherheit und Performance.  
+
+4. **Login-Funktion**:  
+     - Implementierung sicherer Authentifizierungsmechanismen.  
+
+5. **Order-Funktion**:  
+     - Einsatz einer effizienten API-Struktur für optimierten Datenfluss zwischen Frontend und Backend.  
+
+6. **Kriterien der Entscheidungsfindung**:  
+     - Skalierbarkeit.  
+     - Wartbarkeit.  
+     - Benutzerfreundlichkeit der APIs.  
+
+7. **Ergebnis**: Solides technisches Fundament für die Webseite.  
 
 </font>
----
-### Realisierung Nelo
-1. **Authentication and Authorization**
+
+# Realisierung
+1. **Front-End Anpassungen**
+   - Eine Neue Page für den Login
+   - Order Site anpassen
+2. **Authentication and Authorization**
    - JSON Web Tokens (JWT)
    - BCrypt für das Password Hashing
-2. **APIs**
+3. **APIs**
    - User Management
    - Service Orders
-3. **Database**
+4. **Database**
    - SQL Server Integration
    - Sicherstellen das die "tabels Exist"
+
+
 
 ### Frameworks and Libraries
 Die Passenden Frameworks installiert die wir benötigen 
@@ -76,15 +100,14 @@ Die Passenden Frameworks installiert die wir benötigen
 - Entity Framework Core
 - JWT and BCrypt
 
----
-# Security: JSON Web Tokens (JWT)
+### Security: JSON Web Tokens (JWT)
 
 ### Why JWT?
 - Stateless Authentication
 - Kompakt und sichere Token Formatierung
 
 ### Bearer 
-wir haben es mit Bearer geamcht da es weitverbreitet ist und es Weit Verbreitet ist.
+wir haben es mit Bearer geamcht da es weitverbreitet ist.
 
 # Kontrolieren
 
@@ -103,9 +126,10 @@ Hier werten wir unsere arbeit ein.
 - Kurze Rückmelung
 
 
-# Ende 
-## Danke für's zu Hören 
-## Gibt es noch Fragen
+# Recap
+<font size = 4>
+Hier geben wir eine Kurze Zusammenfassung zum Ganzen Projekt
+<h3> Danke für's zu Hören 
 
 
 
