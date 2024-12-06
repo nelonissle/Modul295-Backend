@@ -26,7 +26,7 @@ namespace Praxisarbeit_M295.Controllers
         public async Task<ActionResult<string>> Login([FromBody] UserLoginDto loginDto)
         {
             Console.WriteLine($"Name: {loginDto.Username}");
-            var user =  _context.Users
+            var user = _context.Users
                 .SingleOrDefault(u => u.Username == loginDto.Username);
             Console.WriteLine($"Name: {user.Username}");
 
@@ -63,28 +63,36 @@ namespace Praxisarbeit_M295.Controllers
             return CreatedAtAction(nameof(Register), new { id = newUser.UserId }, newUser);
         }
 
+        // GET: api/Users
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        {
+            var users = await _context.Users.ToListAsync();
+            return Ok(users);
+        }
+
         // Hilfsfunktionen für die Passwortverwaltung
         private string CreatePasswordHash(string password)
         {
             // Generiert den Hash mit bcrypt. Salt wird automatisch erstellt.
             return BCrypt.Net.BCrypt.HashPassword(password);
-/*
-            using (var hmac = new HMACSHA256())
-            {
-                return Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(password)));
-            }*/
+            /*
+                        using (var hmac = new HMACSHA256())
+                        {
+                            return Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(password)));
+                        }*/
         }
 
         private bool VerifyPasswordHash(string password, string storedHash)
         {
             // bcrypt übernimmt das Vergleichen des Passworts mit dem gespeicherten Hash, einschließlich des Salts.
             return BCrypt.Net.BCrypt.Verify(password, storedHash);
-/*
-            using (var hmac = new HMACSHA256())
-            {
-                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return Convert.ToBase64String(computedHash) == storedHash;
-            }*/
+            /*
+                        using (var hmac = new HMACSHA256())
+                        {
+                            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+                            return Convert.ToBase64String(computedHash) == storedHash;
+                        }*/
         }
     }
 
