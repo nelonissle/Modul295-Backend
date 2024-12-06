@@ -59,50 +59,53 @@ Die Entscheidungsfindung basierte auf klaren Kriterien wie Skalierbarkeit, Wartb
 
 </font>
 ---
+### Realisierung Nelo
+1. **Authentication and Authorization**
+   - JSON Web Tokens (JWT)
+   - BCrypt für das Password Hashing
+2. **APIs**
+   - User Management
+   - Service Orders
+3. **Database**
+   - SQL Server Integration
+   - Sicherstellen das die "tabels Exist"
 
-# Realiseren
-
-
-
----
-
-# Kontrollieren
-
----
-
-# Auswerten
-
----
-
-# Slide 4: Image or Diagram
-
-![Alt text for your image](image-url-placeholder.jpg)
+### Frameworks and Libraries
+Die Passenden Frameworks installiert die wir benötigen 
+- ASP.NET Core
+- Entity Framework Core
+- JWT and BCrypt
 
 ---
+# Security: JSON Web Tokens (JWT)
 
-# Slide 5: Code Example
+### Why JWT?
+- Stateless Authentication
+- Kompakt und sichere Token Formatierung
 
-```javascript
-const greet = (name) => {
-  return `Hello, ${name}!`;
-};
-console.log(greet("World"));
+### Bearer 
+wir haben es mit Bearer geamcht da es weitverbreitet ist und es Weit Verbreitet ist.
+
+# Kontrolieren
+
+Kontrolliet ob unsere Anwendungen Laufen das die Präsentation Vollständig ist. 
+
+### Beispiel eines Postman Test
+Die Test URL für ServiceOrders Datenbank mit Dieser URL kann man alle CRUD Operationen machen.
+```
+http://localhost:5013/api/ServiceOrders
 ```
 
----
+# Auswerten 
+Hier werten wir unsere arbeit ein. 
+- Präsentieren
+- Fazit 
+- Kurze Rückmelung
 
-# Slide 6: Summary
 
-- Recap key points
-- Highlight takeaways
-- Call to action or closing statement
+# Ende 
+## Danke für's zu Hören 
+## Gibt es noch Fragen
 
----
 
-# Thank You!
 
-Contact Information:
-
-- **Email:** <your-email@example.com>
-- **LinkedIn:** [Your LinkedIn](https://linkedin.com)
-- **GitHub:** [Your GitHub](https://github.com)
