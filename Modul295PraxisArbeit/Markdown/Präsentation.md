@@ -1,35 +1,85 @@
+
+# Modul 295-Backend 
+
+#### Muhammetali Topal, Nelo Nissle
+
+
+# Inhaltsverzeichniss
+
+- Planungs Vorgehen
+- IPERKA Erklärung
+- Code Beispiele
+- Live Demo
+- Recap
+- Thank You!
+
+# Planungs Vorgehen
+
+<font size = 4>Im Rahmen der Projektplanung haben wir die verfügbaren Ressourcen, Kompetenzen und Zeitpläne der Teammitglieder Nelo und Mali sorgfältig analysiert. Dabei haben wir die fachlichen Stärken und Erfahrungen berücksichtigt, um die Aufgaben optimal zu verteilen, sowie die zeitliche Verfügbarkeit, um mögliche Engpässe oder andere Verpflichtungen einzuplanen.</font>
+
+# IPERKA Erklärung
+<h1>
+- I nformieren<br>
+- P lanen<br>
+- E ntscheiden<br>
+- R ealisieren<br>
+- K ontrollieren<br>
+- A uswerten<br>
+<h1>
+
 ---
-# Modul 295-Backend #
 
-### Author's Name
+# Informieren
 
----
-# Slide 1 Title
+<font size  = 4>
 
-- Point 1
-- Point 2
-- Point 3
+Im Modul 295 haben Mali und Nelo gemeinsam ihre Kompetenzen sorgfältig ausgewertet, um sowohl ihre individuellen Stärken als auch mögliche Schwächen zu identifizieren. Der Fokus lag darauf, vorhandene Fähigkeiten gezielt zu stärken und fehlende Kenntnisse systematisch nachzuarbeiten. Dabei haben sie verschiedene Ressourcen wie Lernmaterialien, praktische Übungen und gegenseitiges Feedback genutzt, um kontinuierlich Fortschritte zu erzielen. Diese Herangehensweise hat nicht nur ihre persönlichen Fähigkeiten erweitert, sondern auch ihre Zusammenarbeit gefördert, sodass sie die Anforderungen des Moduls effizient und erfolgreich bewältigen konnten.
+</font>
 
 ---
-# Slide 2 Title
 
-> "Insert a notable quote or statement here."
+# Planen
 
----
-# Slide 3 Title
+<font size  = 4>
 
-### Subsection Title
-
-1. Step 1
-2. Step 2
-3. Step 3
+Im Rahmen des Moduls 295 spielten Planung und Organisation eine zentrale Rolle. Mali und Nelo begannen damit, eine strukturierte Übersicht über die zu erarbeitenden Themen und Aufgaben zu erstellen. Sie analysierten ihre individuellen Stärken und Schwächen, um die Aufgaben entsprechend ihrer Kompetenzen aufzuteilen. Gleichzeitig entwickelten sie einen realistischen Zeitplan, der sowohl den Umfang der Inhalte als auch ihre verfügbaren Kapazitäten berücksichtigte.
+</font>
 
 ---
+
+# Entscheiden
+
+<font size  = 4>
+
+Im IPERKA-Schritt Entscheiden lag der Fokus darauf, die bestmöglichen Lösungen für die Entwicklung der Backend-APIs unserer Website auszuwählen. Dabei mussten Mali und Nelo verschiedene Ansätze und Technologien evaluieren, die sowohl die Login- als auch die Order-Funktion optimal unterstützen.
+
+Die Entscheidung umfasste die Auswahl geeigneter Programmiersprachen, Frameworks und Authentifizierungsmethoden. Es wurde analysiert, welche Technologien am besten zu den Anforderungen der Anwendung passen und gleichzeitig eine hohe Sicherheit und Performance gewährleisten. Besonders bei der Implementierung der Login-Funktion war es wichtig, sichere Authentifizierungsmechanismen wie JWT (JSON Web Tokens) oder Session-basierte Authentifizierung in Betracht zu ziehen. Für die Order-Funktion wurde entschieden, auf eine effiziente API-Struktur zu setzen, die den Datenfluss zwischen Frontend und Backend optimiert.
+
+Die Entscheidungsfindung basierte auf klaren Kriterien wie Skalierbarkeit, Wartbarkeit und der Benutzerfreundlichkeit der APIs, sodass am Ende ein solides technisches Fundament für die Webseite gelegt wurde.
+
+</font>
+---
+
+# Realiseren
+
+
+
+---
+
+# Kontrollieren
+
+---
+
+# Auswerten
+
+---
+
 # Slide 4: Image or Diagram
 
 ![Alt text for your image](image-url-placeholder.jpg)
 
 ---
+
 # Slide 5: Code Example
 
 ```javascript
@@ -40,6 +90,7 @@ console.log(greet("World"));
 ```
 
 ---
+
 # Slide 6: Summary
 
 - Recap key points
@@ -47,9 +98,11 @@ console.log(greet("World"));
 - Call to action or closing statement
 
 ---
+
 # Thank You!
 
 Contact Information:
-- **Email:** your-email@example.com
+
+- **Email:** <your-email@example.com>
 - **LinkedIn:** [Your LinkedIn](https://linkedin.com)
 - **GitHub:** [Your GitHub](https://github.com)
