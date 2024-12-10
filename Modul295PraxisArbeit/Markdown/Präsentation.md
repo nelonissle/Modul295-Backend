@@ -5,13 +5,14 @@
 
 
 # Inhaltsverzeichniss
-
-- Planungs Vorgehen
-- IPERKA Erklärung
-- Code Beispiele
-- Live Demo
-- Recap
-- Thank You!
+<font size = 5>
+- Planungs Vorgehen <br>
+- IPERKA Erklärung<br>
+- Code Beispiele<br>
+- Live Demo<br>
+- Recap<br>
+- Thank You!<br>
+</font>
 
 # Planungs Vorgehen
 
@@ -25,15 +26,30 @@
 - R ealisieren<br>
 - K ontrollieren<br>
 - A uswerten<br>
-<h1>
+</h1>
 
----
+
 
 # Informieren
-
 <font size  = 4>
-
-Im Modul 295 haben Mali und Nelo gemeinsam ihre Kompetenzen sorgfältig ausgewertet, um sowohl ihre individuellen Stärken als auch mögliche Schwächen zu identifizieren. Der Fokus lag darauf, vorhandene Fähigkeiten gezielt zu stärken und fehlende Kenntnisse systematisch nachzuarbeiten. Dabei haben sie verschiedene Ressourcen wie Lernmaterialien, praktische Übungen und gegenseitiges Feedback genutzt, um kontinuierlich Fortschritte zu erzielen. Diese Herangehensweise hat nicht nur ihre persönlichen Fähigkeiten erweitert, sondern auch ihre Zusammenarbeit gefördert, sodass sie die Anforderungen des Moduls effizient und erfolgreich bewältigen konnten.
+ 
+ 
+**Kompetenzbewertung**: Mali und Nelo haben ihre individuellen Stärken und Schwächen analysiert.  
+1. **Fokus**:  
+  - Stärkung vorhandener Fähigkeiten.  
+  - Nacharbeit fehlender Kenntnisse.  
+ 
+2. **Ressourcen genutzt**:  
+  - Lernmaterialien.  
+  - Praktische Übungen.  
+  - Gegenseitiges Feedback.  
+ 
+3. **Ergebnisse**:  
+  - Kontinuierlicher Fortschritt.  
+  - Erweiterung persönlicher Fähigkeiten.  
+  - Förderung der Zusammenarbeit.  
+ 
+4. **Ziel**: Anforderungen des Moduls effizient und erfolgreich bewältigen.  
 </font>
 
 ---
@@ -42,7 +58,15 @@ Im Modul 295 haben Mali und Nelo gemeinsam ihre Kompetenzen sorgfältig ausgewer
 
 <font size  = 4>
 
-Im Rahmen des Moduls 295 spielten Planung und Organisation eine zentrale Rolle. Mali und Nelo begannen damit, eine strukturierte Übersicht über die zu erarbeitenden Themen und Aufgaben zu erstellen. Sie analysierten ihre individuellen Stärken und Schwächen, um die Aufgaben entsprechend ihrer Kompetenzen aufzuteilen. Gleichzeitig entwickelten sie einen realistischen Zeitplan, der sowohl den Umfang der Inhalte als auch ihre verfügbaren Kapazitäten berücksichtigte.
+**Zentrale Rolle von Planung und Organisation**: Im Rahmen des Moduls 295.  
+1. **Erstellung einer strukturierten Übersicht**:  
+     - Themen und Aufgaben wurden systematisch erfasst.  
+ 
+2. **Analyse der individuellen Stärken und Schwächen**:  
+     - Aufgaben wurden entsprechend den Kompetenzen aufgeteilt.  
+ 
+3. **Entwicklung eines realistischen Zeitplans**:  
+     - Umfang der Inhalte und verfügbare Kapazitäten wurden berücksichtigt.  
 </font>
 
 ---
@@ -79,6 +103,8 @@ Im Rahmen des Moduls 295 spielten Planung und Organisation eine zentrale Rolle. 
 </font>
 
 # Realisierung
+<font size = 4>
+
 1. **Front-End Anpassungen**
    - Eine Neue Page für den Login
    - Order Site anpassen
