@@ -15,7 +15,8 @@ namespace Modul295PraxisArbeit.Models
         public string? service { get; set; }
        // public string? Status { get; set; }
        // public int? AssignedTo { get; set; }
-
+        public string? Status { get; set; } // Status field to track the order status
+        public int? AssignedUserId { get; set; } // Nullable user ID field
         // Navigation Property
         public User? AssignedUser { get; set; }
     }
