@@ -48,6 +48,10 @@ namespace Modul295PraxisArbeit.Controllers
                 serviceOrder.Status = "Offen"; // Set default status to "Offen"
             }
 
+            var userName = HttpContext.User.Identity.Name; // Normalerweise der Benutzername
+            Console.WriteLine($"Name: {userName}");
+
+
             if (serviceOrder.AssignedUserId == null)
             {
                 serviceOrder.AssignedUserId = null; // Ensure the AssignedUserId is null for new orders
