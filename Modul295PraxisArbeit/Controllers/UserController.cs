@@ -54,7 +54,7 @@ namespace Praxisarbeit_M295.Controllers
             {
                 Username = registerDto.Username,
                 PasswordHash = passwordHash,
-                Role = "Mitarbeiter"
+                Role = "Kunde"
             };
 
             _context.Users.Add(newUser);
