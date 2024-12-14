@@ -17,14 +17,32 @@ namespace Modul295PraxisArbeit.Controllers
             _context = context;
         }
 
+        // Prüfe ob richtige rolle
+        public bool CheckEditRole(string username)
+        {
+            Console.WriteLine($"Check Edit Role of User: {username}");
+            var user = _context.Users.SingleOrDefault(u => u.Username == username);
+            if (user != null)
+            {
+                if (user.Role == "Mitarbeiter" || user.Role == "Admin")
+                   return true;
+            }
+            return false;
+
+        }
+
         // GET: api/ServiceOrders
+        [Authorize] // Autorisierung erforderlich
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ServiceOrder>>> GetServiceOrders()
         {
-            return await _context.ServiceOrders.ToListAsync();
+            if (CheckEditRole(HttpContext.User.Identity.Name))
+                return await _context.ServiceOrders.ToListAsync();
+            return null;
         }
 
         // GET: api/ServiceOrders/5
+        [Authorize] // Autorisierung erforderlich
         [HttpGet("{id}")]
         public async Task<ActionResult<ServiceOrder>> GetServiceOrder(int id)
         {
@@ -38,7 +56,38 @@ namespace Modul295PraxisArbeit.Controllers
             return serviceOrder;
         }
 
+        // GET: api/ServiceOrders/User/5
+        [Authorize] // Autorisierung erforderlich
+        [HttpGet("User/{id}")]
+        public async Task<ActionResult<IEnumerable<ServiceOrder>>> GetServiceOrderByUser(int id)
+        {
+            var serviceOrder = await _context.ServiceOrders.Where(s => s.AssignedUserId == id).ToListAsync();
+
+            if (serviceOrder == null)
+            {
+                return NotFound();
+            }
+
+            return serviceOrder;
+        }
+
+        // GET: api/ServiceOrders/User/5/Prio/Tief
+        [Authorize] // Autorisierung erforderlich
+        [HttpGet("User/{id}/Prio/{prio}")]
+        public async Task<ActionResult<IEnumerable<ServiceOrder>>> GetServiceOrderByUserByPrio(int id, string prio)
+        {
+            var serviceOrder = await _context.ServiceOrders.Where(s => s.AssignedUserId == id && s.priority == prio).ToListAsync();
+
+            if (serviceOrder == null)
+            {
+                return NotFound();
+            }
+
+            return serviceOrder;
+        }
+
         // POST: api/ServiceOrders
+        [Authorize] // Autorisierung erforderlich
         [HttpPost]
         public async Task<ActionResult<ServiceOrder>> PostServiceOrder(ServiceOrder serviceOrder)
         {
@@ -50,11 +99,10 @@ namespace Modul295PraxisArbeit.Controllers
 
             var userName = HttpContext.User.Identity.Name; // Normalerweise der Benutzername
             Console.WriteLine($"Name: {userName}");
-
-
-            if (serviceOrder.AssignedUserId == null)
+            var user = _context.Users.SingleOrDefault(u => u.Username == userName);
+            if (user != null)
             {
-                serviceOrder.AssignedUserId = null; // Ensure the AssignedUserId is null for new orders
+                serviceOrder.AssignedUserId = user.UserId; // Ensure the AssignedUserId is null for new orders
             }
 
             // Validierung hinzufügen (optional)
@@ -136,6 +184,10 @@ namespace Modul295PraxisArbeit.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteServiceOrder(int id)
         {
+            // A6 Mitarbeiter können löschen 
+            if (!CheckEditRole(HttpContext.User.Identity.Name))
+                return NotFound();
+            
             var serviceOrder = await _context.ServiceOrders.FindAsync(id);
             if (serviceOrder == null)
             {
@@ -147,6 +199,7 @@ namespace Modul295PraxisArbeit.Controllers
 
             return NoContent();
         }
+
         // PUT: api/ServiceOrders/Claim/5
         [Authorize] // Authorization required
         [HttpPut("Claim/{id}")]

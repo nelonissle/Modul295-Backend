@@ -6,6 +6,14 @@ using System.Text;
 using Modul295PraxisArbeit.Services;
 using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
+using Serilog;
+
+
+// Serilog konfigurieren
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.File("logfile.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.Console()
+    .CreateLogger();
 
 // Erstelle den WebApplication-Builder
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +39,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+// Serilog als Logging-Provider registrieren
+builder.Host.UseSerilog();
 
   // Fügen Sie CORS hinzu und konfigurieren Sie es
 builder.Services.AddCors(options =>

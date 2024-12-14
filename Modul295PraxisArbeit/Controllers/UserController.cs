@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Modul295PraxisArbeit.Data;
@@ -14,24 +15,42 @@ namespace Praxisarbeit_M295.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IJwtService _jwtService;
+        private readonly ILogger<UsersController> _logger;
 
-        public UsersController(ApplicationDbContext context, IJwtService jwtService)
+        public UsersController(ApplicationDbContext context, IJwtService jwtService, ILogger<UsersController> logger)
         {
             _context = context;
             _jwtService = jwtService;
+            _logger = logger;
+        }
+
+        // Prüfe ob richtige rolle
+        public bool CheckEditRole(string username)
+        {
+            Console.WriteLine($"Check Edit Role of User: {username}");
+            var user = _context.Users.SingleOrDefault(u => u.Username == username);
+            if (user != null)
+            {
+                if (user.Role == "Mitarbeiter" || user.Role == "Admin")
+                   return true;
+            }
+            return false;
+
         }
 
         // POST: api/Users/Login
         [HttpPost("Login")]
         public async Task<ActionResult<string>> Login([FromBody] UserLoginDto loginDto)
         {
-            Console.WriteLine($"Name: {loginDto.Username}");
+            _logger.LogInformation("Controller: Post Login");
+            _logger.LogDebug($"Name: {loginDto.Username}");
             var user = _context.Users
                 .SingleOrDefault(u => u.Username == loginDto.Username);
-            Console.WriteLine($"Name: {user.Username}");
+            _logger.LogDebug($"Name: {loginDto.Username}");
 
             if (user == null || !VerifyPasswordHash(loginDto.Password, user.PasswordHash))
             {
+                _logger.LogError("Fehler bei Login - Password nicht OK");
                 return Unauthorized("Falscher Benutzername oder Passwort.");
             }
 
@@ -64,6 +83,7 @@ namespace Praxisarbeit_M295.Controllers
         }
 
         // GET: api/Users
+        [Authorize] // Autorisierung erforderlich
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {

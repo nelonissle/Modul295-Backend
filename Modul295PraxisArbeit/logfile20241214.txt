@@ -1,0 +1,30 @@
+2024-12-14 21:01:26.881 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-14 21:01:26.998 +01:00 [INF] Now listening on: http://localhost:5013
+2024-12-14 21:01:27.002 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-14 21:01:27.004 +01:00 [INF] Hosting environment: Development
+2024-12-14 21:01:27.005 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2024-12-14 21:02:17.836 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/Users - null null
+2024-12-14 21:02:17.884 +01:00 [WRN] Failed to determine the https port for redirect.
+2024-12-14 21:02:17.975 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.GetUsers (Modul295PraxisArbeit)'
+2024-12-14 21:02:18.001 +01:00 [INF] Route matched with {action = "GetUsers", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeit.Models.User]]] GetUsers() on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2024-12-14 21:02:19.283 +01:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[PasswordHash], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+2024-12-14 21:02:19.344 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeit.Models.User, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-14 21:02:19.417 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.GetUsers (Modul295PraxisArbeit) in 1409.0666ms
+2024-12-14 21:02:19.421 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.GetUsers (Modul295PraxisArbeit)'
+2024-12-14 21:02:19.432 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/Users - 200 null application/json; charset=utf-8 1598.3539ms
+2024-12-14 21:02:44.793 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2024-12-14 21:02:44.810 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2024-12-14 21:02:44.820 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeit.Models.ServiceOrder]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2024-12-14 21:02:44.981 +01:00 [INF] Executed DbCommand (17ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[UserId], [u].[PasswordHash], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0
+2024-12-14 21:02:44.998 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[OrderId], [s].[AssignedUserId], [s].[Status], [s].[email], [s].[name], [s].[phone], [s].[priority], [s].[service]
+FROM [ServiceOrders] AS [s]
+2024-12-14 21:02:45.035 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeit.Models.ServiceOrder, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-14 21:02:45.054 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 230.4827ms
+2024-12-14 21:02:45.056 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2024-12-14 21:02:45.058 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 265.5535ms
