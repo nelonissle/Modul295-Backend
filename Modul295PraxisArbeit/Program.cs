@@ -18,6 +18,9 @@ Log.Logger = new LoggerConfiguration()
 // Erstelle den WebApplication-Builder
 var builder = WebApplication.CreateBuilder(args);
 
+// Add this line to register HttpClient
+builder.Services.AddHttpClient();
+
 // Geheimschlüssel für JWT (Sollte aus Konfigurationsdateien oder einem sicheren Speicher kommen)
 var key = builder.Configuration["JwtSettings:Key"];
 
