@@ -33,7 +33,9 @@ namespace DeeplTranslationApi.Controllers
                 return BadRequest("Text and TargetLang are required fields.");
             }
 
-            var deeplUrl = "https://api-free.deepl.com/v2/translate";
+            Console.WriteLine("Got the text");
+
+            var deeplUrl = "http://api-free.deepl.com/v2/translate";
             var postData = new StringContent(
                 $"auth_key={_deeplApiKey}&text={request.Text}&target_lang={request.TargetLang}&source_lang={request.SourceLang}",
                 Encoding.UTF8, "application/x-www-form-urlencoded");
