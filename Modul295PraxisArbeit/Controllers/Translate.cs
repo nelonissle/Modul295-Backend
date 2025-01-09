@@ -36,13 +36,21 @@ namespace DeeplTranslationApi.Controllers
 
             Console.WriteLine("Got the text");
 
-            var deeplUrl = "http://api-free.deepl.com/v2/translate";
+            var deeplUrl = "https://api-free.deepl.com/v2/translate";
             var postData = new StringContent(
                 $"auth_key={_deeplApiKey}&text={request.Text}&target_lang={request.TargetLang}&source_lang={request.SourceLang}",
                 Encoding.UTF8, "application/x-www-form-urlencoded");
 
             try
             {
+                if(request.TargetLang != null)
+                {
+                    System.Console.WriteLine("Error with the APi");
+                }
+                else
+                {
+                    System.Console.WriteLine("API was Succesfull need more debug");
+                }
                 // Send the request to the Deepl API
                 var response = await _httpClient.PostAsync(deeplUrl, postData);
 
