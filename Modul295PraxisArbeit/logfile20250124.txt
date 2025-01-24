@@ -1,0 +1,721 @@
+2025-01-24 13:23:54.797 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-24 13:23:55.068 +01:00 [INF] Now listening on: http://localhost:5013
+2025-01-24 13:23:55.074 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-24 13:23:55.076 +01:00 [INF] Hosting environment: Development
+2025-01-24 13:23:55.078 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-01-24 13:33:18.256 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/OrderService - application/json 159
+2025-01-24 13:33:20.032 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-01-24 13:33:20.359 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:33:20'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-01-24 13:33:20.861 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:33:20'.
+2025-01-24 13:33:20.903 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:33:21.035 +01:00 [INF] Route matched with {action = "CreateOrder", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 13:33:21.057 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit) in 6.9539ms
+2025-01-24 13:33:21.086 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:33:21.097 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Modul295PraxisArbeitOrder.Services.OrderServiceService' while attempting to activate 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 13:33:21.250 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 2999.8867ms
+2025-01-24 13:33:39.174 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - null 0
+2025-01-24 13:33:39.188 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:33:39'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-01-24 13:33:39.428 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:33:39'.
+2025-01-24 13:33:39.431 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 13:33:39.446 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-01-24 13:33:39.925 +01:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-01-24 13:33:40.150 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 667.0126ms
+2025-01-24 13:33:40.153 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 13:33:40.165 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 415 null application/problem+json; charset=utf-8 991.8547ms
+2025-01-24 13:35:38.621 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - null 0
+2025-01-24 13:35:38.647 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:35:38'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-01-24 13:35:38.685 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:35:38'.
+2025-01-24 13:35:38.697 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 13:35:38.715 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-01-24 13:35:38.780 +01:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-01-24 13:35:38.793 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 62.5742ms
+2025-01-24 13:35:38.802 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 13:35:38.811 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 415 null application/problem+json; charset=utf-8 189.4535ms
+2025-01-24 13:35:50.879 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Register - application/json 76
+2025-01-24 13:35:50.883 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:35:50'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-01-24 13:35:50.886 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:35:50'.
+2025-01-24 13:35:50.887 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-01-24 13:35:50.900 +01:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Modul295PraxisArbeit.Models.User]] Register(Praxisarbeit_M295.Controllers.UserRegisterDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-01-24 13:35:52.675 +01:00 [INF] Executed DbCommand (47ms) [Parameters=[@__registerDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__registerDto_Username_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-01-24 13:35:52.710 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-01-24 13:35:52.714 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit) in 1811.5089ms
+2025-01-24 13:35:52.716 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-01-24 13:35:52.733 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Register - 400 null text/plain; charset=utf-8 1853.6653ms
+2025-01-24 13:36:15.573 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 76
+2025-01-24 13:36:15.580 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:36:15'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-01-24 13:36:15.599 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30.12.2024 19:03:42', Current time (UTC): '24.01.2025 12:36:15'.
+2025-01-24 13:36:15.608 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 13:36:15.611 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-01-24 13:36:15.647 +01:00 [INF] Controller: Post Login
+2025-01-24 13:36:15.741 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[UserId], [u].[PasswordHash], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__loginDto_Username_0
+2025-01-24 13:36:16.438 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-24 13:36:16.450 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 831.6969ms
+2025-01-24 13:36:16.451 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 13:36:16.454 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 880.6542ms
+2025-01-24 13:36:40.903 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/OrderService - application/json 159
+2025-01-24 13:36:40.928 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:36:40.930 +01:00 [INF] Route matched with {action = "CreateOrder", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 13:36:40.934 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit) in 0.3014ms
+2025-01-24 13:36:40.941 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:36:40.944 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Modul295PraxisArbeitOrder.Services.OrderServiceService' while attempting to activate 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 13:36:40.968 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 65.3682ms
+2025-01-24 13:36:52.934 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/OrderService - application/json 159
+2025-01-24 13:36:52.940 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:36:52.943 +01:00 [INF] Route matched with {action = "CreateOrder", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 13:36:52.949 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit) in 0.5241ms
+2025-01-24 13:36:52.953 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:36:52.959 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Modul295PraxisArbeitOrder.Services.OrderServiceService' while attempting to activate 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 13:36:52.982 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 48.2445ms
+2025-01-24 13:37:26.049 +01:00 [INF] Application is shutting down...
+2025-01-24 13:40:18.774 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-24 13:40:19.015 +01:00 [INF] Now listening on: http://localhost:5013
+2025-01-24 13:40:19.020 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-24 13:40:19.023 +01:00 [INF] Hosting environment: Development
+2025-01-24 13:40:19.024 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-01-24 13:40:26.030 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/OrderService - application/json 159
+2025-01-24 13:40:27.291 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-01-24 13:40:27.551 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:40:27.832 +01:00 [INF] Route matched with {action = "CreateOrder", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 13:40:28.357 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit) in 340.6818ms
+2025-01-24 13:40:28.420 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:40:28.439 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at MongoDB.Driver.Core.Misc.Ensure.IsNotNull[T](T value, String paramName)
+   at MongoDB.Driver.Core.Configuration.ConnectionString..ctor(String connectionString, Boolean isInternalRepresentation, IDnsResolver dnsResolver)
+   at MongoDB.Driver.Core.Configuration.ConnectionString..ctor(String connectionString)
+   at MongoDB.Driver.MongoUrlBuilder.Parse(String url)
+   at MongoDB.Driver.MongoUrlBuilder..ctor(String url)
+   at MongoDB.Driver.MongoUrl..ctor(String url)
+   at MongoDB.Driver.MongoClientSettings.FromConnectionString(String connectionString)
+   at MongoDB.Driver.MongoClient..ctor(String connectionString)
+   at Modul295PraxisArbeitOrder.Data.MongoDbContext..ctor(String connectionString, String databaseName) in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Data\OrderServiceContext.cs:line 12
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(IServiceProvider sp) in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Program.cs:line 53
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 13:40:29.150 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 3123.2993ms
+2025-01-24 13:40:41.603 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 76
+2025-01-24 13:40:41.615 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 13:40:42.465 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-01-24 13:40:43.315 +01:00 [INF] Controller: Post Login
+2025-01-24 13:40:47.494 +01:00 [INF] Executed DbCommand (183ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[UserId], [u].[PasswordHash], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__loginDto_Username_0
+2025-01-24 13:40:49.466 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-24 13:40:49.612 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 7052.8815ms
+2025-01-24 13:40:50.605 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 13:40:51.513 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 9910.6739ms
+2025-01-24 13:41:12.847 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/OrderService - application/json 159
+2025-01-24 13:41:12.882 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:41:12.954 +01:00 [INF] Route matched with {action = "CreateOrder", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 13:41:13.211 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit) in 0.6864ms
+2025-01-24 13:41:13.246 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 13:41:13.262 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'connectionString')
+   at MongoDB.Driver.Core.Misc.Ensure.IsNotNull[T](T value, String paramName)
+   at MongoDB.Driver.Core.Configuration.ConnectionString..ctor(String connectionString, Boolean isInternalRepresentation, IDnsResolver dnsResolver)
+   at MongoDB.Driver.Core.Configuration.ConnectionString..ctor(String connectionString)
+   at MongoDB.Driver.MongoUrlBuilder.Parse(String url)
+   at MongoDB.Driver.MongoUrlBuilder..ctor(String url)
+   at MongoDB.Driver.MongoUrl..ctor(String url)
+   at MongoDB.Driver.MongoClientSettings.FromConnectionString(String connectionString)
+   at MongoDB.Driver.MongoClient..ctor(String connectionString)
+   at Modul295PraxisArbeitOrder.Data.MongoDbContext..ctor(String connectionString, String databaseName) in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Data\OrderServiceContext.cs:line 12
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(IServiceProvider sp) in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Program.cs:line 53
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 13:41:14.103 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 1255.8239ms
+2025-01-24 13:47:06.113 +01:00 [INF] Application is shutting down...
+2025-01-24 13:48:57.570 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-24 13:48:57.796 +01:00 [INF] Now listening on: http://localhost:5013
+2025-01-24 13:48:57.802 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-24 13:48:57.804 +01:00 [INF] Hosting environment: Development
+2025-01-24 13:48:57.805 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-01-24 14:02:10.230 +01:00 [INF] Application is shutting down...
+2025-01-24 14:02:24.000 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-24 14:02:24.223 +01:00 [INF] Now listening on: http://localhost:5013
+2025-01-24 14:02:24.229 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-24 14:02:24.235 +01:00 [INF] Hosting environment: Development
+2025-01-24 14:02:24.248 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-01-24 14:02:31.944 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 76
+2025-01-24 14:02:31.991 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-01-24 14:02:32.122 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 14:02:32.175 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-01-24 14:02:34.088 +01:00 [INF] Controller: Post Login
+2025-01-24 14:02:38.808 +01:00 [INF] Executed DbCommand (188ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[UserId], [u].[PasswordHash], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__loginDto_Username_0
+2025-01-24 14:02:40.099 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-24 14:02:40.194 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 8006.6239ms
+2025-01-24 14:02:40.202 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 14:02:40.231 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 8287.3438ms
+2025-01-24 14:03:01.162 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/OrderService - application/json 159
+2025-01-24 14:03:01.173 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 14:03:01.606 +01:00 [INF] Route matched with {action = "CreateOrder", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:03:03.073 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-01-24 14:03:03.141 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit) in 1443.2293ms
+2025-01-24 14:03:03.156 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 14:03:03.171 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 201 null application/json; charset=utf-8 2010.1626ms
+2025-01-24 14:03:54.822 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/OrderService - application/json 163
+2025-01-24 14:03:54.843 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 14:03:54.847 +01:00 [INF] Route matched with {action = "CreateOrder", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:03:54.954 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-01-24 14:03:54.967 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit) in 75.8588ms
+2025-01-24 14:03:54.975 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 14:03:54.981 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 201 null application/json; charset=utf-8 159.0336ms
+2025-01-24 14:06:18.526 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService - null null
+2025-01-24 14:06:18.542 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:06:18.649 +01:00 [INF] Route matched with {action = "GetAllOrders", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders() on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:06:18.815 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit) in 149.3813ms
+2025-01-24 14:06:18.819 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:06:18.824 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Element 'OrderId' does not match any field or property of class Modul295PraxisArbeitOrder.Models.OrderService.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetAllOrdersAsync() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 18
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:06:19.055 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 529.3268ms
+2025-01-24 14:07:10.162 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService - null null
+2025-01-24 14:07:10.424 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:07:10.457 +01:00 [INF] Route matched with {action = "GetAllOrders", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders() on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:07:10.476 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit) in 8.2279ms
+2025-01-24 14:07:10.486 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:07:10.496 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Element 'OrderId' does not match any field or property of class Modul295PraxisArbeitOrder.Models.OrderService.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetAllOrdersAsync() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 18
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:07:10.559 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 396.1427ms
+2025-01-24 14:08:31.959 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService/ - null null
+2025-01-24 14:08:33.034 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:08:33.201 +01:00 [INF] Route matched with {action = "GetAllOrders", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders() on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:08:33.221 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit) in 4.0751ms
+2025-01-24 14:08:33.246 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:08:33.251 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Element 'OrderId' does not match any field or property of class Modul295PraxisArbeitOrder.Models.OrderService.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetAllOrdersAsync() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 18
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:08:33.534 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService/ - 500 null text/plain; charset=utf-8 1575.1593ms
+2025-01-24 14:11:50.569 +01:00 [INF] Application is shutting down...
+2025-01-24 14:12:02.802 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-24 14:12:03.056 +01:00 [INF] Now listening on: http://localhost:5013
+2025-01-24 14:12:03.107 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-24 14:12:03.123 +01:00 [INF] Hosting environment: Development
+2025-01-24 14:12:03.128 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-01-24 14:12:20.139 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 76
+2025-01-24 14:12:20.930 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-01-24 14:12:21.183 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 14:12:21.308 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-01-24 14:12:21.773 +01:00 [INF] Controller: Post Login
+2025-01-24 14:12:26.872 +01:00 [INF] Executed DbCommand (124ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[UserId], [u].[PasswordHash], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__loginDto_Username_0
+2025-01-24 14:12:29.949 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-24 14:12:30.122 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 8776.948ms
+2025-01-24 14:12:30.131 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-01-24 14:12:30.174 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 10037.2205ms
+2025-01-24 14:12:51.481 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/OrderService - application/json 163
+2025-01-24 14:12:51.492 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 14:12:51.513 +01:00 [INF] Route matched with {action = "CreateOrder", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:12:53.439 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-01-24 14:12:53.512 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit) in 1829.6963ms
+2025-01-24 14:12:53.520 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-24 14:12:53.534 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 201 null application/json; charset=utf-8 2052.8529ms
+2025-01-24 14:13:00.073 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService/ - null null
+2025-01-24 14:13:00.084 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:13:00.528 +01:00 [INF] Route matched with {action = "GetAllOrders", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders() on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:13:00.884 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit) in 144.3262ms
+2025-01-24 14:13:00.889 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:13:00.894 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Element 'OrderId' does not match any field or property of class Modul295PraxisArbeitOrder.Models.OrderService.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetAllOrdersAsync() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 18
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:13:01.006 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService/ - 500 null text/plain; charset=utf-8 932.547ms
+2025-01-24 14:14:22.714 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService/2 - null null
+2025-01-24 14:14:22.720 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit)'
+2025-01-24 14:14:22.740 +01:00 [INF] Route matched with {action = "GetOrderById", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.String) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:14:22.803 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit) in 58.3686ms
+2025-01-24 14:14:22.806 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit)'
+2025-01-24 14:14:22.808 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: '2' is not a valid 24 digit hex string.
+   at MongoDB.Bson.ObjectId.Parse(String s)
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.SerializeValue(BsonSerializationContext context, BsonSerializationArgs args, String value)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TValue value)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Serialize(BsonSerializationContext context, BsonSerializationArgs args, Object value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize(IBsonSerializer serializer, BsonSerializationContext context, Object value)
+   at MongoDB.Driver.Linq.Linq3Implementation.Misc.SerializationHelper.SerializeValue(IBsonSerializer serializer, Object value)
+   at MongoDB.Driver.Linq.Linq3Implementation.Misc.SerializationHelper.SerializeValue(IBsonSerializer serializer, ConstantExpression constantExpression, Expression containingExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToFilterTranslators.ExpressionTranslators.ComparisonExpressionToFilterTranslator.Translate(TranslationContext context, BinaryExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToFilterTranslators.ExpressionToFilterTranslator.TranslateUsingQueryOperators(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToFilterTranslators.ExpressionToFilterTranslator.Translate(TranslationContext context, Expression expression, Boolean exprOk)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToFilterTranslators.ExpressionToFilterTranslator.TranslateLambda(TranslationContext context, LambdaExpression lambdaExpression, IBsonSerializer parameterSerializer, Boolean asRoot)
+   at MongoDB.Driver.Linq.LinqProviderAdapter.TranslateExpressionToFilter[TDocument](Expression`1 expression, IBsonSerializer`1 documentSerializer, IBsonSerializerRegistry serializerRegistry, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.ExpressionFilterDefinition`1.Render(RenderArgs`1 args)
+   at MongoDB.Driver.MongoCollectionImpl`1.CreateFindOperation[TProjection](FilterDefinition`1 filter, FindOptions`2 options, RenderArgs`1 renderArgs)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindAsync[TProjection](IClientSessionHandle session, FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass53_0`1.<FindAsync>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.FirstOrDefaultAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetOrderByIdAsync(String id) in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 23
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById(String id) in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:14:22.854 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService/2 - 500 null text/plain; charset=utf-8 139.2294ms
+2025-01-24 14:14:36.537 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService/679391d5c912ba99390f12c8 - null null
+2025-01-24 14:14:36.542 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit)'
+2025-01-24 14:14:36.544 +01:00 [INF] Route matched with {action = "GetOrderById", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.String) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:14:36.595 +01:00 [INF] Executing OkObjectResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-01-24 14:14:36.598 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit) in 50.2421ms
+2025-01-24 14:14:36.604 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit)'
+2025-01-24 14:14:36.605 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService/679391d5c912ba99390f12c8 - 200 null application/json; charset=utf-8 68.9091ms
+2025-01-24 14:14:59.448 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService - null null
+2025-01-24 14:14:59.453 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:14:59.494 +01:00 [INF] Route matched with {action = "GetAllOrders", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders() on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:14:59.531 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit) in 4.1661ms
+2025-01-24 14:14:59.541 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:14:59.542 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Element 'OrderId' does not match any field or property of class Modul295PraxisArbeitOrder.Models.OrderService.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetAllOrdersAsync() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 18
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:14:59.566 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 118.2273ms
+2025-01-24 14:15:04.177 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService/ - null null
+2025-01-24 14:15:04.186 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:15:04.190 +01:00 [INF] Route matched with {action = "GetAllOrders", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders() on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:15:04.203 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit) in 4.5088ms
+2025-01-24 14:15:04.208 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:15:04.210 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Element 'OrderId' does not match any field or property of class Modul295PraxisArbeitOrder.Models.OrderService.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetAllOrdersAsync() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 18
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:15:04.240 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService/ - 500 null text/plain; charset=utf-8 62.5197ms
+2025-01-24 14:15:08.831 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService/679391d5c912ba99390f12c8 - null null
+2025-01-24 14:15:08.837 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit)'
+2025-01-24 14:15:08.840 +01:00 [INF] Route matched with {action = "GetOrderById", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.String) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:15:08.854 +01:00 [INF] Executing OkObjectResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-01-24 14:15:08.862 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit) in 15.3831ms
+2025-01-24 14:15:08.864 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit)'
+2025-01-24 14:15:08.870 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService/679391d5c912ba99390f12c8 - 200 null application/json; charset=utf-8 39.5823ms
+2025-01-24 14:15:20.623 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService - null null
+2025-01-24 14:15:20.627 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:15:20.629 +01:00 [INF] Route matched with {action = "GetAllOrders", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders() on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:15:20.643 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit) in 4.0954ms
+2025-01-24 14:15:20.645 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:15:20.647 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Element 'OrderId' does not match any field or property of class Modul295PraxisArbeitOrder.Models.OrderService.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetAllOrdersAsync() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 18
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:15:20.665 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 42.0674ms
+2025-01-24 14:15:25.426 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService - null null
+2025-01-24 14:15:25.431 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:15:25.433 +01:00 [INF] Route matched with {action = "GetAllOrders", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders() on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:15:25.443 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit) in 3.8004ms
+2025-01-24 14:15:25.446 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:15:25.448 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Element 'OrderId' does not match any field or property of class Modul295PraxisArbeitOrder.Models.OrderService.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetAllOrdersAsync() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 18
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:15:25.478 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService - 500 null text/plain; charset=utf-8 52.3024ms
+2025-01-24 14:16:00.809 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService/ - null null
+2025-01-24 14:16:00.813 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:16:00.816 +01:00 [INF] Route matched with {action = "GetAllOrders", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders() on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:16:00.848 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit) in 3.5456ms
+2025-01-24 14:16:00.854 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders (Modul295PraxisArbeit)'
+2025-01-24 14:16:00.859 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Element 'OrderId' does not match any field or property of class Modul295PraxisArbeitOrder.Models.OrderService.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at Modul295PraxisArbeitOrder.Services.OrderServiceService.GetAllOrdersAsync() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Services\OrderServiceService.cs:line 18
+   at Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetAllOrders() in C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit\Controllers\OrderServiceController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-24 14:16:00.882 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService/ - 500 null text/plain; charset=utf-8 72.8607ms
+2025-01-24 14:16:06.532 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/OrderService/679391d5c912ba99390f12c8 - null null
+2025-01-24 14:16:06.539 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit)'
+2025-01-24 14:16:06.544 +01:00 [INF] Route matched with {action = "GetOrderById", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.String) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-24 14:16:06.555 +01:00 [INF] Executing OkObjectResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-01-24 14:16:06.560 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit) in 8.7716ms
+2025-01-24 14:16:06.565 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.GetOrderById (Modul295PraxisArbeit)'
+2025-01-24 14:16:06.570 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/OrderService/679391d5c912ba99390f12c8 - 200 null application/json; charset=utf-8 37.3052ms
+2025-01-24 14:19:40.398 +01:00 [INF] Application is shutting down...

@@ -7,6 +7,10 @@ using Modul295PraxisArbeit.Services;
 using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
 using Serilog;
+using MongoDB.Driver;
+using Modul295PraxisArbeitOrder.Data;
+using Modul295PraxisArbeitOrder.Services;
+using Modul295PraxisArbeitOrder.Models;
 
 
 // Serilog konfigurieren
@@ -41,6 +45,39 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)) // Setze den geheimen Schlüssel
         };
     });
+
+ // Register MongoDbContext
+builder.Services.AddSingleton<MongoDbContext>(sp =>
+{
+    var config = builder.Configuration.GetSection("MongoDbSettings");
+    return new MongoDbContext(
+        config["ConnectionString"],
+        config["DatabaseName"]
+    );
+});
+
+// Add MongoDbContext
+builder.Services.AddSingleton<MongoDbContext>(sp =>
+{
+    var config = builder.Configuration.GetSection("MongoDbSettings");
+    string connectionString = config["ConnectionString"];
+    string databaseName = config["DatabaseName"];
+
+    if (string.IsNullOrEmpty(connectionString))
+    {
+        throw new InvalidOperationException("MongoDB connection string is not configured.");
+    }
+
+    if (string.IsNullOrEmpty(databaseName))
+    {
+        throw new InvalidOperationException("MongoDB database name is not configured.");
+    }
+
+    return new MongoDbContext(connectionString, databaseName);
+});
+
+
+builder.Services.AddScoped<OrderServiceService>();
 
 // Serilog als Logging-Provider registrieren
 builder.Host.UseSerilog();
