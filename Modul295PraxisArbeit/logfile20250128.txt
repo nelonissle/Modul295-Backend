@@ -167,3 +167,21 @@ WHERE [u].[Username] = @__loginDto_Username_0
 2025-01-28 10:29:40.619 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
 2025-01-28 10:29:40.628 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 201 null application/json; charset=utf-8 2082.4532ms
 2025-01-28 13:01:45.359 +01:00 [INF] Application is shutting down...
+2025-01-28 14:33:19.328 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-28 14:33:19.892 +01:00 [INF] Now listening on: http://localhost:5013
+2025-01-28 14:33:19.915 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-28 14:33:19.943 +01:00 [INF] Hosting environment: Development
+2025-01-28 14:33:19.956 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-01-28 14:35:44.595 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/OrderService - null null
+2025-01-28 14:35:44.700 +01:00 [INF] CORS policy execution successful.
+2025-01-28 14:35:44.733 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/OrderService - 204 null null 139.9989ms
+2025-01-28 14:35:44.817 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/OrderService - application/json 168
+2025-01-28 14:35:44.850 +01:00 [INF] CORS policy execution successful.
+2025-01-28 14:35:44.899 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-01-28 14:35:44.996 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-28 14:35:45.083 +01:00 [INF] Route matched with {action = "CreateOrder", controller = "OrderService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeitOrder.Controllers.OrderServiceController (Modul295PraxisArbeit).
+2025-01-28 14:35:47.189 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-01-28 14:35:47.376 +01:00 [INF] Executed action Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit) in 2275.4285ms
+2025-01-28 14:35:47.411 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeitOrder.Controllers.OrderServiceController.CreateOrder (Modul295PraxisArbeit)'
+2025-01-28 14:35:47.485 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/OrderService - 201 null application/json; charset=utf-8 2606.1123ms
+2025-01-28 14:43:02.969 +01:00 [INF] Application is shutting down...
