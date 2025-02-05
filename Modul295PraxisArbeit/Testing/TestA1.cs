@@ -134,10 +134,10 @@ namespace Modul295PraxisArbeitOrder.Tests
 
             Assert.IsInstanceOf<NoContentResult>(result);
         }
-        
-        /*
+
+
         [Test]
-        public async Task TestUpdate_OrderExists_ReturnsNoContennt()
+        public async Task TestUpdate_OrderExists_ReturnsNoContent()
         {
             // Arrange: Erstelle zwei Benutzerobjekte
             var user1 = new OrderService
@@ -167,28 +167,28 @@ namespace Modul295PraxisArbeitOrder.Tests
             // Mock-Setup für die Services
             _mockOrderService.Setup(s => s.CreateOrderAsync(user1)).Returns(Task.CompletedTask);
             _mockOrderService.Setup(s => s.CreateOrderAsync(user2)).Returns(Task.CompletedTask);
-            _mockOrderService.Setup(s => s.DeleteOrderAsync(user1.Name)).Returns(Task.CompletedTask);
+            _mockOrderService.Setup(s => s.DeleteOrderAsync(user1.Name)).Returns(Task.CompletedTask);  // Benutzer wird durch Name gelöscht
 
             // Benutzer 1 und Benutzer 2 hinzufügen
-            await _controller.AddOrderService(user1); // Benutzer 1 wird hinzugefügt
-            await _controller.AddOrderService(user2); // Benutzer 2 wird hinzugefügt
+            await _controller.CreateOrder(user1); // Benutzer 1 wird hinzugefügt
+            await _controller.CreateOrder(user2); // Benutzer 2 wird hinzugefügt
 
             // Benutzer 1 löschen
-            await _controller.DeleteUser(user1.Id); // Benutzer 1 wird gelöscht
+            await _controller.DeleteOrder(user1.Name); // Benutzer 1 wird durch Namen gelöscht
 
             // Act: Liste der Benutzer abrufen
-            _mockOrderService.Setup(s => s.GetAllUsersAsync()).ReturnsAsync(new List<User> { user2 });
+            _mockOrderService.Setup(s => s.GetAllOrdersAsync()).ReturnsAsync(new List<User> { user2 });
 
-            var result = await _controller.GetAllUsers();
+            var result = await _controller.GetAllOrders();
 
             // Assert: Überprüfen, dass der gelöschte Benutzer nicht mehr in der Liste ist
             var okResult = result as OkObjectResult;
             Assert.IsNotNull(okResult);
             var usersInList = okResult.Value as List<User>;
             Assert.IsNotNull(usersInList);
-            Assert.AreEqual(1, usersInList.Count);
-            Assert.AreEqual(user2.Id, usersInList[0].Id); // Nur Benutzer 2 sollte in der Liste sein
+            Assert.AreEqual(1, usersInList.Count);  // Es sollte nur ein Benutzer (user2) in der Liste sein
+            Assert.AreEqual(user2.Name, usersInList[0].Name); // Nur Benutzer 2 sollte in der Liste sein
         }
-*/
+
     }
 }
