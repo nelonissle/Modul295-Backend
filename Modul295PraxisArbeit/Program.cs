@@ -76,7 +76,6 @@ builder.Services.AddSingleton<MongoDbContext>(sp =>
     return new MongoDbContext(connectionString, databaseName);
 });
 
-
 builder.Services.AddScoped<OrderServiceService>();
 
 // Serilog als Logging-Provider registrieren

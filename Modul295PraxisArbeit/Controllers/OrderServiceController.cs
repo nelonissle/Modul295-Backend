@@ -2,15 +2,16 @@ using Microsoft.AspNetCore.Mvc;
 using Modul295PraxisArbeitOrder.Models;
 using Modul295PraxisArbeitOrder.Services;
 
+
 namespace Modul295PraxisArbeitOrder.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     public class OrderServiceController : ControllerBase
     {
-        private readonly OrderServiceService _orderService;
+        private readonly IOrderService _orderService;
 
-        public OrderServiceController(OrderServiceService orderService)
+        public OrderServiceController(IOrderService orderService)
         {
             _orderService = orderService;
         }
