@@ -1,42 +1,40 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Modul295PraxisArbeit.Data;
+using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
 using Modul295PraxisArbeit.Models;
 using Modul295PraxisArbeit.Services;
-using System.Security.Cryptography;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-/*
 namespace Praxisarbeit_M295.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IMongoCollection<User> _usersCollection;
         private readonly IJwtService _jwtService;
         private readonly ILogger<UsersController> _logger;
 
-        public UsersController(ApplicationDbContext context, IJwtService jwtService, ILogger<UsersController> logger)
+        public UsersController(IMongoDatabase database, IJwtService jwtService, ILogger<UsersController> logger)
         {
-            _context = context;
+            _usersCollection = database.GetCollection<User>("Users");
             _jwtService = jwtService;
             _logger = logger;
         }
 
-        // Prüfe ob richtige rolle
+        // Prüfe ob richtige Rolle
         public bool CheckEditRole(string username)
         {
-            Console.WriteLine($"Check Edit Role of User: {username}");
-            var user = _context.Users.SingleOrDefault(u => u.Username == username);
+            _logger.LogInformation($"Check Edit Role of User: {username}");
+            var user = _usersCollection.Find(u => u.Username == username).SingleOrDefault();
             if (user != null)
             {
                 if (user.Role == "Mitarbeiter" || user.Role == "Admin")
-                   return true;
+                    return true;
             }
             return false;
-
         }
 
         // POST: api/Users/Login
@@ -45,9 +43,8 @@ namespace Praxisarbeit_M295.Controllers
         {
             _logger.LogInformation("Controller: Post Login");
             _logger.LogDebug($"Name: {loginDto.Username}");
-            var user = _context.Users
-                .SingleOrDefault(u => u.Username == loginDto.Username);
-            _logger.LogDebug($"Name: {loginDto.Username}");
+
+            var user = _usersCollection.Find(u => u.Username == loginDto.Username).SingleOrDefault();
 
             if (user == null || !VerifyPasswordHash(loginDto.Password, user.PasswordHash))
             {
@@ -63,7 +60,8 @@ namespace Praxisarbeit_M295.Controllers
         [HttpPost("Register")]
         public async Task<ActionResult<User>> Register([FromBody] UserRegisterDto registerDto)
         {
-            if (await _context.Users.AnyAsync(u => u.Username == registerDto.Username))
+            var existingUser = _usersCollection.Find(u => u.Username == registerDto.Username).SingleOrDefault();
+            if (existingUser != null)
             {
                 return BadRequest("Benutzername bereits vergeben.");
             }
@@ -77,8 +75,7 @@ namespace Praxisarbeit_M295.Controllers
                 Role = "Kunde"
             };
 
-            _context.Users.Add(newUser);
-            await _context.SaveChangesAsync();
+            await _usersCollection.InsertOneAsync(newUser);
 
             return CreatedAtAction(nameof(Register), new { id = newUser.UserId }, newUser);
         }
@@ -88,7 +85,7 @@ namespace Praxisarbeit_M295.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            var users = await _context.Users.ToListAsync();
+            var users = await _usersCollection.Find(u => true).ToListAsync();
             return Ok(users);
         }
 
@@ -97,23 +94,12 @@ namespace Praxisarbeit_M295.Controllers
         {
             // Generiert den Hash mit bcrypt. Salt wird automatisch erstellt.
             return BCrypt.Net.BCrypt.HashPassword(password);
-            /*
-                        using (var hmac = new HMACSHA256())
-                        {
-                            return Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(password)));
-                        }
         }
 
         private bool VerifyPasswordHash(string password, string storedHash)
         {
             // bcrypt übernimmt das Vergleichen des Passworts mit dem gespeicherten Hash, einschließlich des Salts.
             return BCrypt.Net.BCrypt.Verify(password, storedHash);
-            /*
-                        using (var hmac = new HMACSHA256())
-                        {
-                            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-                            return Convert.ToBase64String(computedHash) == storedHash;
-                        }
         }
     }
 
@@ -130,4 +116,3 @@ namespace Praxisarbeit_M295.Controllers
         public string Password { get; set; }
     }
 }
-*/
