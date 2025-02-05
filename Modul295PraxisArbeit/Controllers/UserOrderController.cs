@@ -6,6 +6,7 @@ using Modul295PraxisArbeit.Models;
 using Modul295PraxisArbeit.Services;
 using System.Linq;
 using System.Threading.Tasks;
+/*
 
 namespace Praxisarbeit_M295.Controllers
 {
@@ -116,3 +117,4 @@ namespace Praxisarbeit_M295.Controllers
         public string Password { get; set; }
     }
 }
+*/

@@ -7,7 +7,7 @@ using Modul295PraxisArbeit.Services;
 using System.Security.Cryptography;
 using System.Text;
 
-/*
+
 namespace Praxisarbeit_M295.Controllers
 {
     [Route("api/[controller]")]
@@ -102,6 +102,7 @@ namespace Praxisarbeit_M295.Controllers
                         {
                             return Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(password)));
                         }
+                        */
         }
 
         private bool VerifyPasswordHash(string password, string storedHash)
@@ -113,7 +114,7 @@ namespace Praxisarbeit_M295.Controllers
                         {
                             var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
                             return Convert.ToBase64String(computedHash) == storedHash;
-                        }
+                        }*/
         }
     }
 
@@ -130,4 +131,3 @@ namespace Praxisarbeit_M295.Controllers
         public string Password { get; set; }
     }
 }
-*/

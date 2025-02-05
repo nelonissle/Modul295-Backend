@@ -19,6 +19,6 @@ namespace Modul295PraxisArbeitOrder.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string? AssignedUserId { get; set; }
 
-        public User? AssignedUser { get; set; }
+        public OrderUser? AssignedUser { get; set; }
     }
 }

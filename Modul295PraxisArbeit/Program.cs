@@ -46,42 +46,33 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
- // Register MongoDbContext
 builder.Services.AddSingleton<MongoDbContext>(sp =>
 {
-    var config = builder.Configuration.GetSection("MongoDbSettings");
-    return new MongoDbContext(
-        config["ConnectionString"],
-        config["DatabaseName"]
-    );
+   var config = builder.Configuration.GetSection("MongoDbSettings");
+   string connectionString = config["ConnectionString"];
+   string databaseName = config["DatabaseName"];
+
+   if (string.IsNullOrEmpty(connectionString))
+   {
+       throw new InvalidOperationException("MongoDB connection string is not configured.");
+   }
+
+   if (string.IsNullOrEmpty(databaseName))
+   {
+       throw new InvalidOperationException("MongoDB database name is not configured.");
+   }
+
+   return new MongoDbContext(connectionString, databaseName);
 });
 
-// Add MongoDbContext
-builder.Services.AddSingleton<MongoDbContext>(sp =>
-{
-    var config = builder.Configuration.GetSection("MongoDbSettings");
-    string connectionString = config["ConnectionString"];
-    string databaseName = config["DatabaseName"];
+// Register OrderService with dependency injection
+builder.Services.AddScoped<IOrderService, OrderServiceService>(); // Ensure OrderServiceService implements IOrderService
 
-    if (string.IsNullOrEmpty(connectionString))
-    {
-        throw new InvalidOperationException("MongoDB connection string is not configured.");
-    }
-
-    if (string.IsNullOrEmpty(databaseName))
-    {
-        throw new InvalidOperationException("MongoDB database name is not configured.");
-    }
-
-    return new MongoDbContext(connectionString, databaseName);
-});
-
-builder.Services.AddScoped<OrderServiceService>();
 
 // Serilog als Logging-Provider registrieren
 builder.Host.UseSerilog();
 
-  // Fügen Sie CORS hinzu und konfigurieren Sie es
+// Fügen Sie CORS hinzu und konfigurieren Sie es
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins",
@@ -123,38 +114,38 @@ app.UseAuthorization();
 app.MapControllers();
 
 static void EnsureDatabaseAndTablesExist(string DefaultConnection)
-        {
-            string createDatabaseScript = @"
+{
+    string createDatabaseScript = @"
             IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'JetStreamDB')
             BEGIN
                 CREATE DATABASE JetStreamDB;
             END
             ";
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(DefaultConnection))
-                {
-                    connection.Open();
+    try
+    {
+        using (SqlConnection connection = new SqlConnection(DefaultConnection))
+        {
+            connection.Open();
 
-                    using (SqlCommand command = new SqlCommand(createDatabaseScript, connection))
-                    {
-                        command.ExecuteNonQuery();
-                    }
-
-                    /*
-                                        using (SqlCommand command = new SqlCommand(createTablesScript, connection))
-                                        {
-                                            command.ExecuteNonQuery();
-                                        }
-                    */
-                    Console.WriteLine("Datenbank und Tabellen wurden sichergestellt.");
-                }
-            }
-            catch (Exception ex)
+            using (SqlCommand command = new SqlCommand(createDatabaseScript, connection))
             {
-                Console.WriteLine("Fehler bei der Datenbankerstellung: " + ex.Message);
+                command.ExecuteNonQuery();
             }
+
+            /*
+                                using (SqlCommand command = new SqlCommand(createTablesScript, connection))
+                                {
+                                    command.ExecuteNonQuery();
+                                }
+            */
+            Console.WriteLine("Datenbank und Tabellen wurden sichergestellt.");
         }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Fehler bei der Datenbankerstellung: " + ex.Message);
+    }
+}
 
 // Starte die Anwendung
 app.Run();

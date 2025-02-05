@@ -1,9 +1,10 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
+
 namespace Modul295PraxisArbeitOrder.Models
 {
-    public class User
+    public class OrderUser
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

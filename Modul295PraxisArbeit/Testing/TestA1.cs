@@ -7,6 +7,9 @@ using Modul295PraxisArbeitOrder.Controllers;
 using Modul295PraxisArbeitOrder.Services;
 using Modul295PraxisArbeitOrder.Models;
 using Modul295PraxisArbeitOrder.Data;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 
 
 
@@ -139,7 +142,7 @@ namespace Modul295PraxisArbeitOrder.Tests
         [Test]
         public async Task TestUpdate_OrderExists_ReturnsNoContent()
         {
-            // Arrange: Erstelle zwei Benutzerobjekte
+            // Arrange: Erstelle zwei Bestellobjekte
             var user1 = new OrderService
             {
                 Name = "jefffffc",
@@ -154,8 +157,8 @@ namespace Modul295PraxisArbeitOrder.Tests
 
             var user2 = new OrderService
             {
-                Name = "john_doe",
-                Email = "john@doe.com",
+                Name = "HHHHHHHHHHHHHHHHHHHHH",
+                Email = "HHHHHHHHHHHHHHHHHHH@doe.com",
                 Phone = "22222222222",
                 Priority = "High",
                 Service = "Kleiner Service",
@@ -164,30 +167,31 @@ namespace Modul295PraxisArbeitOrder.Tests
                 AssignedUser = null
             };
 
-            // Mock-Setup für die Services
-            _mockOrderService.Setup(s => s.CreateOrderAsync(user1)).Returns(Task.CompletedTask);
-            _mockOrderService.Setup(s => s.CreateOrderAsync(user2)).Returns(Task.CompletedTask);
-            _mockOrderService.Setup(s => s.DeleteOrderAsync(user1.Name)).Returns(Task.CompletedTask);  // Benutzer wird durch Name gelöscht
+            // MongoDB-Setup
+            var client = new MongoClient("mongodb://localhost:27017"); // MongoDB-Verbindung (stelle sicher, dass MongoDB läuft)
+            var database = client.GetDatabase("Modul295Db");
+            var orderCollection = database.GetCollection<OrderService>("OrderServices");
 
-            // Benutzer 1 und Benutzer 2 hinzufügen
-            await _controller.CreateOrder(user1); // Benutzer 1 wird hinzugefügt
-            await _controller.CreateOrder(user2); // Benutzer 2 wird hinzugefügt
+            // Löschen vorhandener Daten in der Sammlung, falls nötig
+           await orderCollection.DeleteManyAsync(FilterDefinition<OrderService>.Empty);
 
-            // Benutzer 1 löschen
-            await _controller.DeleteOrder(user1.Name); // Benutzer 1 wird durch Namen gelöscht
+            // Act: Füge die Bestellungen hinzu
+            await orderCollection.InsertOneAsync(user1); // Benutzer 1 wird hinzugefügt
+            await orderCollection.InsertOneAsync(user2); // Benutzer 2 wird hinzugefügt
 
-            // Act: Liste der Benutzer abrufen
-            _mockOrderService.Setup(s => s.GetAllOrdersAsync()).ReturnsAsync(new List<User> { user2 });
+            // Überprüfen, dass beide Bestellungen in der Datenbank sind
+            var ordersBeforeDelete = await orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
+            Assert.AreEqual(2, ordersBeforeDelete.Count); // Es sollten 2 Bestellungen in der DB sein
 
-            var result = await _controller.GetAllOrders();
+            // Lösche Benutzer 1 basierend auf dem Namen
+            await orderCollection.DeleteOneAsync(o => o.Name == user1.Name);
 
-            // Assert: Überprüfen, dass der gelöschte Benutzer nicht mehr in der Liste ist
-            var okResult = result as OkObjectResult;
-            Assert.IsNotNull(okResult);
-            var usersInList = okResult.Value as List<User>;
-            Assert.IsNotNull(usersInList);
-            Assert.AreEqual(1, usersInList.Count);  // Es sollte nur ein Benutzer (user2) in der Liste sein
-            Assert.AreEqual(user2.Name, usersInList[0].Name); // Nur Benutzer 2 sollte in der Liste sein
+            // Act: Liste der Bestellungen nach Löschung abrufen
+            var ordersAfterDelete = await orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
+
+            // Assert: Überprüfen, dass Benutzer 1 aus der Liste gelöscht wurde und nur Benutzer 2 übrig bleibt
+            Assert.AreEqual(1, ordersAfterDelete.Count);  // Es sollte nur noch 1 Bestellung (user2) in der DB sein
+            Assert.AreEqual(user2.Name, ordersAfterDelete[0].Name); // Nur Benutzer 2 sollte in der Liste der Bestellungen sein
         }
 
     }

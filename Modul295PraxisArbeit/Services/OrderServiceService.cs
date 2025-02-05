@@ -4,7 +4,7 @@ using Modul295PraxisArbeitOrder.Data;
 
 namespace Modul295PraxisArbeitOrder.Services
 {
-    public class OrderServiceService
+    public class OrderServiceService : IOrderService
     {
         private readonly IMongoCollection<OrderService> _orderCollection;
 
