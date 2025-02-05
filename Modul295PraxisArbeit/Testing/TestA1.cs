@@ -193,6 +193,5 @@ namespace Modul295PraxisArbeitOrder.Tests
             Assert.AreEqual(1, ordersAfterDelete.Count);  // Es sollte nur noch 1 Bestellung (user2) in der DB sein
             Assert.AreEqual(user2.Name, ordersAfterDelete[0].Name); // Nur Benutzer 2 sollte in der Liste der Bestellungen sein
         }
-
     }
 }
