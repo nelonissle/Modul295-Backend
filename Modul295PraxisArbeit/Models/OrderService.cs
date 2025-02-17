@@ -1,3 +1,4 @@
+using Modul295PraxisArbeit.Models;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -18,7 +19,6 @@ namespace Modul295PraxisArbeitOrder.Models
 
         [BsonRepresentation(BsonType.ObjectId)]
         public string? AssignedUserId { get; set; }
-
         public OrderUser? AssignedUser { get; set; }
     }
 }

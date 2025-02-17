@@ -1,4 +1,4 @@
-namespace Modul295PraxisArbeit.Models
+/*namespace Modul295PraxisArbeit.Models
 {
     public class Log
     {
@@ -11,3 +11,4 @@ namespace Modul295PraxisArbeit.Models
         public User? User { get; set; }
     }
 }
+*/

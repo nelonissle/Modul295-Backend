@@ -46,28 +46,25 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-builder.Services.AddSingleton<MongoDbContext>(sp =>
+builder.Services.AddSingleton<IMongoDatabase>(sp =>
 {
-   var config = builder.Configuration.GetSection("MongoDbSettings");
-   string connectionString = config["ConnectionString"];
-   string databaseName = config["DatabaseName"];
+    var config = builder.Configuration.GetSection("MongoDbSettings");
+    string connectionString = config["ConnectionString"];
+    string databaseName = config["DatabaseName"];
 
-   if (string.IsNullOrEmpty(connectionString))
-   {
-       throw new InvalidOperationException("MongoDB connection string is not configured.");
-   }
+    if (string.IsNullOrEmpty(connectionString))
+    {
+        throw new InvalidOperationException("MongoDB connection string is not configured.");
+    }
 
-   if (string.IsNullOrEmpty(databaseName))
-   {
-       throw new InvalidOperationException("MongoDB database name is not configured.");
-   }
+    if (string.IsNullOrEmpty(databaseName))
+    {
+        throw new InvalidOperationException("MongoDB database name is not configured.");
+    }
 
-   return new MongoDbContext(connectionString, databaseName);
+    var client = new MongoClient(connectionString);
+    return client.GetDatabase(databaseName);
 });
-
-// Register OrderService with dependency injection
-builder.Services.AddScoped<IOrderService, OrderServiceService>(); // Ensure OrderServiceService implements IOrderService
-
 
 // Serilog als Logging-Provider registrieren
 builder.Host.UseSerilog();

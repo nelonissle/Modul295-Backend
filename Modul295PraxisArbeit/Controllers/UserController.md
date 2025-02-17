@@ -8,6 +8,14 @@ using System.Security.Cryptography;
 using System.Text;
 
 
+/*
+ * UserController.cs
+ * 
+ * Controller für die Benutzerverwaltung
+ * Den FIle habe ich Umbennent so das es zu keinen Komlikationen führt mit der anderen Datenbank
+ */
+
+
 namespace Praxisarbeit_M295.Controllers
 {
     [Route("api/[controller]")]
@@ -102,7 +110,7 @@ namespace Praxisarbeit_M295.Controllers
                         {
                             return Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(password)));
                         }
-                        */
+            */
         }
 
         private bool VerifyPasswordHash(string password, string storedHash)

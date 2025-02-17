@@ -6,7 +6,7 @@ using Modul295PraxisArbeit.Models;
 using Modul295PraxisArbeit.Services;
 using System.Linq;
 using System.Threading.Tasks;
-/*
+
 
 namespace Praxisarbeit_M295.Controllers
 {
@@ -14,16 +14,17 @@ namespace Praxisarbeit_M295.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IMongoCollection<User> _usersCollection;
+        private readonly IMongoCollection<OrderUser> _usersCollection;
         private readonly IJwtService _jwtService;
         private readonly ILogger<UsersController> _logger;
 
         public UsersController(IMongoDatabase database, IJwtService jwtService, ILogger<UsersController> logger)
         {
-            _usersCollection = database.GetCollection<User>("Users");
-            _jwtService = jwtService;
-            _logger = logger;
+            _usersCollection = database.GetCollection<OrderUser>("Users") ?? throw new ArgumentNullException(nameof(database), "MongoDB Database ist null.");
+            _jwtService = jwtService ?? throw new ArgumentNullException(nameof(jwtService), "JwtService ist null.");
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger), "Logger ist null.");
         }
+
 
         // Prüfe ob richtige Rolle
         public bool CheckEditRole(string username)
@@ -59,32 +60,40 @@ namespace Praxisarbeit_M295.Controllers
 
         // POST: api/Users/Register
         [HttpPost("Register")]
-        public async Task<ActionResult<User>> Register([FromBody] UserRegisterDto registerDto)
+        public async Task<ActionResult<OrderUser>> Register([FromBody] UserRegisterDto registerDto)
         {
-            var existingUser = _usersCollection.Find(u => u.Username == registerDto.Username).SingleOrDefault();
-            if (existingUser != null)
+            try
             {
-                return BadRequest("Benutzername bereits vergeben.");
+                if (await _usersCollection.Find(u => u.Username == registerDto.Username).AnyAsync())
+                {
+                    _logger.LogWarning("Benutzername bereits vergeben.");
+                    return BadRequest(new { message = "Benutzername bereits vergeben." });
+                }
+
+                var passwordHash = CreatePasswordHash(registerDto.Password);
+
+                var newUser = new OrderUser
+                {
+                    Username = registerDto.Username,
+                    PasswordHash = passwordHash,
+                    Role = "Kunde"
+                };
+
+                await _usersCollection.InsertOneAsync(newUser);
+                return CreatedAtAction(nameof(Register), new { id = newUser.Id }, newUser);
             }
-
-            var passwordHash = CreatePasswordHash(registerDto.Password);
-
-            var newUser = new User
+            catch (Exception ex)
             {
-                Username = registerDto.Username,
-                PasswordHash = passwordHash,
-                Role = "Kunde"
-            };
-
-            await _usersCollection.InsertOneAsync(newUser);
-
-            return CreatedAtAction(nameof(Register), new { id = newUser.UserId }, newUser);
+                _logger.LogError($"Fehler bei Registrierung: {ex.Message}");
+                return StatusCode(500, new { message = "Interner Serverfehler.", error = ex.Message });
+            }
         }
+
 
         // GET: api/Users
         [Authorize] // Autorisierung erforderlich
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<OrderUser>>> GetUsers()
         {
             var users = await _usersCollection.Find(u => true).ToListAsync();
             return Ok(users);
@@ -117,4 +126,3 @@ namespace Praxisarbeit_M295.Controllers
         public string Password { get; set; }
     }
 }
-*/

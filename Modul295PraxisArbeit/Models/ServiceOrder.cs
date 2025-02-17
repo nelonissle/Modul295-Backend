@@ -1,4 +1,4 @@
-
+/*
 using System.ComponentModel.DataAnnotations;
 
 
@@ -21,3 +21,4 @@ namespace Modul295PraxisArbeit.Models
         public User? AssignedUser { get; set; }
     }
 }
+*/
