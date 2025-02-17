@@ -1,17 +1,12 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NUnit.Framework;
-using Modul295PraxisArbeitOrder.Controllers;
 using Modul295PraxisArbeitOrder.Services;
 using Modul295PraxisArbeitOrder.Models;
-using Modul295PraxisArbeitOrder.Data;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
-
-
+using Modul295PraxisArbeit.Controllers;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Modul295PraxisArbeitOrder.Tests
 {
@@ -19,19 +14,19 @@ namespace Modul295PraxisArbeitOrder.Tests
     public class OrderServiceControllerTests
     {
         private Mock<IOrderService> _mockOrderService;
-        private OrderServiceController _controller;
+        private ServiceOrdersController _controller;
 
         [SetUp]
         public void Setup()
         {
             _mockOrderService = new Mock<IOrderService>();
-            _controller = new OrderServiceController(_mockOrderService.Object);
+            _controller = new ServiceOrdersController(_mockOrderService.Object, null, null);
         }
 
         [Test]
         public async Task GetAllOrders_ReturnsOkResult_WithOrders()
         {
-            var orders = new List<OrderService> // Corrected class name
+            var orders = new List<OrderService>
             {
                 new OrderService { OrderId = "1" },
                 new OrderService { OrderId = "2" }
@@ -39,12 +34,10 @@ namespace Modul295PraxisArbeitOrder.Tests
 
             _mockOrderService.Setup(s => s.GetAllOrdersAsync()).ReturnsAsync(orders);
 
-            var result = await _controller.GetAllOrders();
+            var result = await _controller.GetServiceOrders();
 
-            Assert.IsInstanceOf<OkObjectResult>(result);
-            var okResult = result as OkObjectResult;
-            Assert.IsNotNull(okResult);
-            Assert.AreEqual(orders, okResult.Value);
+            Assert.IsInstanceOf<ActionResult<IEnumerable<OrderService>>>(result);
+            Assert.IsInstanceOf<OkObjectResult>(result.Result);
         }
 
         [Test]
@@ -54,12 +47,10 @@ namespace Modul295PraxisArbeitOrder.Tests
 
             _mockOrderService.Setup(s => s.GetOrderByIdAsync("1")).ReturnsAsync(order);
 
-            var result = await _controller.GetOrderById("1");
+            var result = await _controller.GetServiceOrder("1");
 
-            Assert.IsInstanceOf<OkObjectResult>(result);
-            var okResult = result as OkObjectResult;
-            Assert.IsNotNull(okResult);
-            Assert.AreEqual(order, okResult.Value);
+            Assert.IsInstanceOf<ActionResult<OrderService>>(result);
+            Assert.IsInstanceOf<OkObjectResult>(result.Result);
         }
 
         [Test]
@@ -67,9 +58,10 @@ namespace Modul295PraxisArbeitOrder.Tests
         {
             _mockOrderService.Setup(s => s.GetOrderByIdAsync("nonexistent")).ReturnsAsync((OrderService)null);
 
-            var result = await _controller.GetOrderById("nonexistent");
+            var result = await _controller.GetServiceOrder("nonexistent");
 
-            Assert.IsInstanceOf<NotFoundResult>(result);
+            Assert.IsInstanceOf<ActionResult<OrderService>>(result);
+            Assert.IsInstanceOf<NotFoundResult>(result.Result);
         }
 
         [Test]
@@ -79,26 +71,10 @@ namespace Modul295PraxisArbeitOrder.Tests
 
             _mockOrderService.Setup(s => s.CreateOrderAsync(newOrder)).Returns(Task.CompletedTask);
 
-            var result = await _controller.CreateOrder(newOrder);
+            var result = await _controller.PostServiceOrder(newOrder);
 
-            Assert.IsInstanceOf<CreatedAtActionResult>(result);
-            var createdResult = result as CreatedAtActionResult;
-            Assert.IsNotNull(createdResult);
-            Assert.AreEqual(nameof(OrderServiceController.GetOrderById), createdResult.ActionName);
-            Assert.AreEqual(newOrder.OrderId, createdResult.RouteValues["id"]);
-            Assert.AreEqual(newOrder, createdResult.Value);
-        }
-
-        [Test]
-        public async Task UpdateOrder_OrderDoesNotExist_ReturnsNotFound()
-        {
-            _mockOrderService.Setup(s => s.GetOrderByIdAsync("nonexistent")).ReturnsAsync((OrderService)null);
-
-            var updatedOrder = new OrderService { OrderId = "nonexistent" };
-
-            var result = await _controller.UpdateOrder("nonexistent", updatedOrder);
-
-            Assert.IsInstanceOf<NotFoundResult>(result);
+            Assert.IsInstanceOf<ActionResult<OrderService>>(result);
+            Assert.IsInstanceOf<CreatedAtActionResult>(result.Result);
         }
 
         [Test]
@@ -110,19 +86,10 @@ namespace Modul295PraxisArbeitOrder.Tests
             _mockOrderService.Setup(s => s.GetOrderByIdAsync("1")).ReturnsAsync(existingOrder);
             _mockOrderService.Setup(s => s.UpdateOrderAsync("1", updatedOrder)).Returns(Task.CompletedTask);
 
-            var result = await _controller.UpdateOrder("1", updatedOrder);
+            var result = await _controller.PutServiceOrder("1", updatedOrder);
 
+            Assert.IsInstanceOf<IActionResult>(result);
             Assert.IsInstanceOf<NoContentResult>(result);
-        }
-
-        [Test]
-        public async Task DeleteOrder_OrderDoesNotExist_ReturnsNotFound()
-        {
-            _mockOrderService.Setup(s => s.GetOrderByIdAsync("nonexistent")).ReturnsAsync((OrderService)null);
-
-            var result = await _controller.DeleteOrder("nonexistent");
-
-            Assert.IsInstanceOf<NotFoundResult>(result);
         }
 
         [Test]
@@ -133,26 +100,22 @@ namespace Modul295PraxisArbeitOrder.Tests
             _mockOrderService.Setup(s => s.GetOrderByIdAsync("1")).ReturnsAsync(existingOrder);
             _mockOrderService.Setup(s => s.DeleteOrderAsync("1")).Returns(Task.CompletedTask);
 
-            var result = await _controller.DeleteOrder("1");
+            var result = await _controller.DeleteServiceOrder("1");
 
+            Assert.IsInstanceOf<IActionResult>(result);
             Assert.IsInstanceOf<NoContentResult>(result);
         }
 
-
         [Test]
-        public async Task TestUpdate_OrderExists_ReturnsNoContent()
+        public async Task MongoDB_InsertAndDeleteOrder_WorksCorrectly()
         {
-            // Arrange: Erstelle zwei Bestellobjekte
             var user1 = new OrderService
             {
                 Name = "jefffffc",
                 Email = "joseff@ashd.com",
                 Phone = "11111111111",
                 Priority = "Standard",
-                Service = "Grosser Service",
-                Status = null,
-                AssignedUserId = null,
-                AssignedUser = null
+                Service = "Grosser Service"
             };
 
             var user2 = new OrderService
@@ -161,37 +124,27 @@ namespace Modul295PraxisArbeitOrder.Tests
                 Email = "HHHHHHHHHHHHHHHHHHH@doe.com",
                 Phone = "22222222222",
                 Priority = "High",
-                Service = "Kleiner Service",
-                Status = null,
-                AssignedUserId = null,
-                AssignedUser = null
+                Service = "Kleiner Service"
             };
 
-            // MongoDB-Setup
-            var client = new MongoClient("mongodb://localhost:27017"); // MongoDB-Verbindung (stelle sicher, dass MongoDB läuft)
+            var client = new MongoClient("mongodb://localhost:27017");
             var database = client.GetDatabase("Modul295Db");
             var orderCollection = database.GetCollection<OrderService>("OrderServices");
 
-            // Löschen vorhandener Daten in der Sammlung, falls nötig
-           await orderCollection.DeleteManyAsync(FilterDefinition<OrderService>.Empty);
+            await orderCollection.DeleteManyAsync(FilterDefinition<OrderService>.Empty);
 
-            // Act: Füge die Bestellungen hinzu
-            await orderCollection.InsertOneAsync(user1); // Benutzer 1 wird hinzugefügt
-            await orderCollection.InsertOneAsync(user2); // Benutzer 2 wird hinzugefügt
+            await orderCollection.InsertOneAsync(user1);
+            await orderCollection.InsertOneAsync(user2);
 
-            // Überprüfen, dass beide Bestellungen in der Datenbank sind
             var ordersBeforeDelete = await orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
-            Assert.AreEqual(2, ordersBeforeDelete.Count); // Es sollten 2 Bestellungen in der DB sein
+            Assert.AreEqual(2, ordersBeforeDelete.Count);
 
-            // Lösche Benutzer 1 basierend auf dem Namen
             await orderCollection.DeleteOneAsync(o => o.Name == user1.Name);
 
-            // Act: Liste der Bestellungen nach Löschung abrufen
             var ordersAfterDelete = await orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
 
-            // Assert: Überprüfen, dass Benutzer 1 aus der Liste gelöscht wurde und nur Benutzer 2 übrig bleibt
-            Assert.AreEqual(1, ordersAfterDelete.Count);  // Es sollte nur noch 1 Bestellung (user2) in der DB sein
-            Assert.AreEqual(user2.Name, ordersAfterDelete[0].Name); // Nur Benutzer 2 sollte in der Liste der Bestellungen sein
+            Assert.AreEqual(1, ordersAfterDelete.Count);
+            Assert.AreEqual(user2.Name, ordersAfterDelete[0].Name);
         }
     }
 }

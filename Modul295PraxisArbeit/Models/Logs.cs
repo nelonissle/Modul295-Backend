@@ -1,4 +1,4 @@
-/*namespace Modul295PraxisArbeit.Models
+namespace Modul295PraxisArbeit.Models
 {
     public class Log
     {
@@ -8,7 +8,6 @@
         public int? UserId { get; set; }
 
         // Navigation Property
-        public User? User { get; set; }
+        public Users? User { get; set; }
     }
 }
-*/

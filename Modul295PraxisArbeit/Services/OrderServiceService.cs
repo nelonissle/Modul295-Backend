@@ -1,6 +1,5 @@
 using MongoDB.Driver;
 using Modul295PraxisArbeitOrder.Models;
-using Modul295PraxisArbeitOrder.Data;
 
 namespace Modul295PraxisArbeitOrder.Services
 {
@@ -8,9 +7,9 @@ namespace Modul295PraxisArbeitOrder.Services
     {
         private readonly IMongoCollection<OrderService> _orderCollection;
 
-        public OrderServiceService(MongoDbContext dbContext)
+        public OrderServiceService(IMongoDatabase database)
         {
-            _orderCollection = dbContext.OrderServices;
+            _orderCollection = database.GetCollection<OrderService>("OrderServices");
         }
 
         public async Task<List<OrderService>> GetAllOrdersAsync()

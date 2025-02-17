@@ -6,7 +6,7 @@ using Modul295PraxisArbeit.Models;
 using Modul295PraxisArbeit.Services;
 using System.Linq;
 using System.Threading.Tasks;
-
+using MongoDB.Bson;
 
 namespace Praxisarbeit_M295.Controllers
 {
@@ -25,28 +25,20 @@ namespace Praxisarbeit_M295.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger), "Logger ist null.");
         }
 
-
-        // Prüfe ob richtige Rolle
         public bool CheckEditRole(string username)
         {
             _logger.LogInformation($"Check Edit Role of User: {username}");
             var user = _usersCollection.Find(u => u.Username == username).SingleOrDefault();
-            if (user != null)
-            {
-                if (user.Role == "Mitarbeiter" || user.Role == "Admin")
-                    return true;
-            }
-            return false;
+            return user != null && (user.Role == "Mitarbeiter" || user.Role == "Admin");
         }
 
-        // POST: api/Users/Login
         [HttpPost("Login")]
         public async Task<ActionResult<string>> Login([FromBody] UserLoginDto loginDto)
         {
             _logger.LogInformation("Controller: Post Login");
             _logger.LogDebug($"Name: {loginDto.Username}");
 
-            var user = _usersCollection.Find(u => u.Username == loginDto.Username).SingleOrDefault();
+            var user = await _usersCollection.Find(u => u.Username == loginDto.Username).SingleOrDefaultAsync();
 
             if (user == null || !VerifyPasswordHash(loginDto.Password, user.PasswordHash))
             {
@@ -58,13 +50,16 @@ namespace Praxisarbeit_M295.Controllers
             return Ok(new { Token = token });
         }
 
-        // POST: api/Users/Register
         [HttpPost("Register")]
         public async Task<ActionResult<OrderUser>> Register([FromBody] UserRegisterDto registerDto)
         {
             try
             {
-                if (await _usersCollection.Find(u => u.Username == registerDto.Username).AnyAsync())
+                // Check if the username already exists
+                var userExists = await _usersCollection.Find(u => u.Username == registerDto.Username).AnyAsync();
+                _logger.LogInformation($"Checking if username exists: {registerDto.Username} -> Exists: {userExists}");
+
+                if (userExists)
                 {
                     _logger.LogWarning("Benutzername bereits vergeben.");
                     return BadRequest(new { message = "Benutzername bereits vergeben." });
@@ -89,9 +84,7 @@ namespace Praxisarbeit_M295.Controllers
             }
         }
 
-
-        // GET: api/Users
-        [Authorize] // Autorisierung erforderlich
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<OrderUser>>> GetUsers()
         {
@@ -99,21 +92,17 @@ namespace Praxisarbeit_M295.Controllers
             return Ok(users);
         }
 
-        // Hilfsfunktionen für die Passwortverwaltung
         private string CreatePasswordHash(string password)
         {
-            // Generiert den Hash mit bcrypt. Salt wird automatisch erstellt.
             return BCrypt.Net.BCrypt.HashPassword(password);
         }
 
         private bool VerifyPasswordHash(string password, string storedHash)
         {
-            // bcrypt übernimmt das Vergleichen des Passworts mit dem gespeicherten Hash, einschließlich des Salts.
             return BCrypt.Net.BCrypt.Verify(password, storedHash);
         }
     }
 
-    // DTOs (Datenobjekte für Login/Registrierung)
     public class UserLoginDto
     {
         public string Username { get; set; }

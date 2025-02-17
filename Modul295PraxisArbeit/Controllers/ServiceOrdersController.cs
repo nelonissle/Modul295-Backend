@@ -6,6 +6,7 @@ using Modul295PraxisArbeitOrder.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Modul295PraxisArbeitOrder.Services;
 using Modul295PraxisArbeit.Models;
 
 namespace Modul295PraxisArbeit.Controllers
@@ -14,13 +15,13 @@ namespace Modul295PraxisArbeit.Controllers
     [ApiController]
     public class ServiceOrdersController : ControllerBase
     {
-        private readonly IMongoCollection<OrderService> _serviceOrdersCollection;
+        private readonly IOrderService _orderService;
         private readonly IMongoCollection<OrderUser> _usersCollection;
         private readonly ILogger<ServiceOrdersController> _logger;
 
-        public ServiceOrdersController(IMongoDatabase database, ILogger<ServiceOrdersController> logger)
+        public ServiceOrdersController(IOrderService orderService, IMongoDatabase database, ILogger<ServiceOrdersController> logger)
         {
-            _serviceOrdersCollection = database.GetCollection<OrderService>("ServiceOrders");
+            _orderService = orderService;
             _usersCollection = database.GetCollection<OrderUser>("Users");
             _logger = logger;
         }
@@ -36,7 +37,7 @@ namespace Modul295PraxisArbeit.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<OrderService>>> GetServiceOrders()
         {
-            var orders = await _serviceOrdersCollection.Find(_ => true).ToListAsync();
+            var orders = await _orderService.GetAllOrdersAsync();
             return Ok(orders);
         }
 
@@ -44,23 +45,24 @@ namespace Modul295PraxisArbeit.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<OrderService>> GetServiceOrder(string id)
         {
-            var serviceOrder = await _serviceOrdersCollection.Find(s => s.OrderId == id).FirstOrDefaultAsync();
+            var serviceOrder = await _orderService.GetOrderByIdAsync(id);
             if (serviceOrder == null)
             {
                 return NotFound();
             }
-            return serviceOrder;
+            return Ok(serviceOrder);
         }
 
         [Authorize]
         [HttpGet("User/{id}")]
         public async Task<ActionResult<IEnumerable<OrderService>>> GetServiceOrderByUser(string id)
         {
-            var serviceOrders = await _serviceOrdersCollection.Find(s => s.AssignedUserId == id).ToListAsync();
-            return Ok(serviceOrders);
+            var serviceOrders = await _orderService.GetAllOrdersAsync();
+            var userOrders = serviceOrders.Where(s => s.AssignedUserId == id).ToList();
+            return Ok(userOrders);
         }
 
-        [Authorize]
+        
         [HttpPost]
         public async Task<ActionResult<OrderService>> PostServiceOrder(OrderService serviceOrder)
         {
@@ -68,27 +70,24 @@ namespace Modul295PraxisArbeit.Controllers
                 serviceOrder.Status = "Offen";
 
             var userName = HttpContext.User.Identity.Name;
-            var user = _usersCollection.Find(u => u.Username == userName).FirstOrDefault();
+            var user = await _usersCollection.Find(u => u.Username == userName).FirstOrDefaultAsync();
             if (user != null)
                 serviceOrder.AssignedUserId = user.Id;
 
-            await _serviceOrdersCollection.InsertOneAsync(serviceOrder);
+            await _orderService.CreateOrderAsync(serviceOrder);
             return CreatedAtAction(nameof(GetServiceOrder), new { id = serviceOrder.OrderId }, serviceOrder);
         }
+
 
         [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutServiceOrder(string id, OrderService serviceOrder)
         {
-            var update = Builders<OrderService>.Update
-                .Set(s => s.Name, serviceOrder.Name)
-                .Set(s => s.Email, serviceOrder.Email)
-                .Set(s => s.Phone, serviceOrder.Phone)
-                .Set(s => s.Priority, serviceOrder.Priority)
-                .Set(s => s.Service, serviceOrder.Service)
-                .Set(s => s.Status, serviceOrder.Status);
+            var existingOrder = await _orderService.GetOrderByIdAsync(id);
+            if (existingOrder == null) return NotFound();
 
-            await _serviceOrdersCollection.UpdateOneAsync(s => s.OrderId == id, update);
+            serviceOrder.OrderId = id;
+            await _orderService.UpdateOrderAsync(id, serviceOrder);
             return NoContent();
         }
 
@@ -96,7 +95,10 @@ namespace Modul295PraxisArbeit.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteServiceOrder(string id)
         {
-            await _serviceOrdersCollection.DeleteOneAsync(s => s.OrderId == id);
+            var existingOrder = await _orderService.GetOrderByIdAsync(id);
+            if (existingOrder == null) return NotFound();
+
+            await _orderService.DeleteOrderAsync(id);
             return NoContent();
         }
     }

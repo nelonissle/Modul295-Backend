@@ -45,26 +45,22 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)) // Setze den geheimen Schlüssel
         };
     });
-
 builder.Services.AddSingleton<IMongoDatabase>(sp =>
 {
     var config = builder.Configuration.GetSection("MongoDbSettings");
-    string connectionString = config["ConnectionString"];
-    string databaseName = config["DatabaseName"];
+    string? connectionString = config["ConnectionString"];
+    string? databaseName = config["DatabaseName"];
 
-    if (string.IsNullOrEmpty(connectionString))
+    if (string.IsNullOrEmpty(connectionString) || string.IsNullOrEmpty(databaseName))
     {
-        throw new InvalidOperationException("MongoDB connection string is not configured.");
-    }
-
-    if (string.IsNullOrEmpty(databaseName))
-    {
-        throw new InvalidOperationException("MongoDB database name is not configured.");
+        throw new InvalidOperationException("MongoDB Connection String oder Database Name fehlt in den Konfigurationsdateien.");
     }
 
     var client = new MongoClient(connectionString);
     return client.GetDatabase(databaseName);
 });
+
+builder.Services.AddScoped<IOrderService, OrderServiceService>(); // Stellt sicher, dass der Service registriert ist
 
 // Serilog als Logging-Provider registrieren
 builder.Host.UseSerilog();

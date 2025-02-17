@@ -1,4 +1,4 @@
-/*
+
 using System.ComponentModel.DataAnnotations;
 
 
@@ -18,7 +18,6 @@ namespace Modul295PraxisArbeit.Models
         public string? Status { get; set; } // Status field to track the order status
         public int? AssignedUserId { get; set; } // Nullable user ID field
         // Navigation Property
-        public User? AssignedUser { get; set; }
+        public Users? AssignedUser { get; set; }
     }
 }
-*/
