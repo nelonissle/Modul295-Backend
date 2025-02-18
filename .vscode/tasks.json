@@ -18,7 +18,7 @@
             "command": "powershell",
             "args": [
                 "-ExecutionPolicy", "Bypass",
-                "-File", "${workspaceFolder}\\Modul295PraxisArbeit\\run_tests.ps1"
+                "-File", "${workspaceFolder}/Modul295PraxisArbeit/Scripts/run_tests.ps1"
             ],
             "problemMatcher": [],
             "group": {
