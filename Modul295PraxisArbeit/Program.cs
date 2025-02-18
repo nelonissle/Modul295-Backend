@@ -12,12 +12,15 @@ using Modul295PraxisArbeitOrder.Data;
 using Modul295PraxisArbeitOrder.Services;
 using Modul295PraxisArbeitOrder.Models;
 
+var logFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Logs", "application.log");
 
-// Serilog konfigurieren
+// Ensure the Logs directory exists
+Directory.CreateDirectory(Path.GetDirectoryName(logFilePath)!);
+
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.File("logfile.txt", rollingInterval: RollingInterval.Day)
-    .WriteTo.Console()
+    .WriteTo.File(logFilePath, rollingInterval: RollingInterval.Infinite, retainedFileCountLimit: 1)
     .CreateLogger();
+
 
 // Erstelle den WebApplication-Builder
 var builder = WebApplication.CreateBuilder(args);
@@ -98,6 +101,8 @@ if (app.Environment.IsDevelopment())
 
 // Aktiviere HTTPS-Umleitungen
 app.UseHttpsRedirection();
+
+app.UseSerilogRequestLogging();
 
 // Füge Authentifikations- und Autorisierungs-Middleware hinzu
 app.UseAuthentication();

@@ -1,0 +1,6 @@
+2025-02-18 12:08:36.688 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-18 12:08:36.827 +01:00 [INF] Now listening on: http://localhost:5013
+2025-02-18 12:08:36.830 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-18 12:08:36.830 +01:00 [INF] Hosting environment: Development
+2025-02-18 12:08:36.830 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-02-18 12:08:48.612 +01:00 [INF] Application is shutting down...
