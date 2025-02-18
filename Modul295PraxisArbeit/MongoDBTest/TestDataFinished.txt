@@ -1,0 +1,104 @@
+This is the test Data that is Full and has every field it needs so this isnt to use now its for the end 
+
+db.OrderServices.insertMany([
+    {
+        Name: "John Doe",
+        Email: "john.doe@example.com",
+        Phone: "123456789",
+        Priority: "High",
+        Service: "Full Ski Service",
+        Status: "Offen",
+        AssignedUserId: null,
+        AssignedUser: null
+    },
+    {
+        Name: "Jane Smith",
+        Email: "jane.smith@example.com",
+        Phone: "987654321",
+        Priority: "Medium",
+        Service: "Edge Tuning",
+        Status: "InArbeit",
+        AssignedUserId: "67b48ec78c195aa9c3d6c5fb",
+        AssignedUser: "Techniker A"
+    },
+    {
+        Name: "Mark Miller",
+        Email: "mark.miller@example.com",
+        Phone: "741852963",
+        Priority: "Low",
+        Service: "Waxing",
+        Status: "Abgeschlossen",
+        AssignedUserId: "67b48ec78c195aa9c3d6c5fc",
+        AssignedUser: "Techniker B"
+    },
+    {
+        Name: "Emily Johnson",
+        Email: "emily.johnson@example.com",
+        Phone: "852963741",
+        Priority: "High",
+        Service: "Race Tuning",
+        Status: "Offen",
+        AssignedUserId: null,
+        AssignedUser: null
+    },
+    {
+        Name: "David Brown",
+        Email: "david.brown@example.com",
+        Phone: "369852147",
+        Priority: "Standard",
+        Service: "Basic Wax",
+        Status: "InArbeit",
+        AssignedUserId: "67b48ec78c195aa9c3d6c5fd",
+        AssignedUser: "Techniker C"
+    },
+    {
+        Name: "Michael Scott",
+        Email: "michael.scott@dundermifflin.com",
+        Phone: "555123456",
+        Priority: "Low",
+        Service: "Snowboard Service",
+        Status: "Offen",
+        AssignedUserId: null,
+        AssignedUser: null
+    },
+    {
+        Name: "Sarah Williams",
+        Email: "sarah.williams@example.com",
+        Phone: "741258963",
+        Priority: "High",
+        Service: "Custom Setup",
+        Status: "Abgeschlossen",
+        AssignedUserId: "67b48ec78c195aa9c3d6c5fe",
+        AssignedUser: "Techniker D"
+    },
+    {
+        Name: "Tom Hardy",
+        Email: "tom.hardy@example.com",
+        Phone: "159357486",
+        Priority: "Medium",
+        Service: "Boot Fitting",
+        Status: "Offen",
+        AssignedUserId: null,
+        AssignedUser: null
+    },
+    {
+        Name: "Jessica Parker",
+        Email: "jessica.parker@example.com",
+        Phone: "753951456",
+        Priority: "Standard",
+        Service: "Binding Adjustment",
+        Status: "InArbeit",
+        AssignedUserId: "67b48ec78c195aa9c3d6c5ff",
+        AssignedUser: "Techniker E"
+    },
+    {
+        Name: "Chris Evans",
+        Email: "chris.evans@example.com",
+        Phone: "321654987",
+        Priority: "High",
+        Service: "Pro Waxing",
+        Status: "Offen",
+        AssignedUserId: null,
+        AssignedUser: null
+    }
+])

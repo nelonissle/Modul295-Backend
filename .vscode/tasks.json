@@ -27,6 +27,16 @@
             },
             "isBackground": true,
             "runOptions": { "runOn": "folderOpen" }  // ✅ Automatically starts when opening VS Code
+        },
+        {
+            "label": "Insert Test Data",
+            "type": "shell",
+            "command": "dotnet run --project TestDataInserter/TestDataInserter.csproj",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
         }
     ]
 }
