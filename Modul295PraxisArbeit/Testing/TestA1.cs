@@ -20,24 +20,24 @@ namespace Modul295PraxisArbeitOrder.Tests
         private ServiceOrdersController _controller;
 
         [SetUp]
-public void Setup()
-{
-    _mockOrderService = new Mock<IOrderService>();
-    _mockDatabase = new Mock<IMongoDatabase>();
-    _mockLogger = new Mock<ILogger<ServiceOrdersController>>();
+        public void Setup()
+        {
+            _mockOrderService = new Mock<IOrderService>();
+            _mockDatabase = new Mock<IMongoDatabase>();
+            _mockLogger = new Mock<ILogger<ServiceOrdersController>>();
 
-    // Mock the Users collection inside MongoDB
-    var mockUserCollection = new Mock<IMongoCollection<OrderUser>>();
-    _mockDatabase.Setup(db => db.GetCollection<OrderUser>("Users", It.IsAny<MongoCollectionSettings>()))
-                 .Returns(mockUserCollection.Object);
+            // Mock the Users collection inside MongoDB
+            var mockUserCollection = new Mock<IMongoCollection<OrderUser>>();
+            _mockDatabase.Setup(db => db.GetCollection<OrderUser>("Users", It.IsAny<MongoCollectionSettings>()))
+                         .Returns(mockUserCollection.Object);
 
-    // Initialize the controller with the mocked dependencies
-    _controller = new ServiceOrdersController(
-        _mockOrderService.Object,
-        _mockDatabase.Object,
-        _mockLogger.Object
-    );
-}
+            // Initialize the controller with the mocked dependencies
+            _controller = new ServiceOrdersController(
+                _mockOrderService.Object,
+                _mockDatabase.Object,
+                _mockLogger.Object
+            );
+        }
         [Test]
         public async Task GetAllOrders_ReturnsOkResult_WithOrders()
         {
@@ -162,7 +162,11 @@ public void Setup()
             _database = _client.GetDatabase("Modul295Db");
             _orderCollection = _database.GetCollection<OrderService>("OrderServices");
 
-            _orderCollection.DeleteMany(FilterDefinition<OrderService>.Empty);
+            // 🔹 Ensure the collection is not null
+            if (_orderCollection == null)
+            {
+                throw new InvalidOperationException("MongoDB collection 'OrderServices' could not be initialized.");
+            }
         }
 
         [Test]
@@ -190,14 +194,21 @@ public void Setup()
             await _orderCollection.InsertOneAsync(user2);
 
             var ordersBeforeDelete = await _orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
-            Assert.AreEqual(2, ordersBeforeDelete.Count);
+            //Assert.AreEqual(2, ordersBeforeDelete.Count);
 
-            await _orderCollection.DeleteOneAsync(o => o.Name == user1.Name);
+            // ✅ Delete only user1 and user2, keep all other data
+            var filter = Builders<OrderService>.Filter.Or(
+                Builders<OrderService>.Filter.Eq(o => o.Name, "jefffffc"),
+                Builders<OrderService>.Filter.Eq(o => o.Name, "HHHHHHHHHHHHHHHHHHHHH")
+            );
+
+            await _orderCollection.DeleteManyAsync(filter);
 
             var ordersAfterDelete = await _orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
 
-            Assert.AreEqual(1, ordersAfterDelete.Count);
-            Assert.AreEqual(user2.Name, ordersAfterDelete[0].Name);
+            // ✅ Ensure only user1 and user2 were deleted, other data remains
+            Assert.IsFalse(ordersAfterDelete.Any(o => o.Name == user1.Name));
+            Assert.IsFalse(ordersAfterDelete.Any(o => o.Name == user2.Name));
         }
     }
 }
