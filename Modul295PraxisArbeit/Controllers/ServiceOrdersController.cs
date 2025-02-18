@@ -92,7 +92,7 @@ namespace Modul295PraxisArbeit.Controllers
         /// <summary>
         /// Creates a new service order.
         /// </summary>
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<OrderService>> PostServiceOrder(OrderService serviceOrder)
         {

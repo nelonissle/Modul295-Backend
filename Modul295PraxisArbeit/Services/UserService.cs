@@ -1,30 +1,48 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Driver;
+using BCrypt.Net;
 using Modul295PraxisArbeitOrder.Models;
 
-/*
 public class UserService : IUserService
 {
-    private List<User> _users = new List<User>();
+    private readonly IMongoCollection<OrderUser> _usersCollection; // ✅ Use OrderUser model
 
-    public async Task AddUserAsync(User user)
+    public UserService(IMongoDatabase database)
     {
-        _users.Add(user);
-        await Task.CompletedTask;
+        _usersCollection = database.GetCollection<OrderUser>("Users"); // ✅ Ensure the collection name is correct
     }
 
-    public async Task DeleteUserAsync(string userId)
+    // ✅ Check if a user already exists in the database
+    public async Task<bool> UserExists(string username)
     {
-        var user = _users.FirstOrDefault(u => u.Id == userId);
-        if (user != null)
-            _users.Remove(user);
-
-        await Task.CompletedTask;
+        return await _usersCollection.Find(u => u.Username == username).AnyAsync();
     }
 
-    public async Task<List<User>> GetAllUsersAsync()
+    // ✅ Create a new user and hash the password
+    public async Task CreateUser(string username, string password, string role)
     {
-        return await Task.FromResult(_users);
+        var user = new OrderUser
+        {
+            Username = username,
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password), // ✅ Secure password hashing
+            Role = role
+        };
+
+        await _usersCollection.InsertOneAsync(user);
+    }
+
+    // ✅ Retrieve a user by their username
+    public async Task<OrderUser> GetUserByUsername(string username)
+    {
+        return await _usersCollection.Find(u => u.Username == username).FirstOrDefaultAsync();
+    }
+
+    // ✅ Update a user's role (e.g., promote to Admin)
+    public async Task UpdateUserRole(string username, string role)
+    {
+        var filter = Builders<OrderUser>.Filter.Eq(u => u.Username, username);
+        var update = Builders<OrderUser>.Update.Set(u => u.Role, role);
+        await _usersCollection.UpdateOneAsync(filter, update);
     }
 }
-*/

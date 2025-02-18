@@ -37,3 +37,418 @@
 2025-02-18 13:14:23.413 +01:00 [INF] Hosting environment: Development
 2025-02-18 13:14:23.414 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
 2025-02-18 13:14:25.411 +01:00 [INF] Application is shutting down...
+2025-02-18 13:53:29.902 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-18 13:53:29.954 +01:00 [INF] Running Unit Tests...
+2025-02-18 13:53:29.965 +01:00 [INF] Unit Tests Started...
+2025-02-18 13:53:34.272 +01:00 [INF] Unit Tests Completed Successfully.
+2025-02-18 13:53:34.412 +01:00 [INF] Now listening on: http://localhost:5013
+2025-02-18 13:53:34.418 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-18 13:53:34.425 +01:00 [INF] Hosting environment: Development
+2025-02-18 13:53:34.430 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-02-18 13:54:07.868 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - null null
+2025-02-18 13:54:07.922 +01:00 [INF] CORS policy execution successful.
+2025-02-18 13:54:08.055 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - 204 null null 192.1017ms
+2025-02-18 13:54:08.079 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Register - application/json 53
+2025-02-18 13:54:08.091 +01:00 [INF] CORS policy execution successful.
+2025-02-18 13:54:08.124 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-02-18 13:54:08.523 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 13:54:08.699 +01:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OrderUser]] Register(Praxisarbeit_M295.Controllers.UserRegisterDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 13:54:10.156 +01:00 [INF] Checking if username exists: nelonissle@gmail.com -> Exists: True
+2025-02-18 13:54:10.249 +01:00 [WRN] Benutzername bereits vergeben.
+2025-02-18 13:54:10.278 +01:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 13:54:10.467 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit) in 1759.8724ms
+2025-02-18 13:54:10.470 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 13:54:10.478 +01:00 [INF] HTTP POST /api/Users/Register responded 400 in 2347.1867 ms
+2025-02-18 13:54:10.602 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Register - 400 null application/json; charset=utf-8 2524.2438ms
+2025-02-18 13:54:21.401 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 13:54:21.497 +01:00 [INF] CORS policy execution successful.
+2025-02-18 13:54:21.500 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 98.9068ms
+2025-02-18 13:54:21.509 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 53
+2025-02-18 13:54:21.518 +01:00 [INF] CORS policy execution successful.
+2025-02-18 13:54:21.528 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 13:54:21.567 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 13:54:21.600 +01:00 [INF] Controller: Post Login
+2025-02-18 13:54:23.340 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 13:54:23.432 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 1852.7226ms
+2025-02-18 13:54:23.446 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 13:54:23.452 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 1926.1092 ms
+2025-02-18 13:54:23.903 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 2396.4545ms
+2025-02-18 14:07:54.614 +01:00 [INF] Application is shutting down...
+2025-02-18 14:08:47.479 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-18 14:08:47.501 +01:00 [INF] Running Unit Tests...
+2025-02-18 14:08:47.507 +01:00 [INF] Unit Tests Started...
+2025-02-18 14:08:49.913 +01:00 [INF] Unit Tests Completed Successfully.
+2025-02-18 14:08:49.950 +01:00 [INF] Now listening on: http://localhost:5013
+2025-02-18 14:08:49.953 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-18 14:08:49.954 +01:00 [INF] Hosting environment: Development
+2025-02-18 14:08:49.954 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-02-18 14:09:04.892 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 14:09:04.907 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:09:04.915 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 22.1626ms
+2025-02-18 14:09:04.920 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 53
+2025-02-18 14:09:04.925 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:09:04.931 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-02-18 14:09:04.947 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:09:04.964 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:09:05.019 +01:00 [INF] 🔍 Login attempt for username: nelonissle@gmail.com
+2025-02-18 14:09:05.317 +01:00 [INF] ✅ Login successful for user 'nelonissle@gmail.com'
+2025-02-18 14:09:05.324 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:09:05.348 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 380.6344ms
+2025-02-18 14:09:05.351 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:09:05.356 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 420.3233 ms
+2025-02-18 14:09:05.360 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 440.3176ms
+2025-02-18 14:09:14.954 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - null null
+2025-02-18 14:09:14.958 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:09:14.959 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - 204 null null 4.1688ms
+2025-02-18 14:09:14.962 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Register - application/json 53
+2025-02-18 14:09:14.965 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:09:14.967 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 14:09:14.974 +01:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OrderUser]] Register(Praxisarbeit_M295.Controllers.UserRegisterDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:09:14.990 +01:00 [INF] Checking if username exists: nelonissle@gmail.com -> Exists: True
+2025-02-18 14:09:14.992 +01:00 [WRN] ⚠️ Username 'nelonissle@gmail.com' is already taken.
+2025-02-18 14:09:14.995 +01:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:09:14.998 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit) in 22.1892ms
+2025-02-18 14:09:14.999 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 14:09:14.999 +01:00 [INF] HTTP POST /api/Users/Register responded 400 in 33.1582 ms
+2025-02-18 14:09:15.001 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Register - 400 null application/json; charset=utf-8 38.1916ms
+2025-02-18 14:10:28.140 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 14:10:28.146 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:10:28.148 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 8.0083ms
+2025-02-18 14:10:28.152 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-18 14:10:28.160 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:10:28.170 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:10:28.175 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:10:28.182 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-18 14:10:28.190 +01:00 [WRN] ⚠️ Login failed - Username 'admin@admin.com' not found.
+2025-02-18 14:10:28.195 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-02-18 14:10:28.200 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 20.3923ms
+2025-02-18 14:10:28.205 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:10:28.208 +01:00 [INF] HTTP POST /api/Users/Login responded 401 in 42.3337 ms
+2025-02-18 14:10:28.212 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 401 null text/plain; charset=utf-8 59.9228ms
+2025-02-18 14:10:38.743 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - null null
+2025-02-18 14:10:38.749 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:10:38.752 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - 204 null null 8.746ms
+2025-02-18 14:10:38.758 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Register - application/json 48
+2025-02-18 14:10:38.763 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:10:38.766 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 14:10:38.771 +01:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OrderUser]] Register(Praxisarbeit_M295.Controllers.UserRegisterDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:10:38.778 +01:00 [INF] Checking if username exists: admin@admin.com -> Exists: False
+2025-02-18 14:10:39.137 +01:00 [INF] 📝 Inserting new user: admin@admin.com with role Kunde
+2025-02-18 14:10:39.238 +01:00 [INF] ✅ User 'admin@admin.com' registered successfully.
+2025-02-18 14:10:39.241 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'OrderUser'.
+2025-02-18 14:10:39.276 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit) in 501.3868ms
+2025-02-18 14:10:39.280 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 14:10:39.285 +01:00 [INF] HTTP POST /api/Users/Register responded 201 in 518.6450 ms
+2025-02-18 14:10:39.291 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Register - 201 null application/json; charset=utf-8 532.6954ms
+2025-02-18 14:12:13.630 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 63
+2025-02-18 14:12:13.681 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05.02.2025 12:11:31', Current time (UTC): '18.02.2025 13:12:13'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-18 14:12:13.703 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05.02.2025 12:11:31', Current time (UTC): '18.02.2025 13:12:13'.
+2025-02-18 14:12:13.707 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:12:13.708 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:12:13.712 +01:00 [INF] 🔍 Login attempt for username: Mali@gmail.com
+2025-02-18 14:12:13.939 +01:00 [INF] ✅ Login successful for user 'Mali@gmail.com'
+2025-02-18 14:12:13.941 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:12:13.943 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 232.3962ms
+2025-02-18 14:12:13.945 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:12:13.947 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 314.3302 ms
+2025-02-18 14:12:13.950 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 319.6034ms
+2025-02-18 14:12:18.740 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Register - application/json 63
+2025-02-18 14:12:18.743 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05.02.2025 12:11:31', Current time (UTC): '18.02.2025 13:12:18'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-18 14:12:18.747 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05.02.2025 12:11:31', Current time (UTC): '18.02.2025 13:12:18'.
+2025-02-18 14:12:18.749 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 14:12:18.752 +01:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OrderUser]] Register(Praxisarbeit_M295.Controllers.UserRegisterDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:12:18.757 +01:00 [INF] Checking if username exists: Mali@gmail.com -> Exists: True
+2025-02-18 14:12:18.759 +01:00 [WRN] ⚠️ Username 'Mali@gmail.com' is already taken.
+2025-02-18 14:12:18.761 +01:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:12:18.762 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit) in 7.9833ms
+2025-02-18 14:12:18.764 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 14:12:18.766 +01:00 [INF] HTTP POST /api/Users/Register responded 400 in 23.1260 ms
+2025-02-18 14:12:18.768 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Register - 400 null application/json; charset=utf-8 27.5545ms
+2025-02-18 14:14:07.636 +01:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5013/api/Users/UpdateRole/admin@admin.com - application/json 25
+2025-02-18 14:14:07.638 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05.02.2025 12:11:31', Current time (UTC): '18.02.2025 13:14:07'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-18 14:14:07.640 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05.02.2025 12:11:31', Current time (UTC): '18.02.2025 13:14:07'.
+2025-02-18 14:14:07.644 +01:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-02-18 14:14:07.650 +01:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-18 14:14:07.650 +01:00 [INF] HTTP PUT /api/Users/UpdateRole/admin@admin.com responded 401 in 12.8547 ms
+2025-02-18 14:14:07.652 +01:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5013/api/Users/UpdateRole/admin@admin.com - 401 0 null 16.292ms
+2025-02-18 14:14:16.744 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 63
+2025-02-18 14:14:16.748 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05.02.2025 12:11:31', Current time (UTC): '18.02.2025 13:14:16'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-18 14:14:16.750 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05.02.2025 12:11:31', Current time (UTC): '18.02.2025 13:14:16'.
+2025-02-18 14:14:16.751 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:14:16.752 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:14:16.755 +01:00 [INF] 🔍 Login attempt for username: Mali@gmail.com
+2025-02-18 14:14:16.875 +01:00 [INF] ✅ Login successful for user 'Mali@gmail.com'
+2025-02-18 14:14:16.877 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:14:16.878 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 123.9235ms
+2025-02-18 14:14:16.880 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:14:16.882 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 134.5651 ms
+2025-02-18 14:14:16.884 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 139.2918ms
+2025-02-18 14:14:32.239 +01:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5013/api/Users/UpdateRole/admin@admin.com - application/json 25
+2025-02-18 14:14:32.251 +01:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-02-18 14:14:32.255 +01:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-02-18 14:14:32.256 +01:00 [INF] HTTP PUT /api/Users/UpdateRole/admin@admin.com responded 403 in 13.6100 ms
+2025-02-18 14:14:32.258 +01:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5013/api/Users/UpdateRole/admin@admin.com - 403 0 null 18.375ms
+2025-02-18 14:16:56.208 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 14:16:56.216 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:16:56.217 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 9.3056ms
+2025-02-18 14:16:56.224 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-18 14:16:56.232 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:16:56.234 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:16:56.237 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:16:56.239 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-18 14:16:56.345 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-18 14:16:56.346 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:16:56.347 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 108.566ms
+2025-02-18 14:16:56.348 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:16:56.349 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 114.4930 ms
+2025-02-18 14:16:56.350 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 125.3986ms
+2025-02-18 14:16:59.461 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:16:59.464 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:16:59.465 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 4.3484ms
+2025-02-18 14:16:59.467 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:16:59.469 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:16:59.472 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:16:59.475 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-18 14:16:59.488 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-18 14:16:59.502 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 23.3234ms
+2025-02-18 14:16:59.504 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:16:59.506 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 35.7036 ms
+2025-02-18 14:16:59.507 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 40.0189ms
+2025-02-18 14:17:23.434 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:17:23.437 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:17:23.438 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 4.4292ms
+2025-02-18 14:17:23.441 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - application/json 173
+2025-02-18 14:17:23.447 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:17:23.449 +01:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-18 14:17:23.451 +01:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-18 14:17:23.452 +01:00 [INF] HTTP POST /api/ServiceOrders responded 401 in 3.8007 ms
+2025-02-18 14:17:23.458 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - 401 0 null 16.5138ms
+2025-02-18 14:21:38.597 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 14:21:38.604 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:21:38.608 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 10.7414ms
+2025-02-18 14:21:38.619 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-18 14:21:38.623 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:21:38.625 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:21:38.628 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:21:38.631 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-18 14:21:38.867 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-18 14:21:38.869 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:21:38.872 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 241.4631ms
+2025-02-18 14:21:38.875 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:21:38.876 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 251.4928 ms
+2025-02-18 14:21:38.881 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 261.7077ms
+2025-02-18 14:21:52.952 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:21:52.961 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:21:52.965 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 13.5379ms
+2025-02-18 14:21:52.975 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - application/json 173
+2025-02-18 14:21:52.979 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:21:52.981 +01:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-18 14:21:52.984 +01:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-18 14:21:52.987 +01:00 [INF] HTTP POST /api/ServiceOrders responded 401 in 6.3500 ms
+2025-02-18 14:21:52.991 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - 401 0 null 15.9718ms
+2025-02-18 14:22:51.861 +01:00 [INF] Application is shutting down...
+2025-02-18 14:22:57.998 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-18 14:22:58.022 +01:00 [INF] Running Unit Tests...
+2025-02-18 14:22:58.030 +01:00 [INF] Unit Tests Started...
+2025-02-18 14:23:00.574 +01:00 [INF] Unit Tests Completed Successfully.
+2025-02-18 14:23:00.616 +01:00 [INF] Now listening on: http://localhost:5013
+2025-02-18 14:23:00.619 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-18 14:23:00.620 +01:00 [INF] Hosting environment: Development
+2025-02-18 14:23:00.621 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-02-18 14:23:06.709 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:23:06.726 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:23:06.733 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 24.5253ms
+2025-02-18 14:23:06.744 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - application/json 173
+2025-02-18 14:23:06.748 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:23:06.755 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-02-18 14:23:06.777 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-18 14:23:06.795 +01:00 [INF] Route matched with {action = "PostServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Modul295PraxisArbeitOrder.Models.OrderService]] PostServiceOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-18 14:23:06.965 +01:00 [INF] Order created successfully with ID 67b489bafb6f0ab9f6911e43.
+2025-02-18 14:23:06.979 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-02-18 14:23:07.178 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit) in 375.3821ms
+2025-02-18 14:23:07.180 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-18 14:23:07.184 +01:00 [INF] HTTP POST /api/ServiceOrders responded 201 in 425.8236 ms
+2025-02-18 14:23:07.191 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - 201 null application/json; charset=utf-8 446.8835ms
+2025-02-18 14:23:18.213 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:23:18.220 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:23:18.222 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 8.721ms
+2025-02-18 14:23:18.229 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - application/json 171
+2025-02-18 14:23:18.244 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:23:18.249 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-18 14:23:18.254 +01:00 [INF] Route matched with {action = "PostServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Modul295PraxisArbeitOrder.Models.OrderService]] PostServiceOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-18 14:23:18.266 +01:00 [INF] Order created successfully with ID 67b489c6fb6f0ab9f6911e44.
+2025-02-18 14:23:18.269 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-02-18 14:23:18.274 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit) in 13.6863ms
+2025-02-18 14:23:18.277 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-18 14:23:18.279 +01:00 [INF] HTTP POST /api/ServiceOrders responded 201 in 32.0776 ms
+2025-02-18 14:23:18.283 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - 201 null application/json; charset=utf-8 54.1885ms
+2025-02-18 14:23:34.314 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:23:34.319 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:23:34.322 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 7.7626ms
+2025-02-18 14:23:34.331 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - application/json 174
+2025-02-18 14:23:34.338 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:23:34.345 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-18 14:23:34.348 +01:00 [INF] Route matched with {action = "PostServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Modul295PraxisArbeitOrder.Models.OrderService]] PostServiceOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-18 14:23:34.356 +01:00 [INF] Order created successfully with ID 67b489d6fb6f0ab9f6911e45.
+2025-02-18 14:23:34.358 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-02-18 14:23:34.359 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit) in 8.6289ms
+2025-02-18 14:23:34.361 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-18 14:23:34.363 +01:00 [INF] HTTP POST /api/ServiceOrders responded 201 in 22.1417 ms
+2025-02-18 14:23:34.366 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - 201 null application/json; charset=utf-8 34.7148ms
+2025-02-18 14:24:05.540 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 14:24:05.544 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:05.545 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 4.8511ms
+2025-02-18 14:24:05.550 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-18 14:24:05.555 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:05.558 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:24:05.572 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:24:05.592 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-18 14:24:06.125 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-18 14:24:06.127 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:24:06.139 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 560.7499ms
+2025-02-18 14:24:06.140 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:24:06.142 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 583.9176 ms
+2025-02-18 14:24:06.146 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 595.7923ms
+2025-02-18 14:24:09.500 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:24:09.504 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:09.505 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 4.6472ms
+2025-02-18 14:24:09.509 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:24:09.514 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:09.588 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:24:09.597 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-18 14:24:09.621 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-18 14:24:09.640 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 37.9002ms
+2025-02-18 14:24:09.643 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:24:09.645 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 126.2487 ms
+2025-02-18 14:24:09.650 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 140.6998ms
+2025-02-18 14:24:36.766 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 14:24:36.772 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:36.774 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 7.9549ms
+2025-02-18 14:24:36.778 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-18 14:24:36.787 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:36.790 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:24:36.792 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:24:36.798 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-18 14:24:37.029 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-18 14:24:37.032 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:24:37.036 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 239.1069ms
+2025-02-18 14:24:37.039 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:24:37.043 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 253.4094 ms
+2025-02-18 14:24:37.048 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 270.0074ms
+2025-02-18 14:24:40.430 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:24:40.433 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:40.435 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 4.6874ms
+2025-02-18 14:24:40.442 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:24:40.455 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:40.462 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:24:40.467 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-18 14:24:40.479 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-18 14:24:40.485 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 9.4304ms
+2025-02-18 14:24:40.486 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:24:40.487 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 29.3399 ms
+2025-02-18 14:24:40.489 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 47.2712ms
+2025-02-18 14:24:52.988 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - null null
+2025-02-18 14:24:52.992 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:52.993 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - 204 null null 5.1128ms
+2025-02-18 14:24:52.996 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Register - application/json 48
+2025-02-18 14:24:53.002 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:24:53.007 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 14:24:53.017 +01:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OrderUser]] Register(Praxisarbeit_M295.Controllers.UserRegisterDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:24:53.047 +01:00 [INF] Checking if username exists: admin@admin.com -> Exists: True
+2025-02-18 14:24:53.049 +01:00 [WRN] ⚠️ Username 'admin@admin.com' is already taken.
+2025-02-18 14:24:53.051 +01:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:24:53.058 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit) in 35.5281ms
+2025-02-18 14:24:53.061 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-18 14:24:53.063 +01:00 [INF] HTTP POST /api/Users/Register responded 400 in 57.3659 ms
+2025-02-18 14:24:53.067 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Register - 400 null application/json; charset=utf-8 70.2155ms
+2025-02-18 14:25:07.838 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 14:25:07.841 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:25:07.842 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 4.268ms
+2025-02-18 14:25:07.848 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 53
+2025-02-18 14:25:07.851 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:25:07.854 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:25:07.858 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:25:07.864 +01:00 [INF] 🔍 Login attempt for username: nelonissle@gmail.com
+2025-02-18 14:25:08.092 +01:00 [INF] ✅ Login successful for user 'nelonissle@gmail.com'
+2025-02-18 14:25:08.095 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:25:08.098 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 234.3773ms
+2025-02-18 14:25:08.101 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:25:08.104 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 249.1968 ms
+2025-02-18 14:25:08.110 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 261.8352ms
+2025-02-18 14:25:35.253 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 14:25:35.256 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:25:35.258 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 4.5226ms
+2025-02-18 14:25:35.265 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 53
+2025-02-18 14:25:35.275 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:25:35.278 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:25:35.284 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:25:35.291 +01:00 [INF] 🔍 Login attempt for username: nelonissle@gmail.com
+2025-02-18 14:25:35.544 +01:00 [INF] ✅ Login successful for user 'nelonissle@gmail.com'
+2025-02-18 14:25:35.546 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:25:35.551 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 261.042ms
+2025-02-18 14:25:35.554 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:25:35.561 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 283.2189 ms
+2025-02-18 14:25:35.570 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 304.579ms
+2025-02-18 14:25:45.484 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-18 14:25:45.488 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:25:45.489 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 5.0378ms
+2025-02-18 14:25:45.495 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-18 14:25:45.511 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:25:45.515 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:25:45.518 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-18 14:25:45.528 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-18 14:25:45.748 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-18 14:25:45.750 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-18 14:25:45.754 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 226.624ms
+2025-02-18 14:25:45.756 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-18 14:25:45.760 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 244.9650 ms
+2025-02-18 14:25:45.765 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 270.0095ms
+2025-02-18 14:25:49.041 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:25:49.044 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:25:49.046 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 5.2703ms
+2025-02-18 14:25:49.051 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:25:49.061 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:25:49.066 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:25:49.075 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-18 14:25:49.087 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-18 14:25:49.092 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 11.4402ms
+2025-02-18 14:25:49.097 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:25:49.099 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 35.6619 ms
+2025-02-18 14:25:49.105 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 53.8954ms
+2025-02-18 14:27:19.892 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:27:19.898 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:27:19.900 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 7.8126ms
+2025-02-18 14:27:19.909 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-18 14:27:19.921 +01:00 [INF] CORS policy execution successful.
+2025-02-18 14:27:19.922 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:27:19.924 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-18 14:27:20.191 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-18 14:27:20.408 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 226.7115ms
+2025-02-18 14:27:20.411 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-18 14:27:20.412 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 490.0968 ms
+2025-02-18 14:27:20.415 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 505.9732ms
+2025-02-18 14:27:35.531 +01:00 [INF] Application is shutting down...

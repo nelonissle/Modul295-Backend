@@ -12,5 +12,5 @@ public class OrderUser
 
     public string Username { get; set; }
     public string PasswordHash { get; set; }
-    public string Role { get; set; }
+    public string Role { get; set; } = "user"; // ✅ Default-Wert "user"
 }
