@@ -7,6 +7,7 @@ using MongoDB.Driver;
 using Modul295PraxisArbeit.Controllers;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
 namespace Modul295PraxisArbeitOrder.Tests
 {
@@ -14,14 +15,28 @@ namespace Modul295PraxisArbeitOrder.Tests
     public class OrderServiceControllerTests
     {
         private Mock<IOrderService> _mockOrderService;
+        private Mock<IMongoDatabase> _mockDatabase;
+        private Mock<ILogger<ServiceOrdersController>> _mockLogger;
         private ServiceOrdersController _controller;
 
         [SetUp]
         public void Setup()
         {
             _mockOrderService = new Mock<IOrderService>();
-            _controller = new ServiceOrdersController(_mockOrderService.Object, null, null);
+            _mockDatabase = new Mock<IMongoDatabase>();
+            _mockLogger = new Mock<ILogger<ServiceOrdersController>>();
+
+            // Ensure the mock correctly handles CreateOrderAsync
+            _mockOrderService.Setup(s => s.CreateOrderAsync(It.IsAny<OrderService>()))
+                             .Returns(Task.CompletedTask);
+
+            _controller = new ServiceOrdersController(
+                _mockOrderService.Object,
+                _mockDatabase.Object,
+                _mockLogger.Object
+            );
         }
+
 
         [Test]
         public async Task GetAllOrders_ReturnsOkResult_WithOrders()
@@ -69,13 +84,15 @@ namespace Modul295PraxisArbeitOrder.Tests
         {
             var newOrder = new OrderService { OrderId = "123" };
 
-            _mockOrderService.Setup(s => s.CreateOrderAsync(newOrder)).Returns(Task.CompletedTask);
+            _mockOrderService.Setup(s => s.CreateOrderAsync(It.IsAny<OrderService>()))
+                             .Returns(Task.CompletedTask);
 
             var result = await _controller.PostServiceOrder(newOrder);
 
             Assert.IsInstanceOf<ActionResult<OrderService>>(result);
             Assert.IsInstanceOf<CreatedAtActionResult>(result.Result);
         }
+
 
         [Test]
         public async Task UpdateOrder_OrderExists_ReturnsNoContent()
@@ -107,6 +124,48 @@ namespace Modul295PraxisArbeitOrder.Tests
         }
 
         [Test]
+        public async Task DeleteOrder_OrderDoesNotExist_ReturnsNotFound()
+        {
+            _mockOrderService.Setup(s => s.GetOrderByIdAsync("notfound")).ReturnsAsync((OrderService)null);
+
+            var result = await _controller.DeleteServiceOrder("notfound");
+
+            Assert.IsInstanceOf<IActionResult>(result);
+            Assert.IsInstanceOf<NotFoundResult>(result);
+        }
+
+        [Test]
+        public async Task UpdateOrder_OrderDoesNotExist_ReturnsNotFound()
+        {
+            _mockOrderService.Setup(s => s.GetOrderByIdAsync("notfound")).ReturnsAsync((OrderService)null);
+
+            var updatedOrder = new OrderService { OrderId = "notfound" };
+
+            var result = await _controller.PutServiceOrder("notfound", updatedOrder);
+
+            Assert.IsInstanceOf<IActionResult>(result);
+            Assert.IsInstanceOf<NotFoundResult>(result);
+        }
+    }
+
+    [TestFixture]
+    public class OrderServiceMongoDBTests
+    {
+        private IMongoCollection<OrderService> _orderCollection;
+        private MongoClient _client;
+        private IMongoDatabase _database;
+
+        [SetUp]
+        public void Setup()
+        {
+            _client = new MongoClient("mongodb://localhost:27017");
+            _database = _client.GetDatabase("Modul295Db");
+            _orderCollection = _database.GetCollection<OrderService>("OrderServices");
+
+            _orderCollection.DeleteMany(FilterDefinition<OrderService>.Empty);
+        }
+
+        [Test]
         public async Task MongoDB_InsertAndDeleteOrder_WorksCorrectly()
         {
             var user1 = new OrderService
@@ -127,21 +186,15 @@ namespace Modul295PraxisArbeitOrder.Tests
                 Service = "Kleiner Service"
             };
 
-            var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("Modul295Db");
-            var orderCollection = database.GetCollection<OrderService>("OrderServices");
+            await _orderCollection.InsertOneAsync(user1);
+            await _orderCollection.InsertOneAsync(user2);
 
-            await orderCollection.DeleteManyAsync(FilterDefinition<OrderService>.Empty);
-
-            await orderCollection.InsertOneAsync(user1);
-            await orderCollection.InsertOneAsync(user2);
-
-            var ordersBeforeDelete = await orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
+            var ordersBeforeDelete = await _orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
             Assert.AreEqual(2, ordersBeforeDelete.Count);
 
-            await orderCollection.DeleteOneAsync(o => o.Name == user1.Name);
+            await _orderCollection.DeleteOneAsync(o => o.Name == user1.Name);
 
-            var ordersAfterDelete = await orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
+            var ordersAfterDelete = await _orderCollection.Find(FilterDefinition<OrderService>.Empty).ToListAsync();
 
             Assert.AreEqual(1, ordersAfterDelete.Count);
             Assert.AreEqual(user2.Name, ordersAfterDelete[0].Name);
