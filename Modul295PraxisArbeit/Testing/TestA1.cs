@@ -20,24 +20,24 @@ namespace Modul295PraxisArbeitOrder.Tests
         private ServiceOrdersController _controller;
 
         [SetUp]
-        public void Setup()
-        {
-            _mockOrderService = new Mock<IOrderService>();
-            _mockDatabase = new Mock<IMongoDatabase>();
-            _mockLogger = new Mock<ILogger<ServiceOrdersController>>();
+public void Setup()
+{
+    _mockOrderService = new Mock<IOrderService>();
+    _mockDatabase = new Mock<IMongoDatabase>();
+    _mockLogger = new Mock<ILogger<ServiceOrdersController>>();
 
-            // Ensure the mock correctly handles CreateOrderAsync
-            _mockOrderService.Setup(s => s.CreateOrderAsync(It.IsAny<OrderService>()))
-                             .Returns(Task.CompletedTask);
+    // Mock the Users collection inside MongoDB
+    var mockUserCollection = new Mock<IMongoCollection<OrderUser>>();
+    _mockDatabase.Setup(db => db.GetCollection<OrderUser>("Users", It.IsAny<MongoCollectionSettings>()))
+                 .Returns(mockUserCollection.Object);
 
-            _controller = new ServiceOrdersController(
-                _mockOrderService.Object,
-                _mockDatabase.Object,
-                _mockLogger.Object
-            );
-        }
-
-
+    // Initialize the controller with the mocked dependencies
+    _controller = new ServiceOrdersController(
+        _mockOrderService.Object,
+        _mockDatabase.Object,
+        _mockLogger.Object
+    );
+}
         [Test]
         public async Task GetAllOrders_ReturnsOkResult_WithOrders()
         {

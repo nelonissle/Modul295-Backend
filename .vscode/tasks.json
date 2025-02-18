@@ -10,6 +10,19 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Run Unit Tests Every 30 Minutes",
+            "type": "process",
+            "command": "powershell",
+            "args": ["-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/run_tests.ps1"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "isBackground": true,
+            "runOptions": { "runOn": "folderOpen" }  // ✅ Automatically starts when opening VS Code
         }
     ]
 }
