@@ -4,7 +4,8 @@
         {
             "label": "Run Tests and Build",
             "type": "shell",
-            "command": "dotnet test; if ($?) { dotnet clean; dotnet build }",
+            "command": "cmd",
+            "args": ["/c", "cd /d ${workspaceFolder}\\Modul295PraxisArbeit && dotnet test && dotnet clean && dotnet build"],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -15,7 +16,10 @@
             "label": "Run Unit Tests Every 30 Minutes",
             "type": "process",
             "command": "powershell",
-            "args": ["-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/run_tests.ps1"],
+            "args": [
+                "-ExecutionPolicy", "Bypass",
+                "-File", "${workspaceFolder}\\Modul295PraxisArbeit\\run_tests.ps1"
+            ],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
