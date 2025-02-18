@@ -1,127 +1,156 @@
 using Microsoft.EntityFrameworkCore;
-using Modul295PraxisArbeit.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Modul295PraxisArbeit.Services;
-using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
+using System.Text;
 using Serilog;
 using MongoDB.Driver;
-using Modul295PraxisArbeitOrder.Data;
+using Modul295PraxisArbeit.Services;
+using Modul295PraxisArbeit.Data;
 using Modul295PraxisArbeitOrder.Services;
 using Modul295PraxisArbeitOrder.Models;
 
+// 📌 Define the log file path
 var logFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Logs", "application.log");
 
-// Ensure the Logs directory exists
-Directory.CreateDirectory(Path.GetDirectoryName(logFilePath)!);
+// 📌 Ensure the Logs directory exists
+string? logsFolder = Path.GetDirectoryName(logFilePath);
+if (!string.IsNullOrEmpty(logsFolder))
+{
+    Directory.CreateDirectory(logsFolder);
+}
 
+// 📌 Configure Serilog
 Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
     .WriteTo.File(logFilePath, rollingInterval: RollingInterval.Infinite, retainedFileCountLimit: 1)
     .CreateLogger();
 
-
-// Erstelle den WebApplication-Builder
+// 📌 Create WebApplication Builder
 var builder = WebApplication.CreateBuilder(args);
 
-// Add this line to register HttpClient
+// 🔹 Add HttpClient
 builder.Services.AddHttpClient();
 
-// Geheimschlüssel für JWT (Sollte aus Konfigurationsdateien oder einem sicheren Speicher kommen)
-var key = builder.Configuration["JwtSettings:Key"];
+// 🔹 Register Background Test Runner
+builder.Services.AddHostedService<TestRunnerService>();
 
-// Konfiguriere den DbContext für SQL Server
+// 🔹 Load JWT Secret Key
+var jwtKey = builder.Configuration["JwtSettings:Key"];
+if (string.IsNullOrEmpty(jwtKey))
+{
+    throw new Exception("JWT Secret Key is missing. Add it in appsettings.json.");
+}
+
+// 🔹 Configure SQL Database
+var sqlConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+if (string.IsNullOrEmpty(sqlConnectionString))
+{
+    throw new Exception("SQL Server connection string is missing. Add it in appsettings.json.");
+}
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(sqlConnectionString));
 
-// Konfiguriere Authentifikation mit JWT
+// 🔹 Configure Authentication with JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = false, // Deaktiviere Überprüfung des Herausgebers (Issuer)
-            ValidateAudience = false, // Deaktiviere Überprüfung der Zielgruppe (Audience)
-            ValidateLifetime = true, // Überprüfe die Gültigkeit des Tokens
-            ValidateIssuerSigningKey = true, // Überprüfe die Signatur des Tokens
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)) // Setze den geheimen Schlüssel
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
         };
     });
-builder.Services.AddSingleton<IMongoDatabase>(sp =>
+
+// 🔹 Configure MongoDB
+var mongoConfig = builder.Configuration.GetSection("MongoDbSettings");
+string? mongoConnectionString = mongoConfig["ConnectionString"];
+string? mongoDatabaseName = mongoConfig["DatabaseName"];
+
+if (string.IsNullOrEmpty(mongoConnectionString) || string.IsNullOrEmpty(mongoDatabaseName))
 {
-    var config = builder.Configuration.GetSection("MongoDbSettings");
-    string? connectionString = config["ConnectionString"];
-    string? databaseName = config["DatabaseName"];
+    throw new InvalidOperationException("MongoDB Connection String or Database Name is missing in the configuration files.");
+}
 
-    if (string.IsNullOrEmpty(connectionString) || string.IsNullOrEmpty(databaseName))
-    {
-        throw new InvalidOperationException("MongoDB Connection String oder Database Name fehlt in den Konfigurationsdateien.");
-    }
+var mongoClient = new MongoClient(mongoConnectionString);
+var mongoDatabase = mongoClient.GetDatabase(mongoDatabaseName);
 
-    var client = new MongoClient(connectionString);
-    return client.GetDatabase(databaseName);
-});
+builder.Services.AddSingleton<IMongoDatabase>(mongoDatabase);
 
-builder.Services.AddScoped<IOrderService, OrderServiceService>(); // Stellt sicher, dass der Service registriert ist
+// 🔹 Register OrderService
+builder.Services.AddScoped<IOrderService, OrderServiceService>();
 
-// Serilog als Logging-Provider registrieren
+// 🔹 Register JwtService
+builder.Services.AddSingleton<IJwtService>(sp => new JwtService(jwtKey));
+
+// 🔹 Register Serilog
 builder.Host.UseSerilog();
 
-// Fügen Sie CORS hinzu und konfigurieren Sie es
+// 🔹 Configure CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins",
-        policy => policy.AllowAnyOrigin() // Erlaubt jede Origin
-                        .AllowAnyMethod() // Erlaubt alle HTTP-Methoden
-                        .AllowAnyHeader()); // Erlaubt alle Header
+        policy => policy.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
 });
 
-// Füge den JwtService als Singleton hinzu
-builder.Services.AddSingleton<IJwtService>(sp => new JwtService(key));
-
-// Füge Controller und andere notwendige Dienste hinzu
+// 🔹 Add Controllers
 builder.Services.AddControllers();
 
-// Swagger/OpenAPI für API-Dokumentation
+// 🔹 Configure Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Erstelle die Anwendung
+// 📌 Build the Application
 var app = builder.Build();
 
+// 🔹 Enable CORS
 app.UseCors("AllowAllOrigins");
 
-// Konfiguriere die HTTP-Pipeline für Entwicklungsumgebung
+// 🔹 Enable Swagger in Development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-// Aktiviere HTTPS-Umleitungen
+// 🔹 Enable HTTPS Redirection
 app.UseHttpsRedirection();
 
+// 🔹 Enable Logging Middleware
 app.UseSerilogRequestLogging();
 
-// Füge Authentifikations- und Autorisierungs-Middleware hinzu
+// 🔹 Enable Authentication & Authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Mappe die Controller
+// 🔹 Map Controllers
 app.MapControllers();
 
-static void EnsureDatabaseAndTablesExist(string DefaultConnection)
+// 📌 Ensure Database Exists Before Running
+EnsureDatabaseAndTablesExist(sqlConnectionString);
+
+// 📌 Run the Application
+app.Run();
+
+// 📌 Function to Ensure Database Exists
+static void EnsureDatabaseAndTablesExist(string connectionString)
 {
     string createDatabaseScript = @"
-            IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'JetStreamDB')
-            BEGIN
-                CREATE DATABASE JetStreamDB;
-            END
-            ";
+        IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'JetStreamDB')
+        BEGIN
+            CREATE DATABASE JetStreamDB;
+        END
+    ";
+
     try
     {
-        using (SqlConnection connection = new SqlConnection(DefaultConnection))
+        using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
 
@@ -130,20 +159,11 @@ static void EnsureDatabaseAndTablesExist(string DefaultConnection)
                 command.ExecuteNonQuery();
             }
 
-            /*
-                                using (SqlCommand command = new SqlCommand(createTablesScript, connection))
-                                {
-                                    command.ExecuteNonQuery();
-                                }
-            */
-            Console.WriteLine("Datenbank und Tabellen wurden sichergestellt.");
+            Console.WriteLine("✅ Database and tables are ensured.");
         }
     }
     catch (Exception ex)
     {
-        Console.WriteLine("Fehler bei der Datenbankerstellung: " + ex.Message);
+        Console.WriteLine($"❌ Error creating database: {ex.Message}");
     }
 }
-
-// Starte die Anwendung
-app.Run();
