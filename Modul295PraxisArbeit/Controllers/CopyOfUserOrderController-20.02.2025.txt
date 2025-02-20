@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-using System.Text.RegularExpressions;
 
 namespace Praxisarbeit_M295.Controllers
 {
@@ -27,7 +26,15 @@ namespace Praxisarbeit_M295.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger), "Logger is null.");
         }
 
-        // 🛠 REGISTER NEW USER WITH PASSWORD VALIDATION & LOGGING
+        // 🔍 Check if user has edit rights
+        public bool CheckEditRole(string username)
+        {
+            _logger.LogInformation($"Checking edit role for user: {username}");
+            var user = _usersCollection.Find(u => u.Username == username).SingleOrDefault();
+            return user != null && (user.Role == "Mitarbeiter" || user.Role == "Admin");
+        }
+
+        // 🛠 REGISTER NEW USER
         [HttpPost("Register")]
         public async Task<ActionResult<OrderUser>> Register([FromBody] UserRegisterDto registerDto)
         {
@@ -35,24 +42,16 @@ namespace Praxisarbeit_M295.Controllers
             {
                 if (string.IsNullOrEmpty(registerDto.Username) || string.IsNullOrEmpty(registerDto.Password))
                 {
-                    _logger.LogWarning("❌ Registration failed: Username or password is empty.");
-                    return BadRequest(new { message = "❌ Username and password are required." });
-                }
-
-                // 🔒 Validate Password Strength
-                if (!IsValidPassword(registerDto.Password))
-                {
-                    _logger.LogWarning($"❌ Registration failed: Weak password for user '{registerDto.Username}'.");
-                    return BadRequest(new { message = "❌ Password must be at least 15 characters long and contain a letter, a number, and a special character." });
+                    return BadRequest(new { message = "Username and password are required." });
                 }
 
                 var userExists = await _usersCollection.Find(u => u.Username == registerDto.Username).AnyAsync();
-                _logger.LogInformation($"🔍 Checking if username exists: {registerDto.Username} -> Exists: {userExists}");
+                _logger.LogInformation($"Checking if username exists: {registerDto.Username} -> Exists: {userExists}");
 
                 if (userExists)
                 {
-                    _logger.LogWarning($"⚠️ Registration failed: Username '{registerDto.Username}' is already taken.");
-                    return BadRequest(new { message = "❌ Username already exists." });
+                    _logger.LogWarning($"⚠️ Username '{registerDto.Username}' is already taken.");
+                    return BadRequest(new { message = "Username already exists." });
                 }
 
                 string passwordHash = CreatePasswordHash(registerDto.Password);
@@ -73,10 +72,9 @@ namespace Praxisarbeit_M295.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"❌ Error during registration: {ex.Message}");
-                return StatusCode(500, new { message = "❌ Internal server error.", error = ex.Message });
+                return StatusCode(500, new { message = "Internal server error.", error = ex.Message });
             }
         }
-
 
         // 🔑 LOGIN USER
         [HttpPost("Login")]
@@ -89,13 +87,13 @@ namespace Praxisarbeit_M295.Controllers
             if (user == null)
             {
                 _logger.LogWarning($"⚠️ Login failed - Username '{loginDto.Username}' not found.");
-                return Unauthorized("❌ Invalid username or password.");
+                return Unauthorized("Invalid username or password.");
             }
 
             if (!VerifyPasswordHash(loginDto.Password, user.PasswordHash))
             {
                 _logger.LogWarning($"🔒 Password verification failed for user '{loginDto.Username}'");
-                return Unauthorized("❌ Invalid username or password.");
+                return Unauthorized("Invalid username or password.");
             }
 
             var token = _jwtService.GenerateToken(user.Username, user.Role);
@@ -127,11 +125,11 @@ namespace Praxisarbeit_M295.Controllers
             if (result.ModifiedCount > 0)
             {
                 _logger.LogInformation($"✅ Successfully updated role for user '{username}' to '{updateDto.Role}'");
-                return Ok(new { message = "✅ User role updated successfully." });
+                return Ok(new { message = "User role updated successfully." });
             }
 
             _logger.LogWarning($"⚠️ Failed to update role for '{username}'. User not found.");
-            return NotFound(new { message = "❌ User not found." });
+            return NotFound(new { message = "User not found." });
         }
 
         // 🗑 DELETE USER (ADMIN ONLY)
@@ -146,11 +144,11 @@ namespace Praxisarbeit_M295.Controllers
             if (result.DeletedCount > 0)
             {
                 _logger.LogInformation($"✅ User '{username}' deleted successfully.");
-                return Ok(new { message = "✅ User deleted successfully." });
+                return Ok(new { message = "User deleted successfully." });
             }
 
             _logger.LogWarning($"⚠️ Failed to delete user '{username}'. User not found.");
-            return NotFound(new { message = "❌ User not found." });
+            return NotFound(new { message = "User not found." });
         }
 
         // 🔐 HASH PASSWORD
@@ -164,43 +162,6 @@ namespace Praxisarbeit_M295.Controllers
         {
             return BCrypt.Net.BCrypt.Verify(password, storedHash);
         }
-
-        private bool IsValidPassword(string password)
-        {
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                _logger.LogWarning("❌ Password validation failed: Password is empty.");
-                return false;
-            }
-
-            if (password.Length < 15)
-            {
-                _logger.LogWarning("❌ Password validation failed: Password is too short (< 15 characters).");
-                return false;
-            }
-
-            if (!Regex.IsMatch(password, @"[A-Za-z]"))
-            {
-                _logger.LogWarning("❌ Password validation failed: Password does not contain a letter.");
-                return false;
-            }
-
-            if (!Regex.IsMatch(password, @"\d"))
-            {
-                _logger.LogWarning("❌ Password validation failed: Password does not contain a number.");
-                return false;
-            }
-
-            if (!Regex.IsMatch(password, @"[\W_]")) // Sonderzeichen
-            {
-                _logger.LogWarning("❌ Password validation failed: Password does not contain a special character.");
-                return false;
-            }
-
-            _logger.LogInformation("✅ Password validation passed.");
-            return true;
-        }
-
     }
 
     // DTOs
@@ -222,11 +183,3 @@ namespace Praxisarbeit_M295.Controllers
         public string Role { get; set; }
     }
 }
-
-
-
-/*
-Test für Login 
-email: Martin@gmail.com
-Password: bASEL-sTADT1893
-*/
