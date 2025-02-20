@@ -159,3 +159,12 @@ Hier geben wir eine Kurze Zusammenfassung zum Ganzen Projekt
 
 
 
+
+
+
+
+
+// Session 
+// 2 Faktor 
+// Translate
+// Logs über Cookies 
