@@ -3205,3 +3205,987 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2025-02-20 17:17:30.413 +01:00 [INF] CORS policy execution successful.
 2025-02-20 17:17:30.417 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 6.8446ms
 2025-02-20 17:19:50.682 +01:00 [INF] Application is shutting down...
+2025-02-20 20:17:26.420 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-20 20:17:26.470 +01:00 [INF] Running Unit Tests...
+2025-02-20 20:17:26.483 +01:00 [INF] Unit Tests Started...
+2025-02-20 20:17:31.687 +01:00 [INF] Unit Tests Completed Successfully.
+2025-02-20 20:17:31.849 +01:00 [INF] Now listening on: http://localhost:5013
+2025-02-20 20:17:31.851 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-20 20:17:31.852 +01:00 [INF] Hosting environment: Development
+2025-02-20 20:17:31.854 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-02-20 20:17:35.525 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - null null
+2025-02-20 20:17:35.562 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:17:35.575 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - 204 null null 51.8332ms
+2025-02-20 20:17:35.594 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Register - application/json 48
+2025-02-20 20:17:35.609 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:17:35.625 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-02-20 20:17:35.674 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-20 20:17:35.714 +01:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Register(Praxisarbeit_M295.Controllers.UserRegisterDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 20:17:35.817 +01:00 [WRN] ❌ Password validation failed: Password is too short (< 15 characters).
+2025-02-20 20:17:35.819 +01:00 [WRN] ❌ Registration failed: Weak password for user 'admin@admin.com'.
+2025-02-20 20:17:35.826 +01:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:17:35.865 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit) in 142.5481ms
+2025-02-20 20:17:35.867 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-20 20:17:35.872 +01:00 [INF] HTTP POST /api/Users/Register responded 400 in 239.3256 ms
+2025-02-20 20:17:35.883 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Register - 400 null application/json; charset=utf-8 289.3952ms
+2025-02-20 20:18:01.451 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 20:18:01.456 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:01.457 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 6.2789ms
+2025-02-20 20:18:01.460 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 20:18:01.467 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:01.478 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:18:01.492 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 20:18:01.510 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 20:18:02.867 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 20:18:02.876 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:18:02.888 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 1391.6067ms
+2025-02-20 20:18:02.913 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:18:02.928 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 1456.2926 ms
+2025-02-20 20:18:02.936 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 1476.3991ms
+2025-02-20 20:18:04.562 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/cookies/status - null null
+2025-02-20 20:18:04.624 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:04.646 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 20:18:04.652 +01:00 [INF] Route matched with {action = "CheckCookieStatus", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CheckCookieStatus() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 20:18:04.660 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:18:04.672 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit) in 14.0007ms
+2025-02-20 20:18:04.678 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/cookies/status - null null
+2025-02-20 20:18:04.681 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 20:18:04.693 +01:00 [INF] HTTP GET /api/cookies/status responded 200 in 49.8845 ms
+2025-02-20 20:18:04.798 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:04.904 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/cookies/status - 200 null application/json; charset=utf-8 341.5379ms
+2025-02-20 20:18:04.934 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 20:18:05.092 +01:00 [INF] Route matched with {action = "CheckCookieStatus", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CheckCookieStatus() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 20:18:05.094 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:18:05.097 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit) in 3.5041ms
+2025-02-20 20:18:05.106 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 20:18:05.108 +01:00 [INF] HTTP GET /api/cookies/status responded 200 in 174.5465 ms
+2025-02-20 20:18:05.113 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/cookies/status - 200 null application/json; charset=utf-8 434.4584ms
+2025-02-20 20:18:13.637 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/cookies/accept - null 0
+2025-02-20 20:18:13.666 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:13.670 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 20:18:13.674 +01:00 [INF] Route matched with {action = "AcceptCookies", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AcceptCookies() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 20:18:13.696 +01:00 [INF] ✅ Cookies accepted | IP: ::1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0 | Referrer: http://localhost:5173/ | SessionID: 26faa7b9-b830-497d-8283-51379ce1ba3b | Timestamp: 2025-02-20 19:18:13
+2025-02-20 20:18:13.700 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:18:13.708 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit) in 29.1797ms
+2025-02-20 20:18:13.713 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 20:18:13.714 +01:00 [INF] HTTP POST /api/cookies/accept responded 200 in 44.0749 ms
+2025-02-20 20:18:13.717 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/cookies/accept - 200 null application/json; charset=utf-8 81.2453ms
+2025-02-20 20:18:44.958 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - null null
+2025-02-20 20:18:44.963 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:44.965 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Register - 204 null null 6.4402ms
+2025-02-20 20:18:44.969 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Register - application/json 59
+2025-02-20 20:18:44.977 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:44.979 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-20 20:18:45.004 +01:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Register(Praxisarbeit_M295.Controllers.UserRegisterDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 20:18:45.010 +01:00 [INF] ✅ Password validation passed.
+2025-02-20 20:18:45.056 +01:00 [INF] 🔍 Checking if username exists: Rssas@gmail.com -> Exists: False
+2025-02-20 20:18:45.423 +01:00 [INF] 📝 Inserting new user: Rssas@gmail.com with role Kunde
+2025-02-20 20:18:45.532 +01:00 [INF] ✅ User 'Rssas@gmail.com' registered successfully.
+2025-02-20 20:18:45.534 +01:00 [INF] 🔑 Token generated successfully for 'Rssas@gmail.com'.
+2025-02-20 20:18:45.537 +01:00 [INF] Executing CreatedAtActionResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:18:45.577 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit) in 568.8982ms
+2025-02-20 20:18:45.579 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Register (Modul295PraxisArbeit)'
+2025-02-20 20:18:45.581 +01:00 [INF] HTTP POST /api/Users/Register responded 201 in 601.7762 ms
+2025-02-20 20:18:45.586 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Register - 201 null application/json; charset=utf-8 616.2306ms
+2025-02-20 20:18:47.190 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/cookies/status - null null
+2025-02-20 20:18:47.213 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:47.216 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 20:18:47.220 +01:00 [INF] Route matched with {action = "CheckCookieStatus", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CheckCookieStatus() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 20:18:47.225 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:18:47.230 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit) in 5.3417ms
+2025-02-20 20:18:47.236 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/cookies/status - null null
+2025-02-20 20:18:47.277 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:47.272 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 20:18:47.284 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 20:18:47.294 +01:00 [INF] HTTP GET /api/cookies/status responded 200 in 78.8481 ms
+2025-02-20 20:18:47.298 +01:00 [INF] Route matched with {action = "CheckCookieStatus", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CheckCookieStatus() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 20:18:47.311 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/cookies/status - 200 null application/json; charset=utf-8 120.6273ms
+2025-02-20 20:18:47.436 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:18:47.467 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit) in 30.8248ms
+2025-02-20 20:18:47.582 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 20:18:47.701 +01:00 [INF] HTTP GET /api/cookies/status responded 200 in 416.7944 ms
+2025-02-20 20:18:47.705 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/cookies/status - 200 null application/json; charset=utf-8 468.5631ms
+2025-02-20 20:18:50.504 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/cookies/accept - null 0
+2025-02-20 20:18:50.529 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:50.593 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 20:18:50.730 +01:00 [INF] Route matched with {action = "AcceptCookies", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AcceptCookies() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 20:18:50.836 +01:00 [INF] ✅ Cookies accepted | IP: ::1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0 | Referrer: http://localhost:5173/ | SessionID: 52afc86a-b906-4537-9c3e-b0c95f126710 | Timestamp: 2025-02-20 19:18:50
+2025-02-20 20:18:50.951 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:18:50.967 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit) in 131.2485ms
+2025-02-20 20:18:50.972 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 20:18:50.975 +01:00 [INF] HTTP POST /api/cookies/accept responded 200 in 382.2431 ms
+2025-02-20 20:18:51.490 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/cookies/accept - null 0
+2025-02-20 20:18:51.491 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/cookies/accept - 200 null application/json; charset=utf-8 986.9233ms
+2025-02-20 20:18:51.745 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:18:51.800 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 20:18:51.804 +01:00 [INF] Route matched with {action = "AcceptCookies", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AcceptCookies() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 20:18:51.810 +01:00 [INF] ✅ Cookies accepted | IP: ::1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0 | Referrer: http://localhost:5173/ | SessionID: e3c4d467-984a-437e-85b2-5fb506edb091 | Timestamp: 2025-02-20 19:18:51
+2025-02-20 20:18:51.823 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:18:51.878 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit) in 68.6994ms
+2025-02-20 20:18:51.941 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 20:18:51.962 +01:00 [INF] HTTP POST /api/cookies/accept responded 200 in 162.5298 ms
+2025-02-20 20:18:52.071 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/cookies/accept - 200 null application/json; charset=utf-8 580.11ms
+2025-02-20 20:31:18.900 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 20:31:18.907 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:31:18.910 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 9.103ms
+2025-02-20 20:31:18.914 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 20:31:18.919 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:31:18.949 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:31:18.958 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 20:31:18.965 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 20:31:19.412 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 20:31:19.418 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:31:19.421 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 457.7395ms
+2025-02-20 20:31:19.424 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:31:19.428 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 479.1402 ms
+2025-02-20 20:31:19.430 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 516.4114ms
+2025-02-20 20:31:23.507 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:31:23.509 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:31:23.523 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:31:23.531 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:31:23.533 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 24.3878ms
+2025-02-20 20:31:23.532 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 25.0297ms
+2025-02-20 20:31:23.545 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:31:23.549 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:31:23.644 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:31:23.655 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:31:23.856 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:31:24.287 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 613.9918ms
+2025-02-20 20:31:24.290 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:31:24.403 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:31:24.412 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:31:24.418 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 864.0478 ms
+2025-02-20 20:31:24.948 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 1401.6955ms
+2025-02-20 20:31:24.948 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:31:24.956 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:31:25.089 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:31:25.098 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 135.265ms
+2025-02-20 20:31:25.100 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:31:25.101 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 157.5116 ms
+2025-02-20 20:31:25.104 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 814.1006ms
+2025-02-20 20:32:02.195 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 20:32:02.203 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:32:02.207 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 11.6189ms
+2025-02-20 20:32:02.219 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 53
+2025-02-20 20:32:02.237 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:32:02.240 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:32:02.245 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 20:32:02.254 +01:00 [INF] 🔍 Login attempt for username: nelonissle@gmail.com
+2025-02-20 20:32:02.634 +01:00 [INF] ✅ Login successful for user 'nelonissle@gmail.com'
+2025-02-20 20:32:02.637 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:32:02.645 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 392.5254ms
+2025-02-20 20:32:02.649 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:32:02.653 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 413.4500 ms
+2025-02-20 20:32:02.665 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 445.8073ms
+2025-02-20 20:32:15.976 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 20:32:15.985 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:32:15.986 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 9.9664ms
+2025-02-20 20:32:15.997 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 20:32:16.004 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:32:16.015 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:32:16.019 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 20:32:16.150 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 20:32:16.493 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 20:32:16.495 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:32:16.498 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 349.586ms
+2025-02-20 20:32:16.501 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:32:16.506 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 492.1516 ms
+2025-02-20 20:32:16.509 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 511.78ms
+2025-02-20 20:32:22.239 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:32:22.240 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:32:22.252 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:32:22.260 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 20.1577ms
+2025-02-20 20:32:22.254 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:32:22.273 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 33.7413ms
+2025-02-20 20:32:22.283 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:32:22.293 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:32:22.299 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:32:22.313 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:32:22.435 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:32:22.450 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 123.7233ms
+2025-02-20 20:32:22.455 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:32:22.458 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:32:22.468 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:32:22.468 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 172.1861 ms
+2025-02-20 20:32:22.474 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 191.4546ms
+2025-02-20 20:32:22.472 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:32:22.666 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:32:22.681 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:32:22.685 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 6.9839ms
+2025-02-20 20:32:22.805 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:32:22.921 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 450.3203 ms
+2025-02-20 20:32:22.931 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 475.0238ms
+2025-02-20 20:34:22.236 +01:00 [INF] Application is shutting down...
+2025-02-20 20:35:41.607 +01:00 [INF] User profile is available. Using 'C:\Users\nelo07\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-20 20:35:41.644 +01:00 [INF] Running Unit Tests...
+2025-02-20 20:35:41.654 +01:00 [INF] Unit Tests Started...
+2025-02-20 20:35:46.252 +01:00 [INF] Unit Tests Completed Successfully.
+2025-02-20 20:35:46.340 +01:00 [INF] Now listening on: http://localhost:5013
+2025-02-20 20:35:46.341 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-20 20:35:46.343 +01:00 [INF] Hosting environment: Development
+2025-02-20 20:35:46.344 +01:00 [INF] Content root path: C:\Users\nelo07\source\repos\Modul295-Backend\Modul295PraxisArbeit
+2025-02-20 20:36:58.658 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:36:58.659 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:36:58.901 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:36:58.901 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:36:58.916 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 260.2256ms
+2025-02-20 20:36:58.916 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 260.8805ms
+2025-02-20 20:36:58.936 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:36:58.947 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:36:58.972 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-02-20 20:36:59.102 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:36:59.149 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:36:59.541 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:36:59.770 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 611.0644ms
+2025-02-20 20:36:59.772 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:36:59.835 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:36:59.839 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:36:59.857 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 875.7153 ms
+2025-02-20 20:36:59.867 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:36:59.870 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 933.3938ms
+2025-02-20 20:36:59.872 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:37:00.066 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:37:00.071 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 51.6613ms
+2025-02-20 20:37:00.159 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:37:00.196 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 337.4793 ms
+2025-02-20 20:37:00.204 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 431.8287ms
+2025-02-20 20:42:08.334 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:42:08.344 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:08.346 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 12ms
+2025-02-20 20:42:08.353 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - application/json 145
+2025-02-20 20:42:08.364 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:08.379 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 20:42:08.417 +01:00 [INF] Route matched with {action = "PostServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Modul295PraxisArbeitOrder.Models.OrderService]] PostServiceOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:42:08.596 +01:00 [INF] Order created successfully with ID 67b78590c93da47e80e7ecf5.
+2025-02-20 20:42:08.598 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-02-20 20:42:08.638 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit) in 210.4062ms
+2025-02-20 20:42:08.642 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 20:42:08.644 +01:00 [INF] HTTP POST /api/ServiceOrders responded 201 in 270.9510 ms
+2025-02-20 20:42:08.648 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - 201 null application/json; charset=utf-8 294.4188ms
+2025-02-20 20:42:18.652 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:42:18.652 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:42:18.680 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:18.837 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 185.184ms
+2025-02-20 20:42:18.836 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:18.857 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:42:18.858 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 205.7234ms
+2025-02-20 20:42:18.961 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:18.982 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:42:19.103 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:42:19.114 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:42:19.123 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 13.4216ms
+2025-02-20 20:42:19.128 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:42:19.232 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:42:19.240 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:19.242 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 266.5416 ms
+2025-02-20 20:42:19.248 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:42:19.252 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 394.9857ms
+2025-02-20 20:42:19.373 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:42:19.707 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:42:19.710 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 7.2236ms
+2025-02-20 20:42:19.718 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:42:19.720 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 476.0589 ms
+2025-02-20 20:42:19.722 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 593.7325ms
+2025-02-20 20:42:43.263 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:42:43.265 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:42:43.267 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:43.272 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:43.273 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 9.966ms
+2025-02-20 20:42:43.274 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 9.5877ms
+2025-02-20 20:42:43.289 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:42:43.295 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:43.296 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:42:43.297 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:42:43.301 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:42:43.302 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 3.2096ms
+2025-02-20 20:42:43.304 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:42:43.304 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:42:43.305 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 8.6739 ms
+2025-02-20 20:42:43.306 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:42:43.308 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 18.2905ms
+2025-02-20 20:42:43.309 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:42:43.315 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:42:43.319 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:42:43.321 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 2.9058ms
+2025-02-20 20:42:43.322 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:42:43.324 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 15.1636 ms
+2025-02-20 20:42:43.326 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 21.9541ms
+2025-02-20 20:43:00.615 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:43:00.615 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:43:00.648 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:00.654 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:00.656 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 41.2602ms
+2025-02-20 20:43:00.657 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 41.5447ms
+2025-02-20 20:43:00.664 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:43:00.666 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:00.667 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:43:00.668 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:43:00.672 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:43:00.673 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 2.7438ms
+2025-02-20 20:43:00.675 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:43:00.676 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:43:00.678 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:00.678 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 11.4232 ms
+2025-02-20 20:43:00.679 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:43:00.680 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 15.7887ms
+2025-02-20 20:43:00.687 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:43:00.695 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:43:00.699 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 7.1046ms
+2025-02-20 20:43:00.701 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:43:00.703 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 23.9543 ms
+2025-02-20 20:43:00.704 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 29.8436ms
+2025-02-20 20:43:05.588 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 20:43:05.596 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:05.598 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 10.2939ms
+2025-02-20 20:43:05.601 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 20:43:05.619 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:05.621 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:43:05.630 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 20:43:05.648 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 20:43:06.312 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 20:43:06.314 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:43:06.336 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 699.6774ms
+2025-02-20 20:43:06.340 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:43:06.345 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 724.3765 ms
+2025-02-20 20:43:06.351 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 748.1112ms
+2025-02-20 20:43:13.438 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:43:13.455 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:43:13.462 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:13.466 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:13.468 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 30.34ms
+2025-02-20 20:43:13.472 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 16.6621ms
+2025-02-20 20:43:13.483 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:43:13.494 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:13.498 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:43:13.502 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:43:13.522 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:43:13.542 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 30.0814ms
+2025-02-20 20:43:13.545 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:43:13.672 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:43:13.803 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:13.803 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 306.8289 ms
+2025-02-20 20:43:13.813 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:43:13.816 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 333.7252ms
+2025-02-20 20:43:13.819 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:43:13.846 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:43:14.009 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 164.87ms
+2025-02-20 20:43:14.015 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:43:14.017 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 211.2077 ms
+2025-02-20 20:43:14.023 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 478.4425ms
+2025-02-20 20:43:26.290 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 20:43:26.295 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:26.297 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 6.5112ms
+2025-02-20 20:43:26.303 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 53
+2025-02-20 20:43:26.313 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:26.318 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:43:26.321 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 20:43:26.333 +01:00 [INF] 🔍 Login attempt for username: nelonissle@gmail.com
+2025-02-20 20:43:26.711 +01:00 [INF] ✅ Login successful for user 'nelonissle@gmail.com'
+2025-02-20 20:43:26.715 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:43:26.717 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 385.6268ms
+2025-02-20 20:43:26.721 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:43:26.729 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 411.1253 ms
+2025-02-20 20:43:26.735 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 432.0467ms
+2025-02-20 20:43:36.073 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 20:43:36.080 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:36.081 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 8.5277ms
+2025-02-20 20:43:36.095 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 20:43:36.104 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:36.118 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:43:36.132 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 20:43:36.147 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 20:43:36.510 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 20:43:36.512 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 20:43:36.516 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 369.9381ms
+2025-02-20 20:43:36.521 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 20:43:36.530 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 412.2499 ms
+2025-02-20 20:43:36.534 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 439.4939ms
+2025-02-20 20:43:58.732 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:43:58.736 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:58.738 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 6.4395ms
+2025-02-20 20:43:58.743 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - application/json 139
+2025-02-20 20:43:58.774 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:43:58.775 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 20:43:58.778 +01:00 [INF] Route matched with {action = "PostServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Modul295PraxisArbeitOrder.Models.OrderService]] PostServiceOrder(Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:43:58.786 +01:00 [INF] Order created successfully with ID 67b785fec93da47e80e7ed8c.
+2025-02-20 20:43:58.792 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'Modul295PraxisArbeitOrder.Models.OrderService'.
+2025-02-20 20:43:58.795 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit) in 13.1522ms
+2025-02-20 20:43:58.802 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PostServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 20:43:58.810 +01:00 [INF] HTTP POST /api/ServiceOrders responded 201 in 35.9645 ms
+2025-02-20 20:43:58.814 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/ServiceOrders - 201 null application/json; charset=utf-8 70.9145ms
+2025-02-20 20:44:05.065 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:44:05.066 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:44:05.073 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:44:05.072 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:44:05.074 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 7.94ms
+2025-02-20 20:44:05.075 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 10.0264ms
+2025-02-20 20:44:05.091 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:44:05.093 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:44:05.096 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:44:05.098 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:44:05.115 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:44:05.122 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 9.2792ms
+2025-02-20 20:44:05.131 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:44:05.140 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:44:05.144 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:44:05.148 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 53.2346 ms
+2025-02-20 20:44:05.151 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 59.7511ms
+2025-02-20 20:44:05.157 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:44:05.179 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:44:05.198 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:44:05.200 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 18.7777ms
+2025-02-20 20:44:05.204 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:44:05.208 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 58.0792 ms
+2025-02-20 20:44:05.210 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 79.9372ms
+2025-02-20 20:51:15.110 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:51:15.114 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:51:15.116 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 6.2359ms
+2025-02-20 20:51:15.122 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:51:15.132 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:51:15.134 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:51:15.137 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:51:15.143 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:51:15.147 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 6.2721ms
+2025-02-20 20:51:15.150 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:51:15.152 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 18.5795 ms
+2025-02-20 20:51:15.155 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 33.1859ms
+2025-02-20 20:53:23.272 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:53:23.277 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:53:23.281 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:23.287 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:23.289 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 16.8513ms
+2025-02-20 20:53:23.291 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 14.5238ms
+2025-02-20 20:53:23.295 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:53:23.308 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:23.310 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:23.312 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:53:23.317 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:53:23.320 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 5.8657ms
+2025-02-20 20:53:23.322 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:53:23.323 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:23.326 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:23.328 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 18.8013 ms
+2025-02-20 20:53:23.330 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:23.332 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 36.5565ms
+2025-02-20 20:53:23.337 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:53:23.347 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:53:23.352 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 7.8005ms
+2025-02-20 20:53:23.355 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:23.356 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 26.8722 ms
+2025-02-20 20:53:23.360 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 38.0268ms
+2025-02-20 20:53:27.154 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:53:27.173 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:27.176 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:27.179 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:53:27.190 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:53:27.192 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 5.6171ms
+2025-02-20 20:53:27.196 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:53:27.206 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:27.209 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:27.214 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 39.0674 ms
+2025-02-20 20:53:27.220 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:27.225 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 70.4609ms
+2025-02-20 20:53:27.231 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:53:27.253 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:53:27.256 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 9.2805ms
+2025-02-20 20:53:27.257 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:27.270 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 52.3432 ms
+2025-02-20 20:53:27.274 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 78.7054ms
+2025-02-20 20:53:35.521 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - null null
+2025-02-20 20:53:35.526 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:35.528 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - 204 null null 7.4299ms
+2025-02-20 20:53:35.535 +01:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - application/json 214
+2025-02-20 20:53:35.541 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:35.544 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 20:53:35.576 +01:00 [INF] Route matched with {action = "PutServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PutServiceOrder(System.String, Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:53:35.644 +01:00 [INF] Order with ID 67b4a9bfd36f9a2ea222c646 updated successfully.
+2025-02-20 20:53:35.652 +01:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-20 20:53:35.653 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit) in 72.742ms
+2025-02-20 20:53:35.658 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 20:53:35.664 +01:00 [INF] HTTP PUT /api/ServiceOrders/67b4a9bfd36f9a2ea222c646 responded 204 in 120.6109 ms
+2025-02-20 20:53:35.684 +01:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - 204 null null 148.6248ms
+2025-02-20 20:53:36.782 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:53:36.793 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:36.796 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 14.1148ms
+2025-02-20 20:53:36.807 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 20:53:36.824 +01:00 [INF] CORS policy execution successful.
+2025-02-20 20:53:36.828 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:36.837 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 20:53:36.846 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 20:53:36.855 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 11.9418ms
+2025-02-20 20:53:36.862 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 20:53:36.866 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 38.8812 ms
+2025-02-20 20:53:36.872 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 65.4288ms
+2025-02-20 21:05:46.254 +01:00 [INF] Running Unit Tests...
+2025-02-20 21:05:46.264 +01:00 [INF] Unit Tests Started...
+2025-02-20 21:05:50.451 +01:00 [INF] Unit Tests Completed Successfully.
+2025-02-20 21:07:54.569 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - null null
+2025-02-20 21:07:54.573 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:07:54.574 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - 204 null null 4.8022ms
+2025-02-20 21:07:54.577 +01:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - application/json 214
+2025-02-20 21:07:54.579 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:07:54.581 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 21:07:54.583 +01:00 [INF] Route matched with {action = "PutServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PutServiceOrder(System.String, Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:07:54.599 +01:00 [INF] Order with ID 67b4a9bfd36f9a2ea222c646 updated successfully.
+2025-02-20 21:07:54.601 +01:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-20 21:07:54.603 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit) in 15.4439ms
+2025-02-20 21:07:54.606 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 21:07:54.607 +01:00 [INF] HTTP PUT /api/ServiceOrders/67b4a9bfd36f9a2ea222c646 responded 204 in 26.9742 ms
+2025-02-20 21:07:54.608 +01:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - 204 null null 31.4133ms
+2025-02-20 21:07:55.811 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:07:55.815 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:07:55.819 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 7.587ms
+2025-02-20 21:07:55.828 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:07:55.840 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:07:55.844 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:07:55.852 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:07:55.868 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:07:55.877 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 14.8663ms
+2025-02-20 21:07:55.885 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:07:55.891 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 47.7695 ms
+2025-02-20 21:07:55.900 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 72.1201ms
+2025-02-20 21:08:00.830 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - null null
+2025-02-20 21:08:00.836 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:00.839 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - 204 null null 8.8291ms
+2025-02-20 21:08:00.848 +01:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - null null
+2025-02-20 21:08:00.853 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:00.857 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.DeleteServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 21:08:00.863 +01:00 [INF] Route matched with {action = "DeleteServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteServiceOrder(System.String) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:08:00.887 +01:00 [INF] Order with ID 67b4a9bfd36f9a2ea222c646 deleted successfully.
+2025-02-20 21:08:00.891 +01:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-20 21:08:00.895 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.DeleteServiceOrder (Modul295PraxisArbeit) in 26.8214ms
+2025-02-20 21:08:00.900 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.DeleteServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 21:08:00.906 +01:00 [INF] HTTP DELETE /api/ServiceOrders/67b4a9bfd36f9a2ea222c646 responded 204 in 49.6843 ms
+2025-02-20 21:08:00.912 +01:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5013/api/ServiceOrders/67b4a9bfd36f9a2ea222c646 - 204 null null 64.4685ms
+2025-02-20 21:08:02.283 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:08:02.302 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:02.313 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 29.6594ms
+2025-02-20 21:08:02.337 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:08:02.360 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:02.368 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:08:02.374 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:08:02.395 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:08:02.408 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 18.5559ms
+2025-02-20 21:08:02.413 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:08:02.421 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 53.7013 ms
+2025-02-20 21:08:02.424 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 87.3075ms
+2025-02-20 21:08:20.649 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4ac04c6181d4a97da3e3c - null null
+2025-02-20 21:08:20.658 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:20.662 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4ac04c6181d4a97da3e3c - 204 null null 13.6368ms
+2025-02-20 21:08:20.673 +01:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5013/api/ServiceOrders/67b4ac04c6181d4a97da3e3c - application/json 209
+2025-02-20 21:08:20.683 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:20.687 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 21:08:20.691 +01:00 [INF] Route matched with {action = "PutServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PutServiceOrder(System.String, Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:08:20.708 +01:00 [INF] Order with ID 67b4ac04c6181d4a97da3e3c updated successfully.
+2025-02-20 21:08:20.713 +01:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-20 21:08:20.718 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit) in 17.5477ms
+2025-02-20 21:08:20.724 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 21:08:20.730 +01:00 [INF] HTTP PUT /api/ServiceOrders/67b4ac04c6181d4a97da3e3c responded 204 in 43.8250 ms
+2025-02-20 21:08:20.738 +01:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5013/api/ServiceOrders/67b4ac04c6181d4a97da3e3c - 204 null null 64.5749ms
+2025-02-20 21:08:22.048 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:08:22.053 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:22.057 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 9.4982ms
+2025-02-20 21:08:22.064 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:08:22.072 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:22.076 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:08:22.080 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:08:22.092 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:08:22.102 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 13.1525ms
+2025-02-20 21:08:22.108 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:08:22.113 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 37.4613 ms
+2025-02-20 21:08:22.125 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 60.4844ms
+2025-02-20 21:08:27.938 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4ac04c6181d4a97da3e3c - null null
+2025-02-20 21:08:27.942 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:27.944 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders/67b4ac04c6181d4a97da3e3c - 204 null null 5.9905ms
+2025-02-20 21:08:27.957 +01:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5013/api/ServiceOrders/67b4ac04c6181d4a97da3e3c - application/json 217
+2025-02-20 21:08:27.973 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:27.977 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 21:08:27.982 +01:00 [INF] Route matched with {action = "PutServiceOrder", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PutServiceOrder(System.String, Modul295PraxisArbeitOrder.Models.OrderService) on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:08:27.998 +01:00 [INF] Order with ID 67b4ac04c6181d4a97da3e3c updated successfully.
+2025-02-20 21:08:28.003 +01:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-20 21:08:28.008 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit) in 16.2409ms
+2025-02-20 21:08:28.011 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.PutServiceOrder (Modul295PraxisArbeit)'
+2025-02-20 21:08:28.016 +01:00 [INF] HTTP PUT /api/ServiceOrders/67b4ac04c6181d4a97da3e3c responded 204 in 40.0329 ms
+2025-02-20 21:08:28.025 +01:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5013/api/ServiceOrders/67b4ac04c6181d4a97da3e3c - 204 null null 68.6961ms
+2025-02-20 21:08:29.368 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:08:29.372 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:29.374 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 5.2221ms
+2025-02-20 21:08:29.385 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:08:29.392 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:29.400 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:08:29.406 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:08:29.420 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:08:29.424 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 6.9959ms
+2025-02-20 21:08:29.432 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:08:29.436 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 36.8584 ms
+2025-02-20 21:08:29.440 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 54.7305ms
+2025-02-20 21:08:48.598 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 21:08:48.604 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:48.605 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 7.8915ms
+2025-02-20 21:08:48.610 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 53
+2025-02-20 21:08:48.616 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:08:48.618 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:08:48.619 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 21:08:48.624 +01:00 [INF] 🔍 Login attempt for username: nelonissle@gmail.com
+2025-02-20 21:08:48.872 +01:00 [INF] ✅ Login successful for user 'nelonissle@gmail.com'
+2025-02-20 21:08:48.877 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:08:48.883 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 259.628ms
+2025-02-20 21:08:48.888 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:08:48.892 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 274.9352 ms
+2025-02-20 21:08:48.897 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 286.9473ms
+2025-02-20 21:09:00.695 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 21:09:00.699 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:09:00.702 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 7.355ms
+2025-02-20 21:09:00.711 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 21:09:00.715 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:09:00.717 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:09:00.720 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 21:09:00.726 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 21:09:00.980 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 21:09:00.984 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:09:00.989 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 263.5164ms
+2025-02-20 21:09:00.992 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:09:00.994 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 277.3464 ms
+2025-02-20 21:09:01.000 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 289.2013ms
+2025-02-20 21:09:03.941 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:09:03.941 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:09:03.949 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:09:03.958 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:09:03.961 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 20.0884ms
+2025-02-20 21:09:03.964 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 22.9847ms
+2025-02-20 21:09:03.980 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:09:04.001 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:09:04.004 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:09:04.007 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:09:04.017 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:09:04.024 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 11.063ms
+2025-02-20 21:09:04.026 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:09:04.030 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:09:04.044 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:09:04.051 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 47.3408 ms
+2025-02-20 21:09:04.057 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:09:04.066 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 86.3196ms
+2025-02-20 21:09:04.071 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:09:04.102 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:09:04.112 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 12.2954ms
+2025-02-20 21:09:04.120 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:09:04.128 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 71.6691 ms
+2025-02-20 21:09:04.140 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 113.9946ms
+2025-02-20 21:27:46.108 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/cookies/status - null null
+2025-02-20 21:27:46.116 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:27:46.117 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 21:27:46.120 +01:00 [INF] Route matched with {action = "CheckCookieStatus", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CheckCookieStatus() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 21:27:46.125 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:27:46.129 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit) in 7.5423ms
+2025-02-20 21:27:46.132 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/cookies/status - null null
+2025-02-20 21:27:46.135 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 21:27:46.144 +01:00 [INF] HTTP GET /api/cookies/status responded 200 in 26.8658 ms
+2025-02-20 21:27:46.144 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:27:46.149 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/cookies/status - 200 null application/json; charset=utf-8 41.0204ms
+2025-02-20 21:27:46.151 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 21:27:46.161 +01:00 [INF] Route matched with {action = "CheckCookieStatus", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CheckCookieStatus() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 21:27:46.163 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:27:46.165 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit) in 2.1027ms
+2025-02-20 21:27:46.167 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 21:27:46.168 +01:00 [INF] HTTP GET /api/cookies/status responded 200 in 16.7364 ms
+2025-02-20 21:27:46.171 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/cookies/status - 200 null application/json; charset=utf-8 38.8467ms
+2025-02-20 21:28:21.932 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/cookies/accept - null 0
+2025-02-20 21:28:21.942 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:21.943 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:28:21.953 +01:00 [INF] Route matched with {action = "AcceptCookies", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AcceptCookies() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 21:28:21.996 +01:00 [INF] ✅ Cookies accepted | IP: ::1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0 | Referrer: http://localhost:5173/ | SessionID: 1355a11d-f509-4c97-939a-1fc6c835a618 | Timestamp: 2025-02-20 20:28:21
+2025-02-20 21:28:22.004 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:28:22.023 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit) in 62.8101ms
+2025-02-20 21:28:22.032 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:28:22.037 +01:00 [INF] HTTP POST /api/cookies/accept responded 200 in 93.5582 ms
+2025-02-20 21:28:22.048 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/cookies/accept - 200 null application/json; charset=utf-8 116.7327ms
+2025-02-20 21:28:27.331 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 21:28:27.335 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:27.336 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 4.9403ms
+2025-02-20 21:28:27.343 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 21:28:27.348 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:27.355 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:28:27.357 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 21:28:27.362 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 21:28:27.666 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 21:28:27.668 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:28:27.670 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 309.1291ms
+2025-02-20 21:28:27.673 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:28:27.675 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 320.1794 ms
+2025-02-20 21:28:27.679 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 335.733ms
+2025-02-20 21:28:29.129 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:28:29.130 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:28:29.137 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:29.143 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:29.145 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 15.5432ms
+2025-02-20 21:28:29.147 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 17.6523ms
+2025-02-20 21:28:29.155 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:28:29.168 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:29.171 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:28:29.174 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:28:29.181 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:28:29.187 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 8.4046ms
+2025-02-20 21:28:29.189 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:28:29.192 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:28:29.201 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:29.204 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 32.8897 ms
+2025-02-20 21:28:29.206 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:28:29.214 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 58.4053ms
+2025-02-20 21:28:29.218 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:28:29.232 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:28:29.235 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 6.1709ms
+2025-02-20 21:28:29.239 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:28:29.243 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 37.8152 ms
+2025-02-20 21:28:29.248 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 59.3285ms
+2025-02-20 21:28:44.240 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/cookies/accept - null 0
+2025-02-20 21:28:44.244 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:44.245 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:28:44.248 +01:00 [INF] Route matched with {action = "AcceptCookies", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AcceptCookies() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 21:28:44.258 +01:00 [INF] ✅ Cookies accepted | IP: ::1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0 | Referrer: http://localhost:5173/ | SessionID: cb630a6e-cef0-4921-9fb7-a566ce3d6bee | Timestamp: 2025-02-20 20:28:44
+2025-02-20 21:28:44.264 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:28:44.274 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit) in 16.3281ms
+2025-02-20 21:28:44.279 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:28:44.283 +01:00 [INF] HTTP POST /api/cookies/accept responded 200 in 38.1941 ms
+2025-02-20 21:28:44.292 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/cookies/accept - 200 null application/json; charset=utf-8 51.7601ms
+2025-02-20 21:28:53.480 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 21:28:53.486 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:53.488 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 8.0357ms
+2025-02-20 21:28:53.495 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 21:28:53.501 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:53.502 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:28:53.503 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 21:28:53.509 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 21:28:53.729 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 21:28:53.732 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:28:53.736 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 227.4419ms
+2025-02-20 21:28:53.740 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:28:53.742 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 240.0366 ms
+2025-02-20 21:28:53.745 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 250.7282ms
+2025-02-20 21:28:55.256 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:28:55.256 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:28:55.261 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:55.271 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:55.273 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 17.3679ms
+2025-02-20 21:28:55.274 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 17.9564ms
+2025-02-20 21:28:55.279 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:28:55.300 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:55.305 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:28:55.309 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:28:55.316 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:28:55.322 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 7.2735ms
+2025-02-20 21:28:55.323 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:28:55.325 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:28:55.331 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:28:55.337 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 32.7510 ms
+2025-02-20 21:28:55.341 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:28:55.351 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 71.4428ms
+2025-02-20 21:28:55.356 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:28:55.378 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:28:55.383 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 7.2748ms
+2025-02-20 21:28:55.388 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:28:55.392 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 51.7698 ms
+2025-02-20 21:28:55.397 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 73.6704ms
+2025-02-20 21:29:11.097 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/cookies/status - null null
+2025-02-20 21:29:11.100 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:29:11.103 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 21:29:11.109 +01:00 [INF] Route matched with {action = "CheckCookieStatus", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CheckCookieStatus() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 21:29:11.117 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:29:11.129 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit) in 11.2671ms
+2025-02-20 21:29:11.134 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.CheckCookieStatus (Modul295PraxisArbeit)'
+2025-02-20 21:29:11.138 +01:00 [INF] HTTP GET /api/cookies/status responded 200 in 35.5276 ms
+2025-02-20 21:29:11.144 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/cookies/status - 200 null application/json; charset=utf-8 47.6562ms
+2025-02-20 21:32:01.172 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/cookies/accept - null 0
+2025-02-20 21:32:01.174 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:01.176 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:32:01.179 +01:00 [INF] Route matched with {action = "AcceptCookies", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AcceptCookies() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 21:32:01.187 +01:00 [INF] ✅ Cookies accepted | IP: ::1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0 | Referrer: http://localhost:5173/ | SessionID: 0b341f81-92ea-4250-9c9d-4c8ba31e2b7a | Timestamp: 2025-02-20 20:32:01
+2025-02-20 21:32:01.194 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:32:01.199 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit) in 12.5651ms
+2025-02-20 21:32:01.204 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:32:01.208 +01:00 [INF] HTTP POST /api/cookies/accept responded 200 in 31.9854 ms
+2025-02-20 21:32:01.213 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/cookies/accept - 200 null application/json; charset=utf-8 41.035ms
+2025-02-20 21:32:05.324 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 21:32:05.328 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:05.329 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 4.5337ms
+2025-02-20 21:32:05.332 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 21:32:05.338 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:05.343 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:32:05.346 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 21:32:05.354 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 21:32:05.579 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 21:32:05.581 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:32:05.584 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 231.1177ms
+2025-02-20 21:32:05.587 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:32:05.590 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 247.6515 ms
+2025-02-20 21:32:05.598 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 265.8603ms
+2025-02-20 21:32:06.779 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:32:06.780 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:32:06.782 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:06.788 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:06.790 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 11.1093ms
+2025-02-20 21:32:06.793 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 12.0571ms
+2025-02-20 21:32:06.803 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:32:06.817 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:06.819 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:32:06.823 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:32:06.832 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:32:06.838 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 8.0534ms
+2025-02-20 21:32:06.840 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:32:06.843 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:32:06.849 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:06.852 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 34.1765 ms
+2025-02-20 21:32:06.857 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:32:06.866 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 63.5396ms
+2025-02-20 21:32:06.874 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:32:06.904 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:32:06.914 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 12.5534ms
+2025-02-20 21:32:06.922 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:32:06.931 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 74.7593 ms
+2025-02-20 21:32:06.942 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 102.3163ms
+2025-02-20 21:32:24.768 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/cookies/accept - null 0
+2025-02-20 21:32:24.777 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:24.779 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:32:24.792 +01:00 [INF] Route matched with {action = "AcceptCookies", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AcceptCookies() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 21:32:24.797 +01:00 [INF] ✅ Cookies accepted | IP: ::1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0 | Referrer: http://localhost:5173/ | SessionID: 72c7616d-a814-4c76-a45d-4b6a8b5d3368 | Timestamp: 2025-02-20 20:32:24
+2025-02-20 21:32:24.807 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:32:24.817 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit) in 20.2527ms
+2025-02-20 21:32:24.821 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:32:24.827 +01:00 [INF] HTTP POST /api/cookies/accept responded 200 in 48.1059 ms
+2025-02-20 21:32:24.832 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/cookies/accept - 200 null application/json; charset=utf-8 63.3938ms
+2025-02-20 21:32:28.511 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 21:32:28.514 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:28.516 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 4.8761ms
+2025-02-20 21:32:28.521 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 21:32:28.532 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:28.534 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:32:28.535 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 21:32:28.544 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 21:32:28.768 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 21:32:28.770 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:32:28.773 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 229.1899ms
+2025-02-20 21:32:28.775 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:32:28.781 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 247.4060 ms
+2025-02-20 21:32:28.790 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 269.3486ms
+2025-02-20 21:32:29.711 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:32:29.711 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:32:29.719 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:29.724 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:29.727 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 15.8454ms
+2025-02-20 21:32:29.728 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 16.7185ms
+2025-02-20 21:32:29.733 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:32:29.749 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:29.751 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:32:29.757 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:32:29.766 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:32:29.773 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 8.4719ms
+2025-02-20 21:32:29.775 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:32:29.778 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:32:29.790 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:32:29.799 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 47.6539 ms
+2025-02-20 21:32:29.804 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:32:29.815 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 81.5884ms
+2025-02-20 21:32:29.819 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:32:29.837 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:32:29.841 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 7.5929ms
+2025-02-20 21:32:29.846 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:32:29.853 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 49.8326 ms
+2025-02-20 21:32:29.860 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 85.5989ms
+2025-02-20 21:34:16.664 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/cookies/accept - null 0
+2025-02-20 21:34:16.672 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:34:16.674 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:34:16.679 +01:00 [INF] Route matched with {action = "AcceptCookies", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AcceptCookies() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 21:34:16.697 +01:00 [INF] ✅ Cookies accepted | IP: ::1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0 | Referrer: http://localhost:5173/ | SessionID: 94b6d8bb-268d-4ee1-aebb-17e512405025 | Timestamp: 2025-02-20 20:34:16
+2025-02-20 21:34:16.705 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:34:16.720 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit) in 23.8233ms
+2025-02-20 21:34:16.736 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:34:16.738 +01:00 [INF] HTTP POST /api/cookies/accept responded 200 in 63.9192 ms
+2025-02-20 21:34:16.750 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/cookies/accept - 200 null application/json; charset=utf-8 85.7174ms
+2025-02-20 21:34:41.031 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 21:34:41.040 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:34:41.043 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 11.8772ms
+2025-02-20 21:34:41.055 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 21:34:41.073 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:34:41.076 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:34:41.085 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 21:34:41.100 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 21:34:41.635 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 21:34:41.637 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:34:41.641 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 547.2504ms
+2025-02-20 21:34:41.648 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:34:41.653 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 577.0921 ms
+2025-02-20 21:34:41.656 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 601.0821ms
+2025-02-20 21:34:43.198 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:34:43.201 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:34:43.217 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:34:43.591 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:34:43.753 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 554.361ms
+2025-02-20 21:34:43.898 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 697.0616ms
+2025-02-20 21:34:43.907 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:34:44.230 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:34:44.238 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:34:44.241 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:34:44.253 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:34:44.264 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 12.5244ms
+2025-02-20 21:34:44.266 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:34:44.267 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:34:44.275 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:34:44.277 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 40.1926 ms
+2025-02-20 21:34:44.281 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:34:44.285 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 378.8004ms
+2025-02-20 21:34:44.290 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:34:44.309 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:34:44.313 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 5.4384ms
+2025-02-20 21:34:44.316 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:34:44.319 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 39.0921 ms
+2025-02-20 21:34:44.321 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 55.0723ms
+2025-02-20 21:34:48.426 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/cookies/accept - null 0
+2025-02-20 21:34:48.431 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:34:48.434 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:34:48.436 +01:00 [INF] Route matched with {action = "AcceptCookies", controller = "Cookies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AcceptCookies() on controller Praxisarbeit_M295.Controllers.CookiesController (Modul295PraxisArbeit).
+2025-02-20 21:34:48.443 +01:00 [INF] ✅ Cookies accepted | IP: ::1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0 | Referrer: http://localhost:5173/ | SessionID: adf44fbe-7485-4562-8b95-9ce977ee4417 | Timestamp: 2025-02-20 20:34:48
+2025-02-20 21:34:48.447 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:34:48.457 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit) in 14.0744ms
+2025-02-20 21:34:48.459 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.CookiesController.AcceptCookies (Modul295PraxisArbeit)'
+2025-02-20 21:34:48.463 +01:00 [INF] HTTP POST /api/cookies/accept responded 200 in 29.9825 ms
+2025-02-20 21:34:48.471 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/cookies/accept - 200 null application/json; charset=utf-8 45.0057ms
+2025-02-20 21:35:14.285 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
+2025-02-20 21:35:14.295 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:35:14.296 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 11.105ms
+2025-02-20 21:35:14.300 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5013/api/Users/Login - application/json 48
+2025-02-20 21:35:14.311 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:35:14.317 +01:00 [INF] Executing endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:35:14.322 +01:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Praxisarbeit_M295.Controllers.UserLoginDto) on controller Praxisarbeit_M295.Controllers.UsersController (Modul295PraxisArbeit).
+2025-02-20 21:35:14.335 +01:00 [INF] 🔍 Login attempt for username: admin@admin.com
+2025-02-20 21:35:14.744 +01:00 [INF] ✅ Login successful for user 'admin@admin.com'
+2025-02-20 21:35:14.747 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-20 21:35:14.749 +01:00 [INF] Executed action Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit) in 415.4253ms
+2025-02-20 21:35:14.751 +01:00 [INF] Executed endpoint 'Praxisarbeit_M295.Controllers.UsersController.Login (Modul295PraxisArbeit)'
+2025-02-20 21:35:14.752 +01:00 [INF] HTTP POST /api/Users/Login responded 200 in 435.8414 ms
+2025-02-20 21:35:14.757 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/Users/Login - 200 null application/json; charset=utf-8 457.1513ms
+2025-02-20 21:35:16.265 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:35:16.287 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:35:16.256 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:35:16.290 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 25.4254ms
+2025-02-20 21:35:16.316 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:35:16.319 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:35:16.319 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/ServiceOrders - 204 null null 62.9223ms
+2025-02-20 21:35:16.326 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:35:16.337 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:35:16.421 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:35:16.473 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:35:16.658 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 185.9333ms
+2025-02-20 21:35:16.662 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - null null
+2025-02-20 21:35:16.668 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:35:16.674 +01:00 [INF] CORS policy execution successful.
+2025-02-20 21:35:17.070 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 734.5479 ms
+2025-02-20 21:35:17.108 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 789.1434ms
+2025-02-20 21:35:17.098 +01:00 [INF] Executing endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:35:17.338 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "ServiceOrders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Modul295PraxisArbeitOrder.Models.OrderService]]] GetServiceOrders() on controller Modul295PraxisArbeit.Controllers.ServiceOrdersController (Modul295PraxisArbeit).
+2025-02-20 21:35:17.361 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Modul295PraxisArbeitOrder.Models.OrderService, Modul295PraxisArbeit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 21:35:17.475 +01:00 [INF] Executed action Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit) in 117.2939ms
+2025-02-20 21:35:17.484 +01:00 [INF] Executed endpoint 'Modul295PraxisArbeit.Controllers.ServiceOrdersController.GetServiceOrders (Modul295PraxisArbeit)'
+2025-02-20 21:35:17.487 +01:00 [INF] HTTP GET /api/ServiceOrders responded 200 in 391.0834 ms
+2025-02-20 21:35:17.495 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5013/api/ServiceOrders - 200 null application/json; charset=utf-8 833.2132ms
+2025-02-20 21:35:50.493 +01:00 [INF] Running Unit Tests...
+2025-02-20 21:35:51.243 +01:00 [INF] Unit Tests Started...
+2025-02-20 21:35:56.203 +01:00 [INF] Unit Tests Completed Successfully.
