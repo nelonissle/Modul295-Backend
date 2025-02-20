@@ -27,9 +27,9 @@ namespace Praxisarbeit_M295.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger), "Logger is null.");
         }
 
-        // 🛠 REGISTER NEW USER WITH PASSWORD VALIDATION & LOGGING
+        // 🛠 REGISTER NEW USER WITH PASSWORD VALIDATION & JWT TOKEN
         [HttpPost("Register")]
-        public async Task<ActionResult<OrderUser>> Register([FromBody] UserRegisterDto registerDto)
+        public async Task<ActionResult<object>> Register([FromBody] UserRegisterDto registerDto)
         {
             try
             {
@@ -68,7 +68,14 @@ namespace Praxisarbeit_M295.Controllers
                 await _usersCollection.InsertOneAsync(newUser);
 
                 _logger.LogInformation($"✅ User '{registerDto.Username}' registered successfully.");
-                return CreatedAtAction(nameof(Register), new { id = newUser.Id }, newUser);
+
+                // ✅ Generate JWT Token 🔥
+                var jwtService = HttpContext.RequestServices.GetRequiredService<IJwtService>();
+                string token = jwtService.GenerateToken(newUser.Username, newUser.Role);
+
+                _logger.LogInformation($"🔑 Token generated successfully for '{registerDto.Username}'.");
+
+                return CreatedAtAction(nameof(Register), new { id = newUser.Id }, new { token });
             }
             catch (Exception ex)
             {
@@ -76,7 +83,6 @@ namespace Praxisarbeit_M295.Controllers
                 return StatusCode(500, new { message = "❌ Internal server error.", error = ex.Message });
             }
         }
-
 
         // 🔑 LOGIN USER
         [HttpPost("Login")]
@@ -229,4 +235,13 @@ namespace Praxisarbeit_M295.Controllers
 Test für Login 
 email: Martin@gmail.com
 Password: bASEL-sTADT1893
+
+Test für admin Login
+email: Marcel@gmail.com
+Password: bASEL-sTADT1893
+
+
+
+Admin page geht nicht 
+Muss behoben werden!!!!
 */

@@ -56,15 +56,37 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+        options.RequireHttpsMetadata = false; // 🔹 Allow HTTP during local development
+        options.SaveToken = true; // 🔹 Save token in the context
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = false,
             ValidateAudience = false,
-            ValidateLifetime = true,
+            ValidateLifetime = true, // 🔥 Ensures token expires correctly
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+            ClockSkew = TimeSpan.Zero // ⏰ Disables the default 5-minute grace period for expired tokens
+        };
+
+        // 🔍 Add error handling for invalid tokens
+        options.Events = new JwtBearerEvents
+        {
+            OnAuthenticationFailed = context =>
+            {
+                Console.WriteLine($"❌ JWT Authentication Failed: {context.Exception.Message}");
+                return Task.CompletedTask;
+            },
+            OnChallenge = context =>
+            {
+                context.HandleResponse();
+                context.Response.StatusCode = 401;
+                context.Response.ContentType = "application/json";
+                var errorMessage = new { message = "❌ Unauthorized: Invalid or expired token" };
+                return context.Response.WriteAsJsonAsync(errorMessage);
+            }
         };
     });
+
 
 // 🔹 Configure MongoDB
 var mongoConfig = builder.Configuration.GetSection("MongoDbSettings");
