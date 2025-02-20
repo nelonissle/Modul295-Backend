@@ -1992,3 +1992,4 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2025-02-20 15:18:39.369 +01:00 [INF] Executed endpoint 'DeeplTranslationApi.Controllers.TranslationController.Translate (Modul295PraxisArbeit)'
 2025-02-20 15:18:39.371 +01:00 [ERR] HTTP POST /api/translation/translate responded 500 in 459.2658 ms
 2025-02-20 15:18:39.373 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5013/api/translation/translate - 500 null text/plain; charset=utf-8 468.7804ms
+2025-02-20 15:24:05.673 +01:00 [INF] Application is shutting down...
