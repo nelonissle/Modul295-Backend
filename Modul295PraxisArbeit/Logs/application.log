@@ -3204,3 +3204,4 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2025-02-20 17:17:30.410 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - null null
 2025-02-20 17:17:30.413 +01:00 [INF] CORS policy execution successful.
 2025-02-20 17:17:30.417 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5013/api/Users/Login - 204 null null 6.8446ms
+2025-02-20 17:19:50.682 +01:00 [INF] Application is shutting down...
