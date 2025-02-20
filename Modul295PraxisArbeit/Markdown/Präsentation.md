@@ -166,5 +166,6 @@ Hier geben wir eine Kurze Zusammenfassung zum Ganzen Projekt
 
 // Session 
 // 2 Faktor 
+// passwort vergessen Code via email
 // Translate
 // Logs über Cookies 
