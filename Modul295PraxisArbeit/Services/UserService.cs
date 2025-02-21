@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using BCrypt.Net;
-using Modul295PraxisArbeitOrder.Models;
+using Modul295PraxisArbeit.Models;
 
 public class UserService : IUserService
 {

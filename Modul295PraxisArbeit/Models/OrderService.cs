@@ -2,7 +2,7 @@ using Modul295PraxisArbeit.Models;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Modul295PraxisArbeitOrder.Models
+namespace Modul295PraxisArbeit.Models
 {
     public class OrderService
     {

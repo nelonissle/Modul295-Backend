@@ -1,5 +1,7 @@
 using System.Threading.Tasks;
-using Modul295PraxisArbeitOrder.Models;
+
+namespace Modul295PraxisArbeit.Models
+{
 
 public interface IUserService
 {
@@ -7,4 +9,6 @@ public interface IUserService
     Task CreateUser(string username, string password, string role);
     Task<OrderUser> GetUserByUsername(string username); // ✅ Changed from User → OrderUser
     Task UpdateUserRole(string username, string role);
+}
+
 }

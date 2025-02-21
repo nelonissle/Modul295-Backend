@@ -4,7 +4,7 @@
 # docker compose up -d
 # Datenbank init, aktiviere volumes sql-init/ticket.sql - setzt die Daten immer zurück auf Testdaten 
 #
-name: backend
+name: Modul295-Backend
 
 services:
   db:
@@ -24,12 +24,12 @@ services:
     image: neloserver:latest
     container_name: myserver
     environment:
- #     - DEBUG=true
-      - ASPNETCORE_URLS="https://*:443"
-      - ASPNETCORE_HTTPS_PORTS=443
+      - DEBUG=true
+#      - ASPNETCORE_URLS="https://*:443"
+#      - ASPNETCORE_HTTPS_PORTS=443
 #      - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "5013:443"
+      - "5013:8080"
     networks:
       - mymongonet
 

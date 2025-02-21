@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Modul295PraxisArbeitOrder.Models;
 
-namespace Modul295PraxisArbeitOrder.Services
+namespace Modul295PraxisArbeit.Models
 {
     public interface IOrderService
     {
