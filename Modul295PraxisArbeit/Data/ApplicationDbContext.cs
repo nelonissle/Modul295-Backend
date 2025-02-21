@@ -8,18 +8,19 @@ namespace Modul295PraxisArbeit.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         // DbSet für jede Tabelle
-        public DbSet<Users> Users { get; set; }
-        public DbSet<ServiceOrder> ServiceOrders { get; set; }
-        public DbSet<Log> Logs { get; set; }
+        public DbSet<OrderUser> Users { get; set; }
+        public DbSet<OrderService> OrderServices { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseMongoDB("mongodb://localhost:27017", "MyDatabase");
+            }
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // Optional: Initiale Daten hinzufügen (Seed-Daten)
-            modelBuilder.Entity<Users>().HasData(
-                new Users { UserId = 1, Username = "admin", PasswordHash = "hashedPassword", Role = "Admin" }
-            );
 
             // Weitere Konfigurationen (z. B. Beziehungen)
         }

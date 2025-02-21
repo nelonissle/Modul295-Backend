@@ -1,6 +1,6 @@
 namespace Modul295PraxisArbeit.Models
 {
-    public class Users
+    public class UsersX
     {
         public int UserId { get; set; }
         public string? Username { get; set; }

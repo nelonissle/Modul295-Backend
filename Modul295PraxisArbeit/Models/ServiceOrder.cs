@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Modul295PraxisArbeit.Models
 {
-    public class ServiceOrder
+    public class ServiceOrderX
     {
         [Key] // Diese Annotation definiert die Property als Primärschlüssel
         public int OrderId { get; set; }
@@ -18,6 +18,6 @@ namespace Modul295PraxisArbeit.Models
         public string? Status { get; set; } // Status field to track the order status
         public int? AssignedUserId { get; set; } // Nullable user ID field
         // Navigation Property
-        public Users? AssignedUser { get; set; }
+        public UsersX? AssignedUser { get; set; }
     }
 }
