@@ -156,7 +156,7 @@ namespace Praxisarbeit_M295.Controllers
                 using var smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
-                    Credentials = new NetworkCredential("nelonissle@gmail.com", "----------"), // ✅ Add your email and password
+                    Credentials = new NetworkCredential("nelonissle@gmail.com", "ucvykxdwiophvkxa"), // ✅ Add your email and password
                     EnableSsl = true,
                 };
 
@@ -338,6 +338,86 @@ namespace Praxisarbeit_M295.Controllers
             return Ok(new { token });
         }
 
+        [HttpPost("forgot-password/request")]
+        public async Task<IActionResult> RequestPasswordReset([FromBody] ForgotPasswordRequest request)
+        {
+            var user = await _usersCollection.Find(u => u.Username == request.Email).FirstOrDefaultAsync();
+            if (user == null) return NotFound(new { message = "❌ Benutzer nicht gefunden." });
+
+            var resetCode = new Random().Next(100000, 999999).ToString();
+            var update = Builders<OrderUser>.Update.Set(u => u.TwoFactorCode, resetCode);
+            await _usersCollection.UpdateOneAsync(u => u.Username == request.Email, update);
+
+            try
+            {
+                var smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("nelonissle@gmail.com", "ucvykxdwiophvkxa"),
+                    EnableSsl = true,
+                };
+
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress("nelonissle@gmail.com"),
+                    Subject = "Passwort Zurücksetzen - Jetstream Skiservice",
+                    Body = $"Ihr Bestätigungscode lautet: {resetCode}",
+                    IsBodyHtml = false,
+                };
+
+                mailMessage.To.Add(request.Email);
+                await smtpClient.SendMailAsync(mailMessage);
+                return Ok(new { message = "✅ Bestätigungscode gesendet." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "❌ Fehler beim Senden der E-Mail.", error = ex.Message });
+            }
+        }
+        [HttpPost("forgot-password/reset")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequest request)
+        {
+            try
+            {
+                var user = await _usersCollection.Find(u => u.Username == request.Email).FirstOrDefaultAsync();
+                if (user == null)
+                    return Unauthorized(new { message = "❌ Benutzer nicht gefunden oder nicht autorisiert." });
+
+                // ✅ Compare the stored 2FA/reset code
+                if (user.TwoFactorCode != request.ResetCode)
+                {
+                    return Unauthorized(new { message = "❌ Ungültiger Code." });
+                }
+
+                // ✅ Hash and update password
+                string newPasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+                var update = Builders<OrderUser>.Update
+                    .Set(u => u.PasswordHash, newPasswordHash)
+                    .Set(u => u.TwoFactorCode, null); // ✅ Remove reset code
+
+                await _usersCollection.UpdateOneAsync(u => u.Username == request.Email, update);
+
+                _logger.LogInformation($"✅ Passwort für {request.Email} erfolgreich zurückgesetzt.");
+                return Ok(new { message = "✅ Passwort erfolgreich aktualisiert." });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"❌ Fehler beim Zurücksetzen des Passworts: {ex.Message}");
+                return StatusCode(500, new { message = "❌ Interner Serverfehler.", error = ex.Message });
+            }
+        }
+
+        public class ForgotPasswordRequest
+        {
+            public string Email { get; set; }
+        }
+
+        public class ResetPasswordRequest
+        {
+            public string Email { get; set; }  // ✅ The email for user identification
+            public string ResetCode { get; set; }  // ✅ Add this field (previously missing)
+            public string NewPassword { get; set; }  // ✅ The new password
+        }
 
 
         // ✅ Request model for 2FA verification

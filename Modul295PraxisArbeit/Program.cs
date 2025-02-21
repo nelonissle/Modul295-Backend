@@ -112,20 +112,25 @@ builder.Services.AddSingleton<IJwtService>(sp => new JwtService(jwtKey));
 // 🔹 Register Serilog
 builder.Host.UseSerilog();
 
-// 🔹 Configure CORS
+// 🔹 Configure CORS (Ensure it allows frontend)
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
-        policy => policy.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader());
+    options.AddPolicy("AllowFrontend",
+        policy => policy.WithOrigins("http://localhost:5173") // ✅ Your React App URL
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
 });
+
+
 
 AppContext.SetSwitch("System.Drawing.EnableUnixSupport", true);
 
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // ✅ Keep JSON property names as-is
+    });
 
-// 🔹 Add Controllers
-builder.Services.AddControllers();
 
 // 🔹 Configure Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -135,7 +140,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // 🔹 Enable CORS
-app.UseCors("AllowAllOrigins");
+app.UseCors("AllowFrontend");
 
 // 🔹 Enable Swagger in Development
 if (app.Environment.IsDevelopment())
