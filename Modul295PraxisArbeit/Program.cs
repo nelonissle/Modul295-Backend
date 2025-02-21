@@ -121,6 +121,9 @@ builder.Services.AddCors(options =>
                         .AllowAnyHeader());
 });
 
+AppContext.SetSwitch("System.Drawing.EnableUnixSupport", true);
+
+
 // 🔹 Add Controllers
 builder.Services.AddControllers();
 

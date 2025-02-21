@@ -32,6 +32,7 @@ namespace Modul295PraxisArbeit.Services
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.Name, username),
+                    new Claim("unique_name", username), // ✅ This ensures we can extract username later
                     new Claim(ClaimTypes.Role, role)
                 }),
                 Expires = DateTime.UtcNow.AddDays(10), // 🔥 Set token expiry to 10 days

@@ -9,6 +9,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using System;
 using System.Text.RegularExpressions;
+using OtpNet; // ✅ Required for TOTP
+using QRCoder; // ✅ Required for QR Code Generation
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using SkiaSharp;
+using QRCoder;
+using System.IO; // Required for MemoryStream
+using System.Drawing; // Required for Bitmap (if using System.Drawing)
+using System.Drawing.Imaging;
+using System.Net.Mail;
+using System.Net;
+using System.Security.Claims; // Required for ImageFormat
+
+
 
 namespace Praxisarbeit_M295.Controllers
 {
@@ -26,6 +41,7 @@ namespace Praxisarbeit_M295.Controllers
             _jwtService = jwtService ?? throw new ArgumentNullException(nameof(jwtService), "JwtService is null.");
             _logger = logger ?? throw new ArgumentNullException(nameof(logger), "Logger is null.");
         }
+
 
         // 🛠 REGISTER NEW USER WITH PASSWORD VALIDATION & JWT TOKEN
         [HttpPost("Register")]
@@ -83,10 +99,100 @@ namespace Praxisarbeit_M295.Controllers
                 return StatusCode(500, new { message = "❌ Internal server error.", error = ex.Message });
             }
         }
+        [Authorize] // ✅ Ensure only authenticated users can enable 2FA
+        [HttpPost("2fa/enable-email")]
+        public async Task<IActionResult> EnableEmail2FA()
+        {
+            try
+            {
+                // ✅ Extract username from JWT token
+                var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
+                var username = claimsIdentity?.FindFirst(ClaimTypes.Name)?.Value;
 
-        // 🔑 LOGIN USER
+                if (string.IsNullOrEmpty(username))
+                {
+                    _logger.LogWarning("❌ Unauthorized request. No username found in token.");
+                    return Unauthorized(new { message = "❌ Unauthorized request. Please log in again." });
+                }
+
+                // ✅ Find user in database
+                var user = await _usersCollection.Find(u => u.Username == username).FirstOrDefaultAsync();
+                if (user == null)
+                {
+                    _logger.LogWarning($"❌ User '{username}' not found in database.");
+                    return NotFound(new { message = "❌ User not found." });
+                }
+
+                // ✅ Enable 2FA for the user
+                var update = Builders<OrderUser>.Update.Set(u => u.TwoFactorEnabled, true);
+                await _usersCollection.UpdateOneAsync(u => u.Username == username, update);
+
+                _logger.LogInformation($"✅ 2FA enabled for user: {username}");
+                return Ok(new { message = "✅ 2FA enabled successfully!" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"❌ Error enabling 2FA: {ex.Message}");
+                return StatusCode(500, new { message = "❌ Internal server error." });
+            }
+        }
+
+        // ✅ Send 2FA Code via Email
+        [HttpPost("2fa/send-email")]
+        public async Task<IActionResult> Send2FACode([FromBody] Send2FARequest request)
+        {
+            var user = await _usersCollection.Find(u => u.Username == request.Username).FirstOrDefaultAsync();
+            if (user == null || !user.TwoFactorEnabled)
+                return BadRequest(new { message = "❌ User not found or 2FA is not enabled." });
+
+            var random = new Random();
+            string code = random.Next(100000, 999999).ToString();
+
+            var update = Builders<OrderUser>.Update.Set(u => u.TwoFactorCode, code);
+            await _usersCollection.UpdateOneAsync(u => u.Username == request.Username, update);
+
+            try
+            {
+                using var smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("nelonissle@gmail.com", "----------"), // ✅ Add your email and password
+                    EnableSsl = true,
+                };
+
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress("nelonissle@gmail.com"),
+                    Subject = "Ihr 2FA Code",
+                    Body = $"Ihr 2FA-Code lautet: {code}",
+                    IsBodyHtml = false,
+                };
+
+                mailMessage.To.Add(user.Username);
+                await smtpClient.SendMailAsync(mailMessage);
+                return Ok(new { message = "✅ 2FA code sent to your email." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "❌ Error sending email.", error = ex.Message });
+            }
+        }
+
+        // ✅ Verify Email-Based 2FA
+        [HttpPost("2fa/verify-email")]
+        public async Task<IActionResult> Verify2FAEmail([FromBody] Verify2FARequest request)
+        {
+            var user = await _usersCollection.Find(u => u.Username == request.Username).FirstOrDefaultAsync();
+
+            if (user == null || user.TwoFactorCode != request.Code)
+                return Unauthorized(new { message = "❌ Invalid 2FA Code." });
+
+            string token = _jwtService.GenerateToken(user.Username, user.Role);
+            return Ok(new { token });
+        }
+
         [HttpPost("Login")]
-        public async Task<ActionResult<string>> Login([FromBody] UserLoginDto loginDto)
+        public async Task<ActionResult<object>> Login([FromBody] UserLoginDto loginDto)
         {
             _logger.LogInformation($"🔍 Login attempt for username: {loginDto.Username}");
 
@@ -95,19 +201,53 @@ namespace Praxisarbeit_M295.Controllers
             if (user == null)
             {
                 _logger.LogWarning($"⚠️ Login failed - Username '{loginDto.Username}' not found.");
-                return Unauthorized("❌ Invalid username or password.");
+                return Unauthorized(new { message = "❌ Invalid username or password." });
             }
 
             if (!VerifyPasswordHash(loginDto.Password, user.PasswordHash))
             {
                 _logger.LogWarning($"🔒 Password verification failed for user '{loginDto.Username}'");
-                return Unauthorized("❌ Invalid username or password.");
+                return Unauthorized(new { message = "❌ Invalid username or password." });
             }
 
+            // ✅ Check if 2FA is enabled for the user
+            if (user.TwoFactorEnabled)
+            {
+                _logger.LogInformation($"🔒 2FA required for user '{user.Username}'");
+                return Ok(new { requires2FA = true, username = user.Username });
+            }
+
+            // ✅ If 2FA is NOT enabled, issue a JWT token directly
             var token = _jwtService.GenerateToken(user.Username, user.Role);
             _logger.LogInformation($"✅ Login successful for user '{user.Username}'");
-            return Ok(new { Token = token });
+
+            return Ok(new { token });
         }
+
+        [HttpGet("2fa/status/{username}")]
+        public async Task<IActionResult> Get2FAStatus(string username)
+        {
+            var user = await _usersCollection.Find(u => u.Username == username).FirstOrDefaultAsync();
+            if (user == null) return NotFound(new { message = "User not found" });
+
+            return Ok(new { twoFactorEnabled = user.TwoFactorEnabled });
+        }
+
+
+        [HttpPost("2fa/disable/{username}")]
+        public async Task<IActionResult> Disable2FA(string username)
+        {
+            var user = await _usersCollection.Find(u => u.Username == username).FirstOrDefaultAsync();
+            if (user == null) return NotFound(new { message = "User not found" });
+
+            var update = Builders<OrderUser>.Update
+                .Set(u => u.TwoFactorEnabled, false)
+                .Set(u => u.TwoFactorSecret, null); // Remove secret
+
+            await _usersCollection.UpdateOneAsync(u => u.Username == username, update);
+            return Ok(new { success = true, message = "2FA disabled successfully" });
+        }
+
 
         // 🔍 GET ALL USERS (ADMIN ONLY)
         [Authorize(Roles = "Admin")]
@@ -157,6 +297,60 @@ namespace Praxisarbeit_M295.Controllers
 
             _logger.LogWarning($"⚠️ Failed to delete user '{username}'. User not found.");
             return NotFound(new { message = "❌ User not found." });
+        }
+
+        [HttpPost("2fa/verify")]
+        public async Task<IActionResult> Verify2FACode([FromBody] Verify2FARequest request)
+        {
+            _logger.LogInformation($"🔍 Incoming 2FA Verification for User: {request?.Username}");
+
+            if (request == null || string.IsNullOrEmpty(request.Username) || string.IsNullOrEmpty(request.Code))
+            {
+                _logger.LogWarning("⚠️ Bad Request: Username or Code is missing.");
+                return BadRequest(new { message = "❌ Invalid request. Username and code are required." });
+            }
+
+            var user = await _usersCollection.Find(u => u.Username == request.Username).FirstOrDefaultAsync();
+
+            if (user == null || string.IsNullOrEmpty(user.TwoFactorSecret))
+            {
+                _logger.LogWarning($"⚠️ Unauthorized: User {request.Username} not found or no 2FA enabled.");
+                return Unauthorized(new { message = "❌ User or 2FA secret not found." });
+            }
+
+            _logger.LogInformation($"🔍 Stored 2FA Secret: {user.TwoFactorSecret}");
+            _logger.LogInformation($"🔍 Provided 2FA Code: {request.Code}");
+
+            var otpKey = Base32Encoding.ToBytes(user.TwoFactorSecret);
+            var totp = new Totp(otpKey);
+            bool isValid = totp.VerifyTotp(request.Code, out long timeStepMatched, VerificationWindow.RfcSpecifiedNetworkDelay);
+
+            if (!isValid)
+            {
+                _logger.LogWarning($"❌ Invalid 2FA Code for user {request.Username}");
+                return Unauthorized(new { message = "❌ Invalid 2FA Code." });
+            }
+
+            // ✅ Generate JWT Token after 2FA verification
+            var token = _jwtService.GenerateToken(user.Username, user.Role);
+            _logger.LogInformation($"✅ 2FA Verification successful for user {request.Username}");
+
+            return Ok(new { token });
+        }
+
+
+
+        // ✅ Request model for 2FA verification
+        public class Verify2FARequest
+        {
+            public string Username { get; set; }
+            public string Code { get; set; }
+        }
+
+        // DTOs
+        public class Send2FARequest
+        {
+            public string Username { get; set; }
         }
 
         // 🔐 HASH PASSWORD
