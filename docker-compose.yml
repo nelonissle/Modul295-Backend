@@ -1,0 +1,37 @@
+#
+# Docker compose Datenbank und Webserver
+#
+# docker compose up -d
+# Datenbank init, aktiviere volumes sql-init/ticket.sql - setzt die Daten immer zurück auf Testdaten 
+#
+name: backend
+
+services:
+  db:
+    image: mongo:latest
+    container_name: mymongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+    networks:
+      - mymongonet
+
+  web:
+    image: neloserver:latest
+    container_name: myserver
+    environment:
+ #     - DEBUG=true
+      - ASPNETCORE_URLS="https://*:443"
+      - ASPNETCORE_HTTPS_PORTS=443
+#      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5013:443"
+    networks:
+      - mymongonet
+
+networks:
+  mymongonet:
