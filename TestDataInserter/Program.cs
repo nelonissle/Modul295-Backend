@@ -27,6 +27,8 @@ class Program
         };
         await collection.InsertManyAsync(testOrders);
 
+        // TODO create password hash for test users
+
         var testUsers = new List<OrderUser>
         {
             new OrderUser
