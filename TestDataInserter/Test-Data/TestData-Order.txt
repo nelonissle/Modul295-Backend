@@ -1,0 +1,77 @@
+// Fall 1: Alle Felder gesetzt, AssignedUser vorhanden (vollständig konsistent)
+            new Modul295PraxisArbeit.Models.OrderService
+            {
+                OrderId = ObjectId.GenerateNewId().ToString(),
+                Name = "Service1",
+                Email = "service1@example.com",
+                Phone = "111-222-3333",
+                Priority = "High",
+                Service = "Installation",
+                Status = "Open",
+                AssignedUserId = ObjectId.GenerateNewId().ToString(),
+                AssignedUser = new Modul295PraxisArbeit.Models.OrderUser
+                {
+                    Id = ObjectId.GenerateNewId().ToString(),
+                    UserId = ObjectId.GenerateNewId().ToString(),
+                    Username = "User1",
+                    PasswordHash = "hash1",
+                    Role = "user",
+                    TwoFactorCode = "123456",
+                    TwoFactorEnabled = true,
+                    TwoFactorSecret = "secret1",
+                    TwoFactorRecoveryCodes = new List<string> { "r1", "r2" },
+                    CreatedAt = DateTime.UtcNow
+                }
+            },
+            // Fall 2: Kein zugewiesener Benutzer – AssignedUser und AssignedUserId sind null
+            new Modul295PraxisArbeit.Models.OrderService
+            {
+                OrderId = ObjectId.GenerateNewId().ToString(),
+                Name = "Service2",
+                Email = "service2@example.com",
+                Phone = "222-333-4444",
+                Priority = "Medium",
+                Service = "Repair",
+                Status = "In Progress",
+                AssignedUserId = null,
+                AssignedUser = null
+            },
+            // Fall 3: Inkonsistenter Fall: AssignedUserId gesetzt, aber kein AssignedUser vorhanden
+            new Modul295PraxisArbeit.Models.OrderService
+            {
+                OrderId = ObjectId.GenerateNewId().ToString(),
+                Name = "Service3",
+                Email = "service3@example.com",
+                Phone = "333-444-5555",
+                Priority = "Low",
+                Service = "Maintenance",
+                Status = "Closed",
+                AssignedUserId = ObjectId.GenerateNewId().ToString(),
+                AssignedUser = null
+            },
+            // Fall 4: Edge-Case: AssignedUser vorhanden, aber AssignedUserId fehlt (null)
+            new Modul295PraxisArbeit.Models.OrderService
+            {
+                OrderId = ObjectId.GenerateNewId().ToString(),
+                Name = "Service4",
+                Email = "service4@example.com",
+                Phone = "444-555-6666",
+                Priority = "Critical",
+                Service = "Upgrade",
+                Status = "Pending",
+                AssignedUserId = null,
+                AssignedUser = new Modul295PraxisArbeit.Models.OrderUser
+                {
+                    Id = ObjectId.GenerateNewId().ToString(),
+                    UserId = ObjectId.GenerateNewId().ToString(),
+                    Username = "User4",
+                    PasswordHash = "hash4",
+                    Role = "admin",
+                    TwoFactorCode = "654321",
+                    TwoFactorEnabled = false,
+                    TwoFactorSecret = null,
+                    TwoFactorRecoveryCodes = null,
+                    CreatedAt = DateTime.UtcNow.AddDays(-1)
+                }
+            }
+        

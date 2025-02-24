@@ -1,0 +1,55 @@
+ new OrderUser
+            {
+                Id = ObjectId.GenerateNewId().ToString(),
+                UserId = ObjectId.GenerateNewId().ToString(),
+                Username = "TestUser1",
+                PasswordHash = "hash1",
+                Role = "user",
+                TwoFactorCode = "111111",
+                TwoFactorEnabled = true,
+                TwoFactorSecret = "secret1",
+                TwoFactorRecoveryCodes = new List<string> { "code1", "code2", "code3" },
+                CreatedAt = DateTime.UtcNow
+            },
+            // Fall 2: TwoFactorEnabled false, 2FA-Felder als null
+            new OrderUser
+            {
+                Id = ObjectId.GenerateNewId().ToString(),
+                UserId = ObjectId.GenerateNewId().ToString(),
+                Username = "TestUser2",
+                PasswordHash = "hash2",
+                Role = "admin",
+                TwoFactorCode = null,
+                TwoFactorEnabled = false,
+                TwoFactorSecret = null,
+                TwoFactorRecoveryCodes = null,
+                CreatedAt = DateTime.UtcNow.AddDays(-1)
+            },
+            // Fall 3: TwoFactorEnabled true, aber leeres RecoveryCodes-Array
+            new OrderUser
+            {
+                Id = ObjectId.GenerateNewId().ToString(),
+                UserId = ObjectId.GenerateNewId().ToString(),
+                Username = "TestUser3",
+                PasswordHash = "hash3",
+                Role = "user",
+                TwoFactorCode = "333333",
+                TwoFactorEnabled = true,
+                TwoFactorSecret = "secret3",
+                TwoFactorRecoveryCodes = new List<string>(), // leeres Array
+                CreatedAt = DateTime.UtcNow.AddDays(-2)
+            },
+            // Fall 4: Edge-Case: TwoFactorEnabled false, aber 2FA-bezogene Felder dennoch gesetzt
+            new OrderUser
+            {
+                Id = ObjectId.GenerateNewId().ToString(),
+                UserId = ObjectId.GenerateNewId().ToString(),
+                Username = "TestUser4",
+                PasswordHash = "hash4",
+                Role = "admin",
+                TwoFactorCode = "444444",
+                TwoFactorEnabled = false,
+                TwoFactorSecret = "secret4",
+                TwoFactorRecoveryCodes = new List<string> { "edge1" },
+                CreatedAt = DateTime.UtcNow.AddDays(-3)
+            }
