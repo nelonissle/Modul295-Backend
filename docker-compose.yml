@@ -26,6 +26,8 @@ services:
     container_name: myserver
     environment:
       - DEBUG=true
+      - SMTPKEY=${SMTPKEY}
+      - SMTPUSER=${SMTPUSER}
 #      - ASPNETCORE_URLS="https://*:443"
 #      - ASPNETCORE_HTTPS_PORTS=443
 #      - ASPNETCORE_ENVIRONMENT=Development

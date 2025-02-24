@@ -153,16 +153,24 @@ namespace Praxisarbeit_M295.Controllers
 
             try
             {
+                var smtpemail = Environment.GetEnvironmentVariable("SMTPUSER");
+                var smptpassword = Environment.GetEnvironmentVariable("SMTPKEY");
+
+                if (string.IsNullOrEmpty(smtpemail) || string.IsNullOrEmpty(smptpassword))
+                {
+                    _logger.LogError("❌ Email credentials are not set in environment variables.");
+                    return StatusCode(500, new { message = "❌ Internal server error. Email credentials are not configured." });
+                }
                 using var smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
-                    Credentials = new NetworkCredential("nelonissle@gmail.com", "ucvykxdwiophvkxa"), // ✅ Add your email and password
+                    Credentials = new NetworkCredential(smtpemail, smptpassword), // ✅ Add your email and password
                     EnableSsl = true,
                 };
 
                 var mailMessage = new MailMessage
                 {
-                    From = new MailAddress("nelonissle@gmail.com"),
+                    From = new MailAddress(smtpemail),
                     Subject = "Ihr 2FA Code",
                     Body = $"Ihr 2FA-Code lautet: {code}",
                     IsBodyHtml = false,

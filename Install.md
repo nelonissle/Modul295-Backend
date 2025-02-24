@@ -1,7 +1,12 @@
 Step 1:
-run ./Install.ps1
+Set environment
+SMTPKEY="gmail key token"
+SMTPUSER="gmail address"
 
 Step 2:
+run ./Install.ps1
+
+Step 3:
 admin user mit pwd erzeugen
 
 tests laufen lassen
