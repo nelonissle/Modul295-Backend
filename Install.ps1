@@ -5,7 +5,7 @@ docker build -t neloserver .
 docker compose up -d
 
 # wait for 3 seconds
-Start-Sleep -Seconds 10
+Start-Sleep -Seconds 15
 
 # execute the following command to connect to the MongoDB container and execute mongosh show dbs
 docker exec mymongo mongosh -u mongoadmin -p secret --eval "show dbs"

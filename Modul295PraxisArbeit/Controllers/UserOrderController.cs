@@ -274,6 +274,8 @@ namespace Praxisarbeit_M295.Controllers
         {
             _logger.LogInformation($"🔄 Updating role for user: {id} -> New Role: {updateDto.Role}");
 
+            //TODO Update the user role
+
             var filter = Builders<OrderUser>.Filter.Eq(u => u.Id, id);
             var update = Builders<OrderUser>.Update.Set(u => u.Role, updateDto.Role);
             var result = await _usersCollection.UpdateOneAsync(filter, update);

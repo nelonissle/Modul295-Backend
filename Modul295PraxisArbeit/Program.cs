@@ -78,7 +78,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 // 🔹 Configure MongoDB
 var mongoConfig = builder.Configuration.GetSection("MongoDbSettings");
-string? mongoConnectionString = mongoConfig["ConnectionString"];
+// read environment variable for connection string
+string? mongoConnectionString = Environment.GetEnvironmentVariable("MONGO_CONNECTION_STRING");
+// check if environment variable is set
+if (string.IsNullOrEmpty(mongoConnectionString))
+{
+    // if not, read from configuration file
+    mongoConnectionString = mongoConfig["ConnectionString"];
+}
 string? mongoDatabaseName = mongoConfig["DatabaseName"];
 
 if (string.IsNullOrEmpty(mongoConnectionString) || string.IsNullOrEmpty(mongoDatabaseName))

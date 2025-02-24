@@ -158,7 +158,8 @@ namespace Modul295PraxisArbeit.Tests
         [SetUp]
         public void Setup()
         {
-            _client = new MongoClient("mongodb://localhost:27017");
+            //TODO - Initialize MongoDB connection Like in Program.cs
+            _client = new MongoClient("mongodb://mongoadmin:secret@localhost:27017/");
             _database = _client.GetDatabase("Modul295Db");
             _orderCollection = _database.GetCollection<OrderService>("OrderServices");
 

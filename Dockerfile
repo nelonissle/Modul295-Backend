@@ -42,6 +42,9 @@ COPY --from=build /publish .
 #COPY GptApp.pfx /https/GptApp.pfx
 EXPOSE 443 8080
 
+# set environment variables (must be name of docker-compose file of mongodb container)
+ENV MONGO_CONNECTION_STRING="mongodb://mongoadmin:secret@mymongo:27017"
+
 VOLUME [ "/publish/Logs" ]
 
 # Run the application
