@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Modul295PraxisArbeit.Models;
+using BCrypt.Net;  // Make sure to add the BCrypt.Net NuGet package
 
 class Program
 {
@@ -27,18 +28,21 @@ class Program
         };
         await collection.InsertManyAsync(testOrders);
 
-        // TODO create password hash for test users
+        // Create password hash for the admin user using the CreatePasswordHash function
+        string adminPasswordHash = CreatePasswordHash("1234");
 
         var testUsers = new List<OrderUser>
         {
             new OrderUser
             {
-                Username = "admin",
-                PasswordHash = "hashedpassword1",
-                Role = "admin",
+                Username = "nelo@admin.com",
+                PasswordHash = adminPasswordHash, // Hashed password is stored here
+                Role = "Admin",
+                TwoFactorCode = null,
                 TwoFactorEnabled = false,
                 TwoFactorSecret = null,
-                TwoFactorRecoveryCodes = null
+                TwoFactorRecoveryCodes = null,
+                CreatedAt = DateTime.UtcNow.AddDays(-1)
             },
             new OrderUser
             {
@@ -53,8 +57,12 @@ class Program
 
         await usercol.InsertManyAsync(testUsers);
 
-
-
         Console.WriteLine("✅ Inserted test data successfully!");
+    }
+
+    // Function to hash a password using BCrypt
+    private static string CreatePasswordHash(string password)
+    {
+        return BCrypt.Net.BCrypt.HashPassword(password);
     }
 }

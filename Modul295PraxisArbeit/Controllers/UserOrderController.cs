@@ -261,22 +261,22 @@ namespace Praxisarbeit_M295.Controllers
 
         // 🔄 UPDATE USER ROLE (ADMIN ONLY)
         [Authorize(Roles = "Admin")]
-        [HttpPut("UpdateRole/{username}")]
-        public async Task<IActionResult> UpdateUserRole(string username, [FromBody] UpdateRoleDto updateDto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUserRole(string id, [FromBody] UpdateRoleDto updateDto)
         {
-            _logger.LogInformation($"🔄 Updating role for user: {username} -> New Role: {updateDto.Role}");
+            _logger.LogInformation($"🔄 Updating role for user: {id} -> New Role: {updateDto.Role}");
 
-            var filter = Builders<OrderUser>.Filter.Eq(u => u.Username, username);
+            var filter = Builders<OrderUser>.Filter.Eq(u => u.Id, id);
             var update = Builders<OrderUser>.Update.Set(u => u.Role, updateDto.Role);
             var result = await _usersCollection.UpdateOneAsync(filter, update);
 
             if (result.ModifiedCount > 0)
             {
-                _logger.LogInformation($"✅ Successfully updated role for user '{username}' to '{updateDto.Role}'");
+                _logger.LogInformation($"✅ Successfully updated role for user '{id}' to '{updateDto.Role}'");
                 return Ok(new { message = "✅ User role updated successfully." });
             }
 
-            _logger.LogWarning($"⚠️ Failed to update role for '{username}'. User not found.");
+            _logger.LogWarning($"⚠️ Failed to update role for '{id}'. User not found.");
             return NotFound(new { message = "❌ User not found." });
         }
 

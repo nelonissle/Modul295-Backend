@@ -42,6 +42,8 @@ COPY --from=build /publish .
 #COPY GptApp.pfx /https/GptApp.pfx
 EXPOSE 443 8080
 
+VOLUME [ "/publish/Logs" ]
+
 # Run the application
 #ENTRYPOINT ["dotnet", "Modul295PraxisArbeit.dll", "--urls", "https://*:8080"]
 ENTRYPOINT ["dotnet", "Modul295PraxisArbeit.dll"]
