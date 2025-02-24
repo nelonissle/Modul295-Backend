@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Modul295PraxisArbeitOrder.Services;
-using Modul295PraxisArbeitOrder.Models;
+using Modul295PraxisArbeit.Services;
+using Modul295PraxisArbeit.Models;
 using Modul295PraxisArbeit.Services;
 
 [ApiController]

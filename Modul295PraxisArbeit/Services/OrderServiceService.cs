@@ -1,7 +1,7 @@
 using MongoDB.Driver;
-using Modul295PraxisArbeitOrder.Models;
+using Modul295PraxisArbeit.Models;
 
-namespace Modul295PraxisArbeitOrder.Services
+namespace Modul295PraxisArbeit.Services
 {
     public class OrderServiceService : IOrderService
     {

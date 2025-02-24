@@ -1,9 +1,17 @@
 Step 1:
-docker run mongo
+run ./Install.ps1
 
-Step2: 
- docker run -d --network mymongonet --name mymongo -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
+Step 2:
+admin user mit pwd erzeugen
 
-Step3:
+tests laufen lassen
+
+
+for mongosh in container:
 mongosh -u mongoadmin -p secret
-show dbs
+
+Use database 
+use Modul295Db
+
+show users
+db.Users.find().pretty()

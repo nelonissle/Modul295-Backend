@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NUnit.Framework;
-using Modul295PraxisArbeitOrder.Services;
-using Modul295PraxisArbeitOrder.Models;
+using Modul295PraxisArbeit.Services;
+using Modul295PraxisArbeit.Models;
 using MongoDB.Driver;
 using Modul295PraxisArbeit.Controllers;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 
-namespace Modul295PraxisArbeitOrder.Tests
+namespace Modul295PraxisArbeit.Tests
 {
     [TestFixture]
     public class OrderServiceControllerTests

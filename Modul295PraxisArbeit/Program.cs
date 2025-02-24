@@ -1,14 +1,12 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.Data.SqlClient;
 using System.Text;
 using Serilog;
 using MongoDB.Driver;
 using Modul295PraxisArbeit.Services;
 using Modul295PraxisArbeit.Data;
-using Modul295PraxisArbeitOrder.Services;
-using Modul295PraxisArbeitOrder.Models;
+using Modul295PraxisArbeit.Services;
+using Modul295PraxisArbeit.Models;
 
 // 📌 Define the log file path
 var logFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Logs", "application.log");
@@ -41,16 +39,6 @@ if (string.IsNullOrEmpty(jwtKey))
 {
     throw new Exception("JWT Secret Key is missing. Add it in appsettings.json.");
 }
-
-// 🔹 Configure SQL Database
-var sqlConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-if (string.IsNullOrEmpty(sqlConnectionString))
-{
-    throw new Exception("SQL Server connection string is missing. Add it in appsettings.json.");
-}
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(sqlConnectionString));
 
 // 🔹 Configure Authentication with JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -162,38 +150,5 @@ app.UseAuthorization();
 // 🔹 Map Controllers
 app.MapControllers();
 
-// 📌 Ensure Database Exists Before Running
-EnsureDatabaseAndTablesExist(sqlConnectionString);
-
 // 📌 Run the Application
 app.Run();
-
-// 📌 Function to Ensure Database Exists
-static void EnsureDatabaseAndTablesExist(string connectionString)
-{
-    string createDatabaseScript = @"
-        IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'JetStreamDB')
-        BEGIN
-            CREATE DATABASE JetStreamDB;
-        END
-    ";
-
-    try
-    {
-        using (SqlConnection connection = new SqlConnection(connectionString))
-        {
-            connection.Open();
-
-            using (SqlCommand command = new SqlCommand(createDatabaseScript, connection))
-            {
-                command.ExecuteNonQuery();
-            }
-
-            Console.WriteLine("✅ Database and tables are ensured.");
-        }
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"❌ Error creating database: {ex.Message}");
-    }
-}
