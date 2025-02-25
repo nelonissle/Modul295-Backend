@@ -1,12 +1,12 @@
-# Backend Project Documentation
+# Modul295PraxisArbeit Backend Projekt Documentation
 
-This document provides an in-depth explanation of your backend code. It covers the structure, functionality, and dependencies of your application. Sections include controllers, models, data context, services, testing, configuration, and deployment (Docker).
+This document describes the complete backend project "Modul295PraxisArbeit" (also referred to as Praxisarbeit_M295 in some parts). It explains the overall architecture, including controllers, models, data context, services, testing, configuration, and deployment. Use this guide to understand, maintain, and deploy my project.
 
 ---
 
 ## Table of Contents
 
-- [Backend Project Documentation](#backend-project-documentation)
+- [Modul295PraxisArbeit Backend Projekt Documentation](#modul295praxisarbeit-backend-projekt-documentation)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Controllers](#controllers)
@@ -31,9 +31,9 @@ This document provides an in-depth explanation of your backend code. It covers t
   - [Configuration Files](#configuration-files)
     - [appsettings.json](#appsettingsjson)
     - [launchSettings.json (Properties)](#launchsettingsjson-properties)
-  - [Program and Startup Configuration](#program-and-startup-configuration)
+  - [Program \& Startup Configuration](#program--startup-configuration)
     - [Program.cs](#programcs)
-  - [Docker and Deployment](#docker-and-deployment)
+  - [Docker \& Deployment](#docker--deployment)
     - [Docker-Compose.yml](#docker-composeyml)
     - [Dockerfile](#dockerfile)
     - [Install Script (Install.md)](#install-script-installmd)
@@ -43,63 +43,71 @@ This document provides an in-depth explanation of your backend code. It covers t
 
 ## Overview
 
-The backend project is built with ASP.NET Core and uses MongoDB as its primary database. It includes various controllers for handling user actions (cookie consent, service orders, translation, user management), models representing orders and users, and services for JWT authentication, order management, and background test execution. Docker is used for containerized deployment.
+The "Modul295PraxisArbeit" backend project is built with ASP.NET Core and uses MongoDB as its primary database. It supports cookie management, service order processing, translation via DeepL, user authentication with JWT and two-factor authentication (2FA), and background testing. The project is containerized using Docker for easier deployment.
 
 ---
 
 ## Controllers
 
 ### CookiesController
-- **Purpose:** Manages cookie consent actions.
-- **Endpoints:**
-  - **POST api/cookies/accept:** Accepts and logs cookie consent details, storing the data in a cookie (1-year expiry).
-  - **GET api/cookies/status:** Checks if a user has accepted cookies by reading the stored cookie.
-  - **POST api/cookies/clear:** Clears the cookie consent on logout.
+- **Purpose:**  
+  Manages cookie consent—logging user details, storing consent data, and clearing cookies.
+- **Key Endpoints:**
+  - **POST `/api/cookies/accept`:**  
+    Accepts cookie consent, logs details (IP, User-Agent, referrer, session ID), and stores the consent JSON as a cookie (expires in one year).
+  - **GET `/api/cookies/status`:**  
+    Checks if the user has already accepted cookies by reading the stored cookie.
+  - **POST `/api/cookies/clear`:**  
+    Clears the cookie consent (typically on user logout).
 - **Dependencies:**  
-  - `Microsoft.AspNetCore.Mvc`, `Newtonsoft.Json`, and ASP.NET Core logging.
+  ASP.NET Core MVC, logging, and Newtonsoft.Json for serialization.
 
 ### ServiceOrdersController
-- **Purpose:** Provides CRUD operations for service orders.
-- **Endpoints:**
-  - **GET api/serviceorders:** Retrieves all service orders.
-  - **GET api/serviceorders/{id}:** Retrieves a specific order by its ID.
-  - **GET api/serviceorders/User/{id}:** Retrieves orders assigned to a specific user.
-  - **POST api/serviceorders:** Creates a new service order.
-  - **PUT api/serviceorders/{id}:** Updates an existing order.
-  - **DELETE api/serviceorders/{id}:** Deletes an order.
+- **Purpose:**  
+  Provides CRUD operations for service orders.
+- **Key Endpoints:**
+  - **GET `/api/serviceorders`:** Retrieves all service orders.
+  - **GET `/api/serviceorders/{id}`:** Retrieves a specific order by ID.
+  - **GET `/api/serviceorders/User/{id}`:** Retrieves orders filtered by the assigned user.
+  - **POST `/api/serviceorders`:** Creates a new service order (assigning the order to a user if available).
+  - **PUT `/api/serviceorders/{id}`:** Updates an existing order.
+  - **DELETE `/api/serviceorders/{id}`:** Deletes a service order.
 - **Security:**  
-  - Uses `[Authorize]` to secure endpoints.
+  Most endpoints use the `[Authorize]` attribute to ensure proper authentication.
 - **Dependencies:**  
-  - `MongoDB.Driver` for database interactions.
+  MongoDB.Driver and Microsoft.Extensions.Logging.
 
 ### TranslationController
-- **Purpose:** Provides translation functionality using the DeepL API.
-- **Endpoint:**
-  - **POST api/translate:** Accepts a translation request (text and target language) and returns the translated text.
-- **Key Points:**
-  - Retrieves the DeepL API key from configuration.
-  - Uses `HttpClient` to call the external API.
+- **Purpose:**  
+  Provides translation functionality using the DeepL API.
+- **Key Endpoint:**
+  - **POST `/api/translate`:**  
+    Accepts a translation request (with text and target language), calls DeepL’s API using an HTTP client, and returns the translated text.
 - **Dependencies:**  
-  - `System.Net.Http`, `Microsoft.Extensions.Configuration`.
+  System.Net.Http, Microsoft.Extensions.Configuration, and logging.
 
 ### UsersController
-- **Purpose:** Handles user registration, login, two-factor authentication (2FA), password resets, and administrative user management.
-- **Endpoints:**
-  - **POST api/users/Register:** Registers a new user with password strength validation.
-  - **POST api/users/Login:** Logs in a user, issuing a JWT token or requiring 2FA.
-  - **POST api/users/2fa/enable-email:** Enables email-based 2FA.
-  - **POST api/users/2fa/send-email:** Sends a 2FA code via email.
-  - **POST api/users/2fa/verify-email:** Verifies the email-based 2FA code.
-  - **GET api/users/2fa/status/{username}:** Checks if 2FA is enabled.
-  - **POST api/users/2fa/disable/{username}:** Disables 2FA.
-  - **PUT api/users/{id}:** (Admin) Updates a user's role.
-  - **DELETE api/users/Delete/{username}:** (Admin) Deletes a user.
-  - **POST api/users/forgot-password/request:** Initiates a password reset.
-  - **POST api/users/forgot-password/reset:** Resets the user's password after code verification.
-- **Security:**  
-  - JWT-based authentication and role-based authorization for admin functions.
+- **Purpose:**  
+  Manages user registration, login, two-factor authentication (2FA), password reset, and administrative tasks.
+- **Key Endpoints:**
+  - **POST `/api/users/Register`:**  
+    Registers a new user (with password strength validation and BCrypt hashing) and issues a JWT token.
+  - **POST `/api/users/Login`:**  
+    Logs in a user, checking credentials and handling 2FA if enabled.
+  - **2FA Endpoints:**  
+    - **POST `/api/users/2fa/enable-email`:** Enables email-based 2FA.
+    - **POST `/api/users/2fa/send-email`:** Sends a 2FA code to the user's email.
+    - **POST `/api/users/2fa/verify-email`:** Verifies the provided 2FA code.
+    - **GET `/api/users/2fa/status/{username}`:** Checks if 2FA is enabled for the user.
+    - **POST `/api/users/2fa/disable/{username}`:** Disables 2FA for the user.
+  - **Password Reset Endpoints:**  
+    - **POST `/api/users/forgot-password/request`:** Initiates a password reset by sending a code via email.
+    - **POST `/api/users/forgot-password/reset`:** Resets the password after verifying the code.
+  - **Admin Functions:**  
+    - **PUT `/api/users/{id}`:** Updates a user's role.
+    - **DELETE `/api/users/Delete/{username}`:** Deletes a user.
 - **Dependencies:**  
-  - `MongoDB.Driver`, `BCrypt.Net` for password hashing, `OtpNet`, `QRCoder`, `SkiaSharp` for 2FA, `System.Net.Mail` for email.
+  MongoDB.Driver, BCrypt.Net for password hashing, OtpNet, QRCoder, SkiaSharp for 2FA, and System.Net.Mail for emailing.
 
 ---
 
@@ -107,44 +115,44 @@ The backend project is built with ASP.NET Core and uses MongoDB as its primary d
 
 ### IOrderService
 - **Description:**  
-  Interface defining the CRUD operations for service orders.
+  An interface defining the CRUD operations for service orders.
 - **Methods:**
-  - `GetAllOrdersAsync()`
-  - `GetOrderByIdAsync(string id)`
-  - `CreateOrderAsync(OrderService newOrder)`
-  - `UpdateOrderAsync(string id, OrderService updatedOrder)`
-  - `DeleteOrderAsync(string id)`
+  - `Task<List<OrderService>> GetAllOrdersAsync()`
+  - `Task<OrderService> GetOrderByIdAsync(string id)`
+  - `Task CreateOrderAsync(OrderService newOrder)`
+  - `Task UpdateOrderAsync(string id, OrderService updatedOrder)`
+  - `Task DeleteOrderAsync(string id)`
 
 ### IUserService
 - **Description:**  
-  Interface for user-related operations.
+  An interface for user-related operations.
 - **Methods:**
-  - `UserExists(string username)`
-  - `CreateUser(string username, string password, string role)`
-  - `GetUserByUsername(string username)`
-  - `UpdateUserRole(string username, string role)`
+  - `Task<bool> UserExists(string username)`
+  - `Task CreateUser(string username, string password, string role)`
+  - `Task<OrderUser> GetUserByUsername(string username)`
+  - `Task UpdateUserRole(string username, string role)`
 
 ### OrderService
 - **Description:**  
   Represents a service order.
 - **Properties:**
-  - `OrderId`: Unique identifier generated using MongoDB’s ObjectId.
+  - `OrderId`: A unique identifier (generated using MongoDB’s ObjectId).
   - `Name`, `Email`, `Phone`, `Priority`, `Service`, `Status`
-  - `AssignedUserId`: References the ID of the assigned user.
-  - `AssignedUser`: Optionally contains the user details.
+  - `AssignedUserId`: The ID of the assigned user.
+  - `AssignedUser`: Optionally contains the full user details.
 
 ### OrderUser
 - **Description:**  
-  Represents a user within the system.
+  Represents a user in the system.
 - **Properties:**
-  - `Id` and `UserId`: Unique identifiers.
+  - `Id` and `UserId`: Unique identifiers (as strings using MongoDB ObjectId).
   - `Username` and `PasswordHash`: For authentication.
-  - `Role`: User role (default is `"user"`).
+  - `Role`: User role (default is `"user"`, can be updated to `"Kunde"`, `"Admin"`, etc.).
   - **Two-Factor Authentication Fields:**
     - `TwoFactorEnabled`
     - `TwoFactorSecret`
     - `TwoFactorRecoveryCodes`
-  - `CreatedAt`: Timestamp for user creation.
+  - `CreatedAt`: Timestamp when the user was created.
 
 ---
 
@@ -152,13 +160,15 @@ The backend project is built with ASP.NET Core and uses MongoDB as its primary d
 
 ### MongoDbContext (OrderServiceContext)
 - **Purpose:**  
-  Provides access to the MongoDB collections.
+  Provides MongoDB connectivity and exposes collections.
 - **Features:**
-  - **Constructor:** Validates the connection string and database name.
+  - **Constructor:**  
+    - Validates that both the connection string and database name are provided.
+    - Creates a MongoClient and retrieves the specified database.
   - **Property:**  
-    - `OrderServices`: Exposes the collection for service orders.
-- **Dependencies:**  
-  - `MongoDB.Driver`
+    - `OrderServices`: Exposes the MongoDB collection for service orders.
+- **Dependency:**  
+  MongoDB.Driver
 
 ---
 
@@ -166,37 +176,38 @@ The backend project is built with ASP.NET Core and uses MongoDB as its primary d
 
 ### JwtService
 - **Purpose:**  
-  Handles JWT token generation and validation.
+  Generates and validates JWT tokens.
 - **Key Methods:**
-  - `GenerateToken(string username, string role)`: Creates a token that expires in 10 days.
-  - `ValidateToken(string token)`: Validates a token and returns the associated claims.
+  - `GenerateToken(string username, string role)`:  
+    Creates a JWT that expires in 10 days.
+  - `ValidateToken(string token)`:  
+    Validates the token and extracts the claims.
 - **Dependencies:**  
-  - `System.IdentityModel.Tokens.Jwt`, `Microsoft.IdentityModel.Tokens`
+  System.IdentityModel.Tokens.Jwt, Microsoft.IdentityModel.Tokens
 
 ### OrderServiceService
 - **Purpose:**  
-  Implements the `IOrderService` interface to provide CRUD operations for service orders.
-- **Operations:**
-  - Get, create, update, and delete orders using MongoDB.
-- **Dependencies:**  
-  - `MongoDB.Driver`
+  Implements the `IOrderService` interface for managing service orders.
+- **Operations:**  
+  Uses MongoDB to get, create, update, and delete orders.
+- **Dependency:**  
+  MongoDB.Driver
 
 ### TestRunnerService
 - **Purpose:**  
-  A background service that runs unit tests periodically (every 30 minutes).
-- **Key Points:**
-  - Uses a `Process` to execute `dotnet test`.
-  - Logs the results (success or failure).
+  A background service that periodically runs unit tests (every 30 minutes) using a `dotnet test` process.
+- **Behavior:**  
+  Logs the status (success or failure) of test runs.
 - **Dependencies:**  
-  - `Microsoft.Extensions.Hosting`, `Microsoft.Extensions.Logging`
+  Microsoft.Extensions.Hosting, Microsoft.Extensions.Logging
 
 ### UserService
 - **Purpose:**  
-  Implements the `IUserService` interface for managing user data.
-- **Operations:**
-  - Checks for existing users, creates new users (with password hashing), retrieves users, and updates user roles.
+  Implements the `IUserService` interface for user management.
+- **Operations:**  
+  Checks if a user exists, creates new users (with BCrypt password hashing), retrieves users, and updates user roles.
 - **Dependencies:**  
-  - `MongoDB.Driver`, `BCrypt.Net`
+  MongoDB.Driver, BCrypt.Net
 
 ---
 
@@ -205,102 +216,110 @@ The backend project is built with ASP.NET Core and uses MongoDB as its primary d
 ### OrderServiceControllerTests & OrderServiceMongoDBTests
 - **Purpose:**  
   Contains unit tests for controller endpoints and MongoDB operations.
-- **Highlights:**
-  - Tests for successful retrieval, creation, update, and deletion of orders.
-  - Uses NUnit, Moq, and MongoDB.Driver for testing.
-- **Location:**  
-  - Under the `Modul295PraxisArbeit.Tests` namespace.
-  
+- **Highlights:**  
+  - Tests successful and failure scenarios for retrieving, creating, updating, and deleting orders.
+  - Uses NUnit and Moq for mocking dependencies.
+- **Namespace:**  
+  `Modul295PraxisArbeit.Tests`
+
 ---
 
 ## Configuration Files
 
 ### appsettings.json
 - **Purpose:**  
-  Holds configuration settings such as logging, connection strings, JWT settings, DeepL API key, and MongoDB settings.
-- **Example Settings:**
-  - **Logging:** Configured to show information for the default and ASP.NET Core namespaces.
-  - **ConnectionStrings:** Contains SQL Server connection details (if applicable).
-  - **JwtSettings:** Includes the secret key for JWT token generation.
+  Holds configuration settings for logging, connection strings, JWT, DeepL API, and MongoDB.
+- **Key Sections:**
+  - **Logging:** Configures log levels.
+  - **ConnectionStrings:** (For SQL Server if used.)
+  - **JwtSettings:** Contains the JWT secret key.
   - **DeepL:** Contains the API key for translation services.
-  - **MongoDbSettings:** Provides the connection string and database name for MongoDB.
+  - **MongoDbSettings:** Contains the connection string and database name for MongoDB.
 
 ### launchSettings.json (Properties)
 - **Purpose:**  
-  Configures local development settings including application URLs, environment variables, and profiles (HTTP, HTTPS, IIS Express).
-- **Highlights:**
-  - `launchUrl` is set to Swagger for API testing.
-  - Environment is set to `"Development"`.
+  Configures local development settings such as application URLs, launch profiles, and environment variables.
+- **Key Settings:**
+  - `launchUrl` set to Swagger.
+  - Profiles for HTTP, HTTPS, and IIS Express with the environment set to "Development".
 
 ---
 
-## Program and Startup Configuration
+## Program & Startup Configuration
 
 ### Program.cs
 - **Purpose:**  
-  Configures the application’s middleware, dependency injection, logging, authentication, and routing.
+  Configures middleware, dependency injection, logging, authentication, and routing.
 - **Key Configurations:**
-  - **Logging:** Uses Serilog to log both to the console and to a file.
-  - **Authentication:** Configured using JWT with custom token validation parameters.
-  - **MongoDB:** Reads configuration for the connection string and database name and registers `IMongoDatabase` as a singleton.
-  - **Services Registration:**  
-    - Registers `IOrderService` and its implementation.
-    - Registers `IJwtService` with the provided secret key.
-    - Adds CORS policies to allow the frontend (e.g., a React app at `http://localhost:5173`).
-  - **Swagger:** Enabled for development.
-  - **Middleware:** Configures HTTPS redirection, authentication, authorization, and Serilog request logging.
+  - **Logging:**  
+    - Uses Serilog to log to both console and file (located in a Logs directory).
+  - **Authentication:**  
+    - Configured using JWT Bearer authentication with custom token validation parameters.
+  - **MongoDB:**  
+    - Reads connection details from configuration/environment and registers `IMongoDatabase` as a singleton.
+  - **Service Registration:**  
+    - Registers `IOrderService`, `IJwtService`, and background services (like `TestRunnerService`).
+  - **CORS:**  
+    - Configured to allow requests from the frontend (e.g., `http://localhost:5173`).
+  - **Swagger:**  
+    - Enabled in development mode.
 
 ---
 
-## Docker and Deployment
+## Docker & Deployment
 
 ### Docker-Compose.yml
 - **Purpose:**  
-  Defines the Docker services for both the MongoDB database and the web server.
-- **Key Points:**
-  - **Services:**
-    - **db:** Uses the latest MongoDB image, sets up authentication, maps port 27017, and mounts a volume for persistence.
-    - **web:** Runs the backend application image (e.g., `neloserver:latest`), sets environment variables, maps ports, and connects to the MongoDB network.
-  - **Networks:**  
-    - A custom network (`mymongonet`) ensures the containers can communicate.
+  Defines Docker services for MongoDB and the web server.
+- **Services:**
+  - **db:**  
+    - Uses the latest MongoDB image.
+    - Sets up root username and password.
+    - Exposes port 27017 and mounts a volume for data persistence.
+  - **web:**  
+    - Uses your built image (`neloserver:latest`).
+    - Sets environment variables such as SMTP credentials.
+    - Maps container ports to host ports and connects to the MongoDB network.
+- **Networks:**  
+  - A custom network (`mymongonet`) ensures container communication.
 
 ### Dockerfile
 - **Purpose:**  
-  Builds the backend application.
+  Builds and packages the backend application.
 - **Stages:**
   - **Build Stage:**  
-    - Uses the .NET SDK image to restore, build, and publish the application (including a test data inserter if needed).
+    - Uses the .NET SDK image to restore, build, and publish the application (and test data inserter).
   - **Runtime Stage:**  
     - Uses the .NET ASP.NET Core runtime image.
     - Copies published files from the build stage.
-    - Exposes ports (443 and 8080) and sets environment variables.
-- **Commands:**  
-  - Build the image with `docker build -t neloserver .`
-  - Run the container using Docker Compose or `docker run`.
+    - Exposes ports 443 and 8080.
+    - Sets the MongoDB connection string environment variable.
+- **Usage:**  
+  Build the image with `docker build -t neloserver .` and run using Docker Compose.
 
 ### Install Script (Install.md)
 - **Purpose:**  
-  Provides step-by-step instructions to install and deploy the backend.
+  Provides step-by-step instructions to set up and deploy the project.
 - **Steps Include:**
   1. **Environment Setup:**  
-     - Set environment variables such as `SMTPKEY` and `SMTPUSER`.
+     - Set SMTPKEY and SMTPUSER.
   2. **Execution:**  
-     - Run the provided PowerShell script (`Install.ps1`) to build and deploy the Docker containers.
+     - Run the provided PowerShell script (`Install.ps1`) to build and deploy Docker containers.
   3. **Test Data:**  
-     - Create an admin user via the TestDataInserter.
+     - Create an admin user via TestDataInserter.
   4. **MongoDB Commands:**  
-     - Instructions to connect to the MongoDB container, switch databases, and inspect users.
-  5. **MongoDB Connection String Examples:**  
-     - How to use the connection string for either containerized MongoDB or a local instance.
+     - Commands to connect to the MongoDB container, use the proper database, and inspect users.
+  5. **MongoDB Connection:**  
+     - Examples for containerized or local MongoDB usage.
 
 ---
 
 ## Required Packages
 
-Ensure the following NuGet packages are installed for the project to build and run correctly:
+Make sure to install the following NuGet packages:
 
 - **ASP.NET Core & Logging:**
-  - `Microsoft.AspNetCore.App` (includes MVC, HTTP, etc.)
+  - `Microsoft.AspNetCore.App`
   - `Microsoft.Extensions.Logging`
 - **MongoDB:**
   - `MongoDB.Driver`
@@ -322,8 +341,8 @@ Ensure the following NuGet packages are installed for the project to build and r
   - `NUnit`
   - `Moq`
 - **Others:**
-  - `Serilog` (and related sinks)
-  - `System.Drawing.Common` (if using System.Drawing for image processing)
+  - `Serilog` and `Serilog.Sinks.File`
+  - `System.Drawing.Common`
 
 Example .NET CLI commands:
 
