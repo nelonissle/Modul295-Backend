@@ -4,7 +4,7 @@
 # docker compose up -d
 # Datenbank init, aktiviere volumes sql-init/ticket.sql - setzt die Daten immer zurück auf Testdaten 
 #
-name: Modul295-Backend
+name: modul295backend
 
 services:
   db:
@@ -28,9 +28,6 @@ services:
       - DEBUG=true
       - SMTPKEY=${SMTPKEY}
       - SMTPUSER=${SMTPUSER}
-#      - ASPNETCORE_URLS="https://*:443"
-#      - ASPNETCORE_HTTPS_PORTS=443
-#      - ASPNETCORE_ENVIRONMENT=Development
     volumes:
       - ./Modul295PraxisArbeit/Logs:/publish/Logs
     ports:
