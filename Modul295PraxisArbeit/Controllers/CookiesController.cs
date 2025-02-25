@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Net;
 
 namespace Praxisarbeit_M295.Controllers
 {
@@ -17,31 +16,21 @@ namespace Praxisarbeit_M295.Controllers
             _logger = logger;
         }
 
-        // 🍪 User Accepts Cookies → Log Full Details
+        // 🍪 User Accepts Cookies → Log Full Details and set secure cookie
         [HttpPost("accept")]
         public IActionResult AcceptCookies()
         {
             try
             {
-                // 📍 Get IP Address
                 string userIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown IP";
-
-                // 🌍 Get User-Agent (OS, Browser, Device)
                 string userAgent = Request.Headers["User-Agent"].ToString() ?? "Unknown User-Agent";
-
-                // 🔗 Get Referrer (Where the user came from)
                 string referrer = Request.Headers["Referer"].ToString() ?? "No Referrer";
-
-                // 🆔 Generate a Session ID (Simple Random String)
                 string sessionId = Guid.NewGuid().ToString();
-
-                // 🕒 Timestamp
                 string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
 
-                // 📜 Log Everything
                 _logger.LogInformation($"✅ Cookies accepted | IP: {userIp} | User-Agent: {userAgent} | Referrer: {referrer} | SessionID: {sessionId} | Timestamp: {timestamp}");
 
-                // 🍪 Set Secure Cookie (1 year expiry)
+                // Set secure cookie (1 year expiry)
                 Response.Cookies.Append("UserAcceptedCookies", "true", new CookieOptions
                 {
                     Expires = DateTime.UtcNow.AddYears(1),
@@ -50,10 +39,10 @@ namespace Praxisarbeit_M295.Controllers
                     SameSite = SameSiteMode.Strict // Strict SameSite policy
                 });
 
-                // ✅ Return Data to Frontend
                 return Ok(new
                 {
-                    message = "✅ Cookie consent recorded",
+                    accepted = true,
+                    message = "User has accepted cookies",
                     ip = userIp,
                     userAgent = userAgent,
                     referrer = referrer,
@@ -64,7 +53,7 @@ namespace Praxisarbeit_M295.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"❌ Error while processing cookie consent: {ex.Message}");
-                return StatusCode(500, new { message = "Internal server error" });
+                return StatusCode(500, new { accepted = false, message = "Internal server error" });
             }
         }
 
@@ -72,11 +61,20 @@ namespace Praxisarbeit_M295.Controllers
         [HttpGet("status")]
         public IActionResult CheckCookieStatus()
         {
-            if (Request.Cookies.ContainsKey("UserAcceptedCookies"))
+            bool accepted = Request.Cookies.ContainsKey("UserAcceptedCookies");
+            return Ok(new
             {
-                return Ok(new { message = "✅ User has accepted cookies" });
-            }
-            return Ok(new { message = "❌ User has NOT accepted cookies" });
+                accepted,
+                message = accepted ? "User has accepted cookies" : "User has NOT accepted cookies"
+            });
+        }
+
+        // 🍪 Clear cookie consent (to be called on logout)
+        [HttpPost("clear")]
+        public IActionResult ClearCookieConsent()
+        {
+            Response.Cookies.Delete("UserAcceptedCookies");
+            return Ok(new { accepted = false, message = "Cookie consent cleared" });
         }
     }
 }
