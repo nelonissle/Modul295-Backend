@@ -21,12 +21,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Pull latest images (if needed)
-        run: docker-compose pull
-
       - name: Start MongoDB and application
         run: |
-          docker-compose up db -d --build
+          docker compose up db -d --build
           
       - name: Wait for MongoDB to be ready
         run: |
