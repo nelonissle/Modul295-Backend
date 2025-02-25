@@ -4,9 +4,32 @@ This document describes the complete backend project "Modul295PraxisArbeit" (als
 
 ---
 
+## Overview of this Projekt 
+
+This projekt is the backend to my Webpage (See in Github WebpageReact25) it was a School projekt but i have Decided to Keep working on it time by time and now i have a Funktioning Backend system. I keep working on it and this is more a "Testing ground" for me. I will Keep working on it and Improving it the main goal for me is to Automate everything and getting in touch with real world Software Development.
+
+#### Nice to know 
+
+- The Projekt is Designed to run local but mainly in Docker (see Docker Below)
+- It is in .NET 8.0 
+- it has Git Secrets so if you want to Deploy it just Contact me for the Environment Setup  for the keys you need. More Infos About this are under [Docker \& Deployment](#docker--deployment)
+- It is Still in work so not everything is Perfekt or Not Implementet yet
+
+
+#### TOFO for me 
+
+- I want to Analyse Data with Cookies or analytics Tool (matomo or google analytics)
+- Strukture it more so its more viewable and looking better 
+- make Git Actions for more automations 
+- make Logs more advanced and better Struktured so it is simpler to view and analyse the Logs 
+---
+
 ## Table of Contents
 
 - [Modul295PraxisArbeit Backend Projekt Documentation](#modul295praxisarbeit-backend-projekt-documentation)
+  - [Overview of this Projekt](#overview-of-this-projekt)
+      - [Nice to know](#nice-to-know)
+      - [TOFO for me](#tofo-for-me)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Controllers](#controllers)
@@ -34,9 +57,11 @@ This document describes the complete backend project "Modul295PraxisArbeit" (als
   - [Program \& Startup Configuration](#program--startup-configuration)
     - [Program.cs](#programcs)
   - [Docker \& Deployment](#docker--deployment)
+    - [Making Docker setup](#making-docker-setup)
     - [Docker-Compose.yml](#docker-composeyml)
     - [Dockerfile](#dockerfile)
     - [Install Script (Install.md)](#install-script-installmd)
+  - [Command Gallery](#command-gallery)
   - [Required Packages](#required-packages)
 
 ---
@@ -60,10 +85,10 @@ The "Modul295PraxisArbeit" backend project is built with ASP.NET Core and uses M
   - **POST `/api/cookies/clear`:**  
     Clears the cookie consent (typically on user logout).
 - **Dependencies:**  
-  ASP.NET Core MVC, logging, and Newtonsoft.Json for serialization.
+  ASP.NET Core MVC, logging, d Newtonsoft.Json for serialization.
 
 ### ServiceOrdersController
-- **Purpose:**  
+- **Purpose:**  an
   Provides CRUD operations for service orders.
 - **Key Endpoints:**
   - **GET `/api/serviceorders`:** Retrieves all service orders.
@@ -268,6 +293,20 @@ The "Modul295PraxisArbeit" backend project is built with ASP.NET Core and uses M
 
 ## Docker & Deployment
 
+### Making Docker setup 
+  Here i will go more into the Detailed Deployment for the Docker and what you need for it to work properly. For the Docker GUI i use Docker Desktop Because it offers me the perfekt Environment to Manage my Dockers.
+
+  1. Install Docker Desktop if you havent already Here is the Download link for it 
+     [Docker Desktop](https://www.docker.com/products/docker-desktop/ "Docker Desktop download")
+  2. After you Downloaded Docker Desktop Login or creat a Account
+  3. if you have done this you can go back into Visual Stuido Code and run the install script
+   - for Windows (`./Install.ps1`) 
+   - for linux and MacOS run (`./Install.sh`)
+  4. If you have done these Steps you should be Ready to go and my projekt should run on your Local System too 
+   
+  **Important:**
+  If you are running it Localy you need to set your Environment Variables with the keys i have setup for 2fa to work Or else you cant use it for these keys and Secret infos you can Contact me. 
+
 ### Docker-Compose.yml
 - **Purpose:**  
   Defines Docker services for MongoDB and the web server.
@@ -313,6 +352,27 @@ The "Modul295PraxisArbeit" backend project is built with ASP.NET Core and uses M
      - Examples for containerized or local MongoDB usage.
 
 ---
+
+## Command Gallery 
+here are some Important Commands you Could come Encounter. Those Commands are for Windows so some of them ight not work on MacOS or Linux
+
+**General Commands for the Projekt**
+  - `dotnet run` (Runs the projekt Localy)
+  - `dotnet restore` (restore a .NET project’s dependencies and tools)
+  - `dotnet build` (Builds the Projekt and checks for errors)
+  - `dotnet Clean` (properly cleans the projekt)
+  - `cd .\Modul295PraxisArbeit\` (moves into the main projekt Directory)
+  - `cd ..` (goes one Directory Back)
+  - `dir` (displays the contents of a directory)
+  - `Docker Compose up` (It reads the docker-compose.yml file and builds it with its Instruktions)
+  - `Docker compose down` (cleans up the containers and networks created)
+  - `docker compose up db -d` (Launches only the mongodb Docker use it for local development with dotnet run)
+  - `TestDataInserter` (Creats Test Data for the MongoDB)
+
+**Commands for Mongo shell**
+- `use Modul295Db` ()
+- `show collections`
+- `db.Users.find().pretty()` (Displays the current data in Users Collection)
 
 ## Required Packages
 
