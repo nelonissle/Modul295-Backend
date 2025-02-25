@@ -4,33 +4,13 @@ This document describes the complete backend project "Modul295PraxisArbeit" (als
 
 ---
 
-## Overview of this Projekt 
-
-This projekt is the backend to my Webpage (See in Github WebpageReact25) it was a School projekt but i have Decided to Keep working on it time by time and now i have a Funktioning Backend system. I keep working on it and this is more a "Testing ground" for me. I will Keep working on it and Improving it the main goal for me is to Automate everything and getting in touch with real world Software Development.
-
-#### Nice to know 
-
-- The Projekt is Designed to run local but mainly in Docker (see Docker Below)
-- It is in .NET 8.0 
-- it has Git Secrets so if you want to Deploy it just Contact me for the Environment Setup  for the keys you need. More Infos About this are under [Docker \& Deployment](#docker--deployment)
-- It is Still in work so not everything is Perfekt or Not Implementet yet
-
-
-#### TOFO for me 
-
-- I want to Analyse Data with Cookies or analytics Tool (matomo or google analytics)
-- Strukture it more so its more viewable and looking better 
-- make Git Actions for more automations 
-- make Logs more advanced and better Struktured so it is simpler to view and analyse the Logs 
----
-
 ## Table of Contents
 
 - [Modul295PraxisArbeit Backend Projekt Documentation](#modul295praxisarbeit-backend-projekt-documentation)
+  - [Table of Contents](#table-of-contents)
   - [Overview of this Projekt](#overview-of-this-projekt)
       - [Nice to know](#nice-to-know)
-      - [TOFO for me](#tofo-for-me)
-  - [Table of Contents](#table-of-contents)
+      - [TODO for me](#todo-for-me)
   - [Overview](#overview)
   - [Controllers](#controllers)
     - [CookiesController](#cookiescontroller)
@@ -65,6 +45,25 @@ This projekt is the backend to my Webpage (See in Github WebpageReact25) it was 
   - [Required Packages](#required-packages)
 
 ---
+## Overview of this Projekt 
+
+This projekt is the backend to my Webpage (See in Github WebpageReact25) it was a School projekt but i have Decided to Keep working on it time by time and now i have a Funktioning Backend system. I keep working on it and this is more a "Testing ground" for me. I will Keep working on it and Improving it the main goal for me is to Automate everything and getting in touch with real world Software Development.
+
+
+#### Nice to know 
+
+- The Projekt is Designed to run local but mainly in Docker (see Docker Below)
+- It is in .NET 8.0 
+- it has Git Secrets so if you want to Deploy it just Contact me for the Environment Setup  for the keys you need. More Infos About this are under [Docker \& Deployment](#docker--deployment)
+- It is Still in work so not everything is Perfekt or Not Implementet yet
+
+
+#### TODO for me 
+
+- I want to Analyse Data with Cookies or analytics Tool (matomo or google analytics)
+- Strukture it more so its more viewable and looking better 
+- make Git Actions for more automations 
+- make Logs more advanced and better Struktured so it is simpler to view and analyse the Logs 
 
 ## Overview
 
@@ -307,6 +306,8 @@ The "Modul295PraxisArbeit" backend project is built with ASP.NET Core and uses M
   **Important:**
   If you are running it Localy you need to set your Environment Variables with the keys i have setup for 2fa to work Or else you cant use it for these keys and Secret infos you can Contact me. 
 
+  Follow the frontend documentation to run the frontend against this backend, see [WebpageReact25 README](https://github.com/nelonissle/WebpageReact25/blob/main/README.md)
+
 ### Docker-Compose.yml
 - **Purpose:**  
   Defines Docker services for MongoDB and the web server.
@@ -368,11 +369,14 @@ here are some Important Commands you Could come Encounter. Those Commands are fo
   - `Docker compose down` (cleans up the containers and networks created)
   - `docker compose up db -d` (Launches only the mongodb Docker use it for local development with dotnet run)
   - `TestDataInserter` (Creats Test Data for the MongoDB)
+  - `dotnet tests` (Runns all the Unit tests i have)
 
 **Commands for Mongo shell**
-- `use Modul295Db` ()
-- `show collections`
+- `mongosh -u username -p password` (Runs the mongo shell with the password and username for the permissions you need)
+- `use Modul295Db` (switches the current database context to Modul295Db)
+- `show collections` (lists all the collections that exist in that database.)
 - `db.Users.find().pretty()` (Displays the current data in Users Collection)
+- `db.ServiceOrders.find().pretty()` (Displays the current data in ServiceOrders collection)
 
 ## Required Packages
 
