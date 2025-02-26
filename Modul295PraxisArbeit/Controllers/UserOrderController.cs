@@ -276,6 +276,13 @@ namespace Praxisarbeit_M295.Controllers
 
             //TODO Update the user role
 
+            /*
+            serviceOrder.OrderId = id;
+            await _orderService.UpdateOrderAsync(id, serviceOrder);
+            _logger.LogInformation($"Order with ID {id} updated successfully.");
+            return NoContent();
+            */
+
             var filter = Builders<OrderUser>.Filter.Eq(u => u.Id, id);
             var update = Builders<OrderUser>.Update.Set(u => u.Role, updateDto.Role);
             var result = await _usersCollection.UpdateOneAsync(filter, update);
