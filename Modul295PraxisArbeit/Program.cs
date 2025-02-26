@@ -160,3 +160,11 @@ app.MapControllers();
 
 // 📌 Run the Application
 app.Run();
+
+
+// TODO: cryptopayment 
+// TODO: add swagger
+// TODO: Payment
+// TODO: Make the analysis tool 
+// TODO: Add the analysis tool to the project
+// TODO: Add the analysis to the adminpage frontend 
